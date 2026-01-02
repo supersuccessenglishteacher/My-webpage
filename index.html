@@ -5,24 +5,100 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SSCEC - Digital Learning Center</title>
 <style>
-  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7f9; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; min-height: 100vh; }
-  .hero-section { background: linear-gradient(135deg, #1a3a5a 0%, #2e5a88 100%); color: white; width: 100%; text-align: center; padding: 50px 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-  .center-name { font-size: 26px; font-weight: bold; margin: 0; text-transform: uppercase; }
-  .main-content { max-width: 900px; width: 95%; margin: -40px auto 40px; }
-  .card-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-  .test-card { background: white; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.3s; border-top: 6px solid #ffeb3b; }
-  .test-card:hover { transform: translateY(-10px); }
-  .test-card h3 { color: #1a3a5a; margin-top: 0; }
-  .btn { display: inline-block; background: #1a3a5a; color: white; text-decoration: none; padding: 12px 25px; border-radius: 25px; font-weight: bold; margin-top: 15px; }
-  .btn:hover { background: #ffeb3b; color: #1a3a5a; }
-  footer { background: #333; color: white; width: 100%; text-align: center; padding: 15px 0; margin-top: auto; }
+  body { 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    background: #f4f7f9; 
+    margin: 0; padding: 0; 
+    display: flex; flex-direction: column; align-items: center; 
+    min-height: 100vh; 
+  }
+  
+  .hero-section { 
+    background: linear-gradient(135deg, #1a3a5a 0%, #2e5a88 100%); 
+    color: white; 
+    width: 100%; 
+    text-align: center; 
+    padding: 50px 20px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
+  }
+  
+  .center-name { 
+    font-size: 28px; 
+    font-weight: bold; 
+    margin: 0; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+  }
+  
+  .main-content { 
+    max-width: 950px; 
+    width: 95%; 
+    margin: -40px auto 40px; 
+  }
+  
+  .card-container { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 20px; 
+  }
+  
+  .test-card { 
+    background: white; 
+    border-radius: 15px; 
+    padding: 25px; 
+    text-align: center; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); 
+    transition: 0.3s; 
+    border-top: 6px solid #ffeb3b; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .test-card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  }
+  
+  .test-card h3 { 
+    color: #1a3a5a; 
+    margin-top: 0; 
+    font-size: 20px;
+  }
+  
+  .btn { 
+    display: inline-block; 
+    background: #1a3a5a; 
+    color: white; 
+    text-decoration: none; 
+    padding: 12px 25px; 
+    border-radius: 25px; 
+    font-weight: bold; 
+    margin-top: 15px; 
+    transition: 0.3s;
+  }
+  
+  .btn:hover { 
+    background: #ffeb3b; 
+    color: #1a3a5a; 
+  }
+  
+  footer { 
+    background: #333; 
+    color: white; 
+    width: 100%; 
+    text-align: center; 
+    padding: 20px 0; 
+    margin-top: auto; 
+  }
 </style>
 </head>
 <body>
 
   <div class="hero-section">
     <h1 class="center-name">SUPER SUCCESS COMPUTER EDUCATION CENTER</h1>
-    <p>আপনার সাফল্যের সঠিক ঠিকানা | 📞 8017247298 | 9874152080 </p>
+    <p style="margin-top: 10px; font-weight: 500;">আপনার সাফল্যের সঠিক ঠিকানা</p>
+    <p>📞 8017247298 | 9874152080</p>
   </div>
 
   <div class="main-content">
@@ -30,30 +106,30 @@
       
       <div class="test-card" style="border-top-color: #25D366;">
         <h3>🏆 Short Test Challenge</h3>
-        <p>খুব কম সময়ে সঠিক উত্তর দেওয়ার ক্ষমতা যাচাই করো।</br> 
-         <font color="#3C3C3C"> <b>V4 Rules.</b> </font></p>
+        <p>খুব কম সময়ে সঠিক উত্তর দেওয়ার ক্ষমতা যাচাই করো।<br>
+        <span style="color: #666; font-weight: bold;">V4 Rules</span></p>
         <a href="test2.html" class="btn">টেস্ট দাও 🥇</a>
       </div>
 
       <div class="test-card" style="border-top-color: #ff9800; background: #fffdf5;">
-  <span style="background: #ff9800; color: white; padding: 2px 10px; border-radius: 10px; font-size: 12px; font-weight: bold;">FOR GUARDIANS</span>
-  <h3>💻 Computer Basic Q&A</h3>
-  <p>অভিভাবকদের অনুরোধ করা হচ্ছে বাচ্চাদের এখান থেকে প্রশ্ন ধরুন।</p>
-  <a href="basic_computer.html" class="btn" style="background: #ff9800;">পড়া শুরু করো 📖</a>
-</div>
-
-      <div class="test-card" style="border-top-color: #25D366;">
-        <h3>🏆 Short Test Challenge</h3>
-        <p>খুব কম সময়ে সঠিক উত্তর দেওয়ার ক্ষমতা যাচাই করো। </br> 
-         <font color="#3C3C3C"> <b>Computer Basic.</b> </font> </p>
-        <a href="comp_basic_mcq.html" class="btn">টেস্ট দাও 🥇</a>
+        <span style="background: #ff9800; color: white; padding: 2px 10px; border-radius: 10px; font-size: 12px; font-weight: bold; align-self: center; margin-bottom: 10px;">FOR GUARDIANS</span>
+        <h3>💻 Computer Basic Q&A</h3>
+        <p>অভিভাবকদের অনুরোধ করা হচ্ছে বাচ্চাদের এখান থেকে প্রশ্ন ধরুন।</p>
+        <a href="basic_computer.html" class="btn" style="background: #ff9800;">পড়া শুরু করো 📖</a>
       </div>
 
-       div class="test-card" style="border-top-color: #25D366;">
+      <div class="test-card" style="border-top-color: #2196f3;">
         <h3>🏆 Short Test Challenge</h3>
-        <p>খুব কম সময়ে সঠিক উত্তর দেওয়ার ক্ষমতা যাচাই করো। </br> 
-         <font color="#3C3C3C"> <b>কম্পিউটারের ইতিহাস</b> </font> </p>
-        <a href="comp_histtory.html" class="btn">টেস্ট দাও 🥇</a>
+        <p>খুব কম সময়ে সঠিক উত্তর দেওয়ার ক্ষমতা যাচাই করো।<br>
+        <span style="color: #666; font-weight: bold;">Computer Basic</span></p>
+        <a href="comp_basic_mcq.html" class="btn" style="background: #2196f3;">টেস্ট দাও 🥇</a>
+      </div>
+
+      <div class="test-card" style="border-top-color: #9c27b0;">
+        <h3>🏆 Short Test Challenge</h3>
+        <p>খুব কম সময়ে সঠিক উত্তর দেওয়ার ক্ষমতা যাচাই করো।<br>
+        <span style="color: #666; font-weight: bold;">কম্পিউটারের ইতিহাস</span></p>
+        <a href="comp_history.html" class="btn" style="background: #9c27b0;">টেস্ট দাও 🥇</a>
       </div>
       
     </div>
@@ -65,18 +141,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
