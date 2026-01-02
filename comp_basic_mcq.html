@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSCEC Computer Basic Challenge</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #e0f7fa; display: flex; flex-direction: column; align-items: center; padding: 10px; margin: 0; }
+  .header-section { text-align: center; background: white; padding: 20px; border-radius: 0 0 20px 20px; width: 100%; max-width: 700px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 8px solid #00796b; margin-bottom: 20px; }
+  .center-name { color: #004d40; font-size: 22px; font-weight: bold; }
+  
+  #name-box { background: white; padding: 30px; border-radius: 15px; width: 90%; max-width: 500px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-top: 30px; }
+  input[type="text"] { padding: 12px; border-radius: 8px; border: 2px solid #00796b; width: 80%; font-size: 16px; margin-bottom: 20px; outline: none; }
+  
+  .dashboard { display: none; justify-content: space-around; width: 100%; max-width: 700px; margin-bottom: 15px; position: sticky; top: 10px; z-index: 100; }
+  .stat-box { background: #00796b; color: white; padding: 10px 20px; border-radius: 10px; font-size: 18px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+
+  #main-quiz { display: none; width: 100%; max-width: 700px; padding-bottom: 50px; }
+  .question-box { background: white; padding: 20px; border-radius: 12px; margin-bottom: 15px; border-left: 6px solid #ff9800; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+  .question-text { font-size: 18px; font-weight: 600; margin-bottom: 15px; color: #333; }
+  
+  .options-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  button.opt { padding: 12px; border-radius: 8px; border: 1px solid #ddd; cursor: pointer; font-weight: 500; background: #fff; transition: 0.2s; font-size: 15px; }
+  button.opt:active { transform: scale(0.95); }
+
+  #medal-overlay { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2000; text-align: center; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 0 50px rgba(0,0,0,0.5); width: 85%; max-width: 400px; border: 5px solid #ffca28; }
+  .whatsapp-btn { background: #25D366; color: white; padding: 14px 25px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 16px; margin-top: 20px; display: inline-flex; align-items: center; text-decoration: none; }
+</style>
+</head>
+<body>
+
+  <audio id="correct-sound" src="https://assets.mixkit.co/active_storage/sfx/2000/2000-preview.mp3"></audio>
+  <audio id="wrong-sound" src="https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3"></audio>
+  <audio id="win-sound" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3"></audio>
+
+  <div class="header-section">
+    <div class="center-name">SUPER SUCCESS COMPUTER EDUCATION CENTER</div>
+    <div style="color:#e91e63; font-weight:bold; margin-top:5px;">🎮 Computer Basic Fun Quiz</div>
+  </div>
+
+  <div id="name-box">
+    <h3 style="margin-top:0;">হ্যালো ছোট বন্ধুরা! 👋</h3>
+    <p>পরীক্ষা শুরু করতে তোমার নাম লেখো:</p>
+    <input type="text" id="student-name" placeholder="তোমার নাম..."> <br>
+    <button onclick="startQuiz()" style="background:#00796b; color:white; padding:12px 30px; border:none; border-radius:8px; cursor:pointer; font-size:16px; font-weight:bold;">গেম শুরু করো 🚀</button>
+  </div>
+
+  <div id="dashboard-area" class="dashboard">
+    <div id="timer-display" class="stat-box">⏳ 90s</div>
+    <div class="stat-box">⭐ স্কোর: <span id="score">0</span></div>
+  </div>
+
+  <div id="main-quiz">
+    <div id="quiz-area">
+      <div class="question-box"><p class="question-text">১. কম্পিউটারের ব্রেইন কাকে বলা হয়?</p><div class="options-grid"><button class="opt" onclick="check(this,false)">Monitor</button><button class="opt" onclick="check(this,true)">CPU</button><button class="opt" onclick="check(this,false)">Mouse</button><button class="opt" onclick="check(this,false)">UPS</button></div></div>
+      
+      <div class="question-box"><p class="question-text">২. মাউস (Mouse) কি ধরনের ডিভাইস?</p><div class="options-grid"><button class="opt" onclick="check(this,true)">Input</button><button class="opt" onclick="check(this,false)">Output</button><button class="opt" onclick="check(this,false)">Storage</button><button class="opt" onclick="check(this,false)">CPU</button></div></div>
+
+      <div class="question-box"><p class="question-text">৩. নিচের কোনটি কম্পিউটারের স্থায়ী স্মৃতি বা Memory?</p><div class="options-grid"><button class="opt" onclick="check(this,false)">RAM</button><button class="opt" onclick="check(this,false)">CPU</button><button class="opt" onclick="check(this,true)">Hard Disk</button><button class="opt" onclick="check(this,false)">Keyboard</button></div></div>
+
+      <div class="question-box"><p class="question-text">৪. কিবোর্ডে (Keyboard) সবচেয়ে লম্বা কি (Key) কোনটি?</p><div class="options-grid"><button class="opt" onclick="check(this,false)">Enter</button><button class="opt" onclick="check(this,true)">Space Bar</button><button class="opt" onclick="check(this,false)">Shift</button><button class="opt" onclick="check(this,false)">Ctrl</button></div></div>
+
+      <div class="question-box"><p class="question-text">৫. কম্পিউটারে ছবি আঁকার জন্য কোন প্রোগ্রাম ব্যবহার করা হয়?</p><div class="options-grid"><button class="opt" onclick="check(this,true)">MS Paint</button><button class="opt" onclick="check(this,false)">Excel</button><button class="opt" onclick="check(this,false)">NotePad</button><button class="opt" onclick="check(this,false)">Calculator</button></div></div>
+
+      <div class="question-box"><p class="question-text">৬. ১ কিলোবাইট (1 KB) সমান কত বাইট?</p><div class="options-grid"><button class="opt" onclick="check(this,false)">1000</button><button class="opt" onclick="check(this,true)">1024</button><button class="opt" onclick="check(this,false)">1050</button><button class="opt" onclick="check(this,false)">512</button></div></div>
+
+      <div class="question-box"><p class="question-text">৭. মনিটর (Monitor) দেখতে কিসের মতো?</p><div class="options-grid"><button class="opt" onclick="check(this,false)">মোবাইল</button><button class="opt" onclick="check(this,true)">টেলিভিশন</button><button class="opt" onclick="check(this,false)">বই</button><button class="opt" onclick="check(this,false)">রেডিও</button></div></div>
+
+      <div class="question-box"><p class="question-text">৮. কম্পিউটার বন্ধ করার সঠিক নিয়ম কোনটি?</p><div class="options-grid"><button class="opt" onclick="check(this,false)">সুইচ অফ</button><button class="opt" onclick="check(this,true)">Shut Down</button><button class="opt" onclick="check(this,false)">Sleep</button><button class="opt" onclick="check(this,false)">Restart</button></div></div>
+
+      <div class="question-box"><p class="question-text">৯. নিচের কোনটি একটি মেইল (Email) সেবা?</p><div class="options-grid"><button class="opt" onclick="check(this,true)">Gmail</button><button class="opt" onclick="check(this,false)">WhatsApp</button><button class="opt" onclick="check(this,false)">Facebook</button><button class="opt" onclick="check(this,false)">Youtube</button></div></div>
+
+      <div class="question-box"><p class="question-text">১০. ALU এর পূর্ণরূপ কি?</p><div class="options-grid"><button class="opt" onclick="check(this,true)">Arithmetic Logic Unit</button><button class="opt" onclick="check(this,false)">All Logic Unit</button><button class="opt" onclick="check(this,false)">Array Logic Unit</button><button class="opt" onclick="check(this,false)">Auto Logic Unit</button></div></div>
+    </div>
+  </div>
+
+  <div id="medal-overlay">
+    <div style="font-size: 60px;">🏆</div>
+    <h2 id="congrats-name" style="color:#00796b;"></h2>
+    <p id="final-msg" style="font-size: 22px; font-weight: bold;"></p>
+    <a id="wa-link" href="#" class="whatsapp-btn" target="_blank">📲 রেজাল্ট স্যারকে পাঠাও</a>
+    <br><br>
+    <button onclick="location.reload()" style="background:#eee; border:none; padding:10px; border-radius:5px; cursor:pointer;">আবার খেলো</button>
+  </div>
+
+<script>
+  let score = 0, solved = 0, totalQs = 10, timeLeft = 90, timerId, studentName = "";
+  const myWhatsApp = "918017247298"; 
+
+  function startQuiz() {
+    studentName = document.getElementById('student-name').value.trim();
+    if(!studentName) { alert("নাম লেখো সোনা!"); return; }
+    document.getElementById('name-box').style.display = "none";
+    document.getElementById('dashboard-area').style.display = "flex";
+    document.getElementById('main-quiz').style.display = "block";
+    
+    timerId = setInterval(() => {
+      timeLeft--;
+      document.getElementById('timer-display').innerText = "⏳ " + timeLeft + "s";
+      if(timeLeft <= 0) finish();
+    }, 1000);
+  }
+
+  function check(btn, isCorrect) {
+    let parent = btn.parentElement;
+    if(parent.getAttribute('data-ans') === 'true') return;
+    parent.setAttribute('data-ans', 'true');
+    
+    if(isCorrect) {
+      score++;
+      btn.style.background = "#4caf50";
+      btn.style.color = "white";
+      document.getElementById('correct-sound').play();
+    } else {
+      btn.style.background = "#f44336";
+      btn.style.color = "white";
+      document.getElementById('wrong-sound').play();
+    }
+    
+    document.getElementById('score').innerText = score;
+    solved++;
+    if(solved === totalQs) setTimeout(finish, 800);
+  }
+
+  function finish() {
+    clearInterval(timerId);
+    document.getElementById('win-sound').play();
+    document.getElementById('main-quiz').style.opacity = "0.1";
+    document.getElementById('medal-overlay').style.display = "block";
+    document.getElementById('congrats-name').innerText = "অসাধারণ, " + studentName + "!";
+    document.getElementById('final-msg').innerText = "তোমার স্কোর: " + score + " / " + totalQs;
+    
+    let message = `*SSCEC Computer Test*%0A----------------------%0A👤 নাম: ${studentName}%0A🎯 স্কোর: ${score}/${totalQs}%0A⏳ সময় বাকি: ${timeLeft}s%0A----------------------%0Aসাবাশ!`;
+    document.getElementById('wa-link').href = `https://wa.me/${myWhatsApp}?text=${message}`;
+  }
+</script>
+</body>
+</html>
