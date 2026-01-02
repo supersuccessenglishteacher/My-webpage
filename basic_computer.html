@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer Basic Q&A - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 10px; display: flex; flex-direction: column; align-items: center; }
+  
+  /* Header & Center Info */
+  .header { text-align: center; background: #1a3a5a; color: white; padding: 25px; border-radius: 15px; width: 100%; max-width: 700px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 20px; border-bottom: 5px solid #ffeb3b; }
+  .center-name { font-size: 22px; font-weight: bold; margin: 0; text-transform: uppercase; }
+  .address { font-size: 13px; opacity: 0.9; margin-top: 5px; line-height: 1.4; }
+  
+  /* Guardian Message Box */
+  .guardian-note { background: #fff3cd; border: 2px dashed #856404; color: #856404; padding: 15px; border-radius: 10px; width: 100%; max-width: 670px; margin-bottom: 25px; text-align: center; font-weight: bold; font-size: 15px; line-height: 1.5; }
+
+  .qa-container { width: 100%; max-width: 700px; }
+  .qa-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 6px solid #1a3a5a; }
+  .question { font-size: 17px; font-weight: bold; color: #1a3a5a; margin-bottom: 12px; }
+  .answer { display: none; background: #e8f5e9; padding: 15px; border-radius: 8px; color: #2e7d32; font-weight: bold; margin-top: 10px; border: 1px solid #c3e6cb; }
+  
+  .show-btn { background: #1a3a5a; color: white; border: none; padding: 10px 18px; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; }
+  .home-btn { text-decoration: none; background: #1a3a5a; color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold; margin-top: 20px; margin-bottom: 30px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="center-name">SUPER SUCCESS COMPUTER EDUCATION CENTER</div>
+    <div class="address">
+      22/1, BIPIN PAUL ROAD, NIMTATA, KOLKATA-49 <br>
+      📞 যোগাযোগ: 8017247298
+    </div>
+    <h3 style="margin: 15px 0 0; color: #ffeb3b;">💻 Computer Basic Q&A</h3>
+  </div>
+
+  <div class="guardian-note">
+    📢 অভিভাবকদের প্রতি বিশেষ অনুরোধ: <br>
+    আপনার সন্তানকে এখানে দেওয়া প্রশ্নগুলো মুখে ধরে জিজ্ঞাসা করুন। <br>
+    সে উত্তর দেওয়ার পর "উত্তর দেখুন" বাটনে ক্লিক করে সঠিকতা যাচাই করুন।
+  </div>
+
+  <div class="qa-container">
+    <div class="qa-card">
+      <div class="question">১. কম্পিউটারের মস্তিষ্ক (Brain) কাকে বলা হয়?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: CPU (Central Processing Unit)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">২. RAM এর পূর্ণরূপ (Full Form) কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: Random Access Memory</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৩. কোনটি কম্পিউটারের স্থায়ী স্মৃতি বা স্টোরেজ?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: ROM / Hard Disk</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৪. আধুনিক কম্পিউটারের জনক কাকে বলা হয়?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: চার্লস ব্যাবেজ (Charles Babbage)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৫. ১ কিলোবাইট (1 KB) সমান কত বাইট?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: ১০২৪ বাইট (1024 Bytes)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৬. ডব্লিউ ডব্লিউ ডব্লিউ (WWW) এর পূর্ণরূপ কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: World Wide Web</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৭. কম্পিউটারের প্রধান আউটপুট ডিভাইস কোনটি?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: মনিটর (Monitor)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৮. কপি (Copy) করার শর্টকাট কী (Shortcut Key) কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: Ctrl + C</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৯. মাউস (Mouse) কী ধরনের ডিভাইস? ইনপুট নাকি আউটপুট?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: ইনপুট ডিভাইস (Input Device)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">১০. ইমেইল (Email) এর পূর্ণরূপ কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: Electronic Mail</div>
+    </div>
+  </div>
+
+  <a href="index.html" class="home-btn">🏠 হোম মেনুতে ফিরে যাও</a>
+
+  <script>
+    function toggleAns(btn) {
+      const ans = btn.nextElementSibling;
+      if (ans.style.display === "block") {
+        ans.style.display = "none";
+        btn.innerText = "উত্তর দেখুন";
+      } else {
+        ans.style.display = "block";
+        btn.innerText = "উত্তর লুকান";
+      }
+    }
+  </script>
+</body>
+</html>
