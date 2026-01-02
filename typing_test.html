@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSCEC Typing Speed Challenge</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #eef2f7; display: flex; flex-direction: column; align-items: center; padding: 20px; margin: 0; }
+  .container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 95%; max-width: 700px; text-align: center; }
+  
+  .header { color: #1a3a5a; margin-bottom: 20px; border-bottom: 2px solid #ffeb3b; padding-bottom: 10px; }
+  
+  #quote-display { background: #fffde7; padding: 20px; border-radius: 10px; font-size: 22px; color: #444; margin-bottom: 20px; border: 2px solid #1a3a5a; min-height: 60px; line-height: 1.5; font-weight: 500; text-align: left; }
+  
+  #typing-input { width: 100%; padding: 15px; border: 2px solid #ddd; border-radius: 10px; font-size: 18px; outline: none; transition: 0.3s; box-sizing: border-box; resize: none; }
+  #typing-input:focus { border-color: #1a3a5a; box-shadow: 0 0 10px rgba(26,58,90,0.1); }
+
+  .stats-area { display: flex; justify-content: space-around; margin-top: 25px; gap: 10px; }
+  .stat-box { background: #1a3a5a; color: white; padding: 15px; border-radius: 15px; flex: 1; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+  .stat-box span { display: block; font-size: 28px; font-weight: bold; color: #ffeb3b; }
+
+  /* Refresh Button Style */
+  .refresh-btn { 
+    background: #f44336; color: white; border: none; padding: 12px 25px; 
+    border-radius: 50px; cursor: pointer; font-weight: bold; font-size: 16px; 
+    margin-top: 25px; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .refresh-btn:hover { background: #d32f2f; transform: rotate(5deg) scale(1.05); }
+
+  #result-modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 40px; border-radius: 20px; box-shadow: 0 0 50px rgba(0,0,0,0.3); z-index: 1000; text-align: center; border: 5px solid #25D366; width: 80%; max-width: 400px; }
+  .wa-btn { background: #25D366; color: white; padding: 12px 25px; border-radius: 10px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 20px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="header">
+    <h2 style="margin:0;">⌨️ SSCEC Typing Master</h2>
+    <p style="color:#666; font-size:14px;">নিচের বাক্যটি দ্রুত টাইপ করো!</p>
+  </div>
+
+  <div id="quote-display">Loading sentence...</div>
+  
+  <textarea id="typing-input" placeholder="টাইপ করা শুরু করো..." rows="3"></textarea>
+
+  <div class="stats-area">
+    <div class="stat-box">সময়<span><small id="timer">0s</small></span></div>
+    <div class="stat-box">স্পিড<span><small id="wpm">0</small></span></div>
+    <div class="stat-box">সঠিকতা<span><small id="accuracy">0%</small></span></div>
+  </div>
+  
+  <button class="refresh-btn" onclick="location.reload()">
+    🔄 নতুন করে শুরু করো (Refresh)
+  </button>
+</div>
+
+<div id="result-modal">
+  <h2 id="congrats-msg">খুব ভালো! 🎉</h2>
+  <p id="final-stats"></p>
+  <a id="wa-link" href="#" target="_blank" class="wa-btn">📲 রেজাল্ট স্যারকে পাঠাও</a>
+  <br><br>
+  <button onclick="location.reload()" style="background:#eee; border:none; padding:10px 20px; border-radius:10px; cursor:pointer; font-weight:bold;">আবার খেলো 🔄</button>
+</div>
+
+<script>
+const quotes = [
+  "The quick brown fox jumps over the lazy dog.",
+  "Computer is an electronic device that processes data.",
+  "Honesty is the best policy in every work.",
+  "Success depends on hard work and dedication.",
+  "Learn computer today for a bright future.",
+  "Type as fast as you can with correct spelling."
+];
+
+let timer = 0, interval = null, started = false;
+const quoteDisplay = document.getElementById('quote-display');
+const typingInput = document.getElementById('typing-input');
+const timerDisplay = document.getElementById('timer');
+const wpmDisplay = document.getElementById('wpm');
+const accuracyDisplay = document.getElementById('accuracy');
+
+// একটি র‍্যান্ডম বাক্য সেট করা
+const targetQuote = quotes[Math.floor(Math.random() * quotes.length)];
+quoteDisplay.innerText = targetQuote;
+
+typingInput.addEventListener('input', () => {
+  if (!started) {
+    started = true;
+    startTimer();
+  }
+  
+  const currentText = typingInput.value;
+  const targetText = targetQuote;
+  
+  // Accuracy হিসাব
+  let correctChars = 0;
+  for (let i = 0; i < currentText.length; i++) {
+    if (currentText[i] === targetText[i]) correctChars++;
+  }
+  let acc = Math.floor((correctChars / Math.max(1, currentText.length)) * 100);
+  accuracyDisplay.innerText = acc + "%";
+
+  // টেস্ট শেষ হলে
+  if (currentText === targetText) {
+    finishTest(acc);
+  }
+});
+
+function startTimer() {
+  interval = setInterval(() => {
+    timer++;
+    timerDisplay.innerText = timer + "s";
+    
+    // WPM হিসাব
+    let words = typingInput.value.trim().split(/\s+/).length;
+    let wpm = Math.round((words / timer) * 60);
+    wpmDisplay.innerText = isFinite(wpm) ? wpm : 0;
+  }, 1000);
+}
+
+function finishTest(acc) {
+  clearInterval(interval);
+  typingInput.disabled = true;
+  
+  let finalWpm = wpmDisplay.innerText;
+  document.getElementById('result-modal').style.display = 'block';
+  document.getElementById('final-stats').innerText = `আপনার স্পিড: ${finalWpm} WPM\nনির্ভুলতা: ${acc}%`;
+  
+  let message = `*SSCEC Typing Test*%0A------------------%0A🎯 স্পিড: ${finalWpm} WPM%0A✅ সঠিকতা: ${acc}%0A⏳ সময়: ${timer}s`;
+  document.getElementById('wa-link').href = `https://wa.me/918017247298?text=${message}`;
+}
+</script>
+
+</body>
+</html>
