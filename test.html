@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSCEC MOCK TEST - TIMER CHALLENGE</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #eef2f7; display: flex; flex-direction: column; align-items: center; padding: 10px; }
+  .header-section { text-align: center; background: white; padding: 20px; border-radius: 15px; width: 100%; max-width: 700px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 8px solid #1a3a5a; margin-bottom: 20px; }
+  .center-name { color: #1a3a5a; font-size: 20px; font-weight: bold; margin-bottom: 5px; }
+  .address { font-size: 13px; color: #555; }
+  .test-title { background: #ffeb3b; display: inline-block; padding: 5px 20px; border-radius: 20px; margin-top: 10px; font-weight: bold; text-transform: uppercase; }
+
+  /* Input Area */
+  #name-box { background: #ffffff; padding: 20px; border-radius: 15px; width: 100%; max-width: 660px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  input[type="text"] { padding: 12px; border-radius: 8px; border: 2px solid #1a3a5a; width: 80%; font-size: 16px; margin-bottom: 15px; }
+  .start-btn { background: #1a3a5a; color: white; padding: 12px 30px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 18px; }
+
+  /* Dashboard */
+  .dashboard { display: none; justify-content: space-around; width: 100%; max-width: 700px; position: sticky; top: 5px; z-index: 1000; margin-bottom: 15px; }
+  .stat-box { background: #1a3a5a; color: white; padding: 10px; border-radius: 10px; font-size: 18px; font-weight: bold; min-width: 130px; text-align: center; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+  .timer-low { background: #d32f2f !important; animation: blink 0.5s infinite; }
+  @keyframes blink { 50% { opacity: 0.5; } }
+
+  /* Quiz Container */
+  #main-quiz { display: none; width: 100%; max-width: 700px; }
+  .question-box { background: white; padding: 20px; border-radius: 12px; margin-bottom: 15px; border-left: 6px solid #1a3a5a; }
+  .question-text { font-size: 17px; font-weight: bold; margin-bottom: 10px; }
+  button.opt { padding: 10px 15px; margin: 5px; border-radius: 8px; border: 1px solid #ddd; cursor: pointer; font-weight: bold; background: #f8f9fa; }
+
+  /* Medal Overlay */
+  #medal-overlay { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2000; text-align: center; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 0 50px rgba(0,0,0,0.5); width: 85%; max-width: 400px; border: 5px solid #ffd700; }
+
+  /* Gallery */
+  .gallery-section { width: 100%; max-width: 700px; background: #fff; padding: 20px; border-radius: 15px; margin-top: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  .gallery-title { text-align: center; font-weight: bold; color: #1a3a5a; margin-bottom: 15px; }
+  .hall-of-fame { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .student-badge { background: #f1f8ff; border: 1px solid #1a3a5a; padding: 6px 12px; border-radius: 20px; font-size: 13px; font-weight: bold; }
+</style>
+</head>
+<body onload="loadGallery()">
+
+  <div class="header-section">
+    <div class="center-name">SUPER SUCCESS COMPUTER EDUCATION CENTER</div>
+    <div class="address">22/1, BIPIN PAUL ROAD, NIMTATA, KOLKATA-49</div>
+    <div class="contact" style="color:#d32f2f; font-weight:bold; margin-top:5px;">📞 MOB. 8017247298</div>
+    <div class="test-title">✨ "ing" Rules 10-Question Challenge ✨</div>
+  </div>
+
+  <div id="name-box">
+    <p>পরীক্ষা শুরু করার আগে তোমার নাম লেখো:</p>
+    <input type="text" id="student-name" placeholder="Enter Full Name..."> <br>
+    <button class="start-btn" onclick="startQuiz()">START TEST 🚀</button>
+  </div>
+
+  <div id="dashboard-area" class="dashboard">
+    <div id="timer-display" class="stat-box">⏳ 60s</div>
+    <div class="stat-box">⭐ Score: <span id="score">0</span></div>
+  </div>
+
+  <div id="main-quiz">
+    <div class="quiz-container" id="quiz-area">
+      <div class="question-box"><div class="question-text">1. Play + ing = ?</div><button class="opt" onclick="check(this,true,1)">playing</button><button class="opt" onclick="check(this,false,1)">plaing</button></div>
+      <div class="question-box"><div class="question-text">2. Make + ing = ?</div><button class="opt" onclick="check(this,false,2)">makeing</button><button class="opt" onclick="check(this,true,2)">making</button></div>
+      <div class="question-box"><div class="question-text">3. Run + ing = ?</div><button class="opt" onclick="check(this,true,3)">running</button><button class="opt" onclick="check(this,false,3)">runing</button></div>
+      <div class="question-box"><div class="question-text">4. Write + ing = ?</div><button class="opt" onclick="check(this,true,4)">writing</button><button class="opt" onclick="check(this,false,4)">writeing</button></div>
+      <div class="question-box"><div class="question-text">5. Sit + ing = ?</div><button class="opt" onclick="check(this,false,5)">siting</button><button class="opt" onclick="check(this,true,5)">sitting</button></div>
+      <div class="question-box"><div class="question-text">6. Lie + ing = ?</div><button class="opt" onclick="check(this,true,6)">lying</button><button class="opt" onclick="check(this,false,6)">lieing</button></div>
+      <div class="question-box"><div class="question-text">7. Cry + ing = ?</div><button class="opt" onclick="check(this,false,7)">criing</button><button class="opt" onclick="check(this,true,7)">crying</button></div>
+      <div class="question-box"><div class="question-text">8. Dance + ing = ?</div><button class="opt" onclick="check(this,true,8)">dancing</button><button class="opt" onclick="check(this,false,8)">danceing</button></div>
+      <div class="question-box"><div class="question-text">9. Hop + ing = ?</div><button class="opt" onclick="check(this,false,9)">hoping</button><button class="opt" onclick="check(this,true,9)">hopping</button></div>
+      <div class="question-box"><div class="question-text">10. Die + ing = ?</div><button class="opt" onclick="check(this,true,10)">dying</button><button class="opt" onclick="check(this,false,10)">dieing</button></div>
+    </div>
+  </div>
+
+  <div id="medal-overlay">
+    <div style="font-size: 60px;">🏆</div>
+    <h2 id="congrats-name">Excellent!</h2>
+    <p id="final-msg" style="font-size: 18px; font-weight: bold;"></p>
+    <button class="start-btn" onclick="location.reload()">Close</button>
+  </div>
+
+  <div class="gallery-section">
+    <div class="gallery-title">🌟 SUCCESS GALLERY (Recent Scorers) 🌟</div>
+    <div class="hall-of-fame" id="gallery-list"></div>
+  </div>
+
+<script>
+  let score=0, solved=0, totalQs=10, timeLeft=60, timerId, studentName="";
+  const winSound = new Audio('https://assets.mixkit.co/active_storage/sfx/2013/2013-preview.mp3');
+
+  function startQuiz() {
+    studentName = document.getElementById('student-name').value.trim();
+    if(!studentName) { alert("দয়া করে নাম লেখো!"); return; }
+    document.getElementById('name-box').style.display = "none";
+    document.getElementById('dashboard-area').style.display = "flex";
+    document.getElementById('main-quiz').style.display = "block";
+    
+    timerId = setInterval(() => {
+      timeLeft--;
+      document.getElementById('timer-display').innerText = "⏳ " + timeLeft + "s";
+      if(timeLeft <= 10) document.getElementById('timer-display').classList.add('timer-low');
+      if(timeLeft <= 0) finish();
+    }, 1000);
+  }
+
+  function check(btn, isCorrect, qId) {
+    let parent = btn.parentElement;
+    if(parent.classList.contains('done')) return;
+    parent.classList.add('done');
+    if(isCorrect) { score++; btn.style.background="#4CAF50"; btn.style.color="white"; }
+    else { btn.style.background="#f44336"; btn.style.color="white"; }
+    document.getElementById('score').innerText = score;
+    solved++;
+    if(solved === totalQs) finish();
+  }
+
+  function finish() {
+    clearInterval(timerId);
+    saveData(studentName, score);
+    document.getElementById('main-quiz').style.opacity = "0.1";
+    document.getElementById('medal-overlay').style.display = "block";
+    document.getElementById('congrats-name').innerText = "Well Done, " + studentName + "!";
+    document.getElementById('final-msg').innerText = "তোমার স্কোর: " + score + "/" + totalQs;
+    if(score >= 8) winSound.play();
+    loadGallery();
+  }
+
+  function saveData(n, s) {
+    let g = JSON.parse(localStorage.getItem('sscec_res')) || [];
+    g.push({n, s});
+    localStorage.setItem('sscec_res', JSON.stringify(g));
+  }
+
+  function loadGallery() {
+    let g = JSON.parse(localStorage.getItem('sscec_res')) || [];
+    let list = document.getElementById('gallery-list');
+    list.innerHTML = "";
+    g.reverse().slice(0, 15).forEach(i => {
+      list.innerHTML += `<span class="student-badge">⭐ ${i.n} (${i.s}/10)</span>`;
+    });
+  }
+</script>
+</body>
+</html>
