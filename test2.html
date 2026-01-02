@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SSCEC WhatsApp Result Challenge</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #eef2f7; display: flex; flex-direction: column; align-items: center; padding: 10px; }
+  .header-section { text-align: center; background: white; padding: 20px; border-radius: 15px; width: 100%; max-width: 700px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 8px solid #1a3a5a; margin-bottom: 20px; }
+  .center-name { color: #1a3a5a; font-size: 20px; font-weight: bold; }
+  
+  #name-box { background: white; padding: 20px; border-radius: 15px; width: 100%; max-width: 660px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+  input[type="text"] { padding: 12px; border-radius: 8px; border: 2px solid #1a3a5a; width: 80%; font-size: 16px; margin-bottom: 15px; }
+  
+  .dashboard { display: none; justify-content: space-around; width: 100%; max-width: 700px; margin-bottom: 15px; }
+  .stat-box { background: #1a3a5a; color: white; padding: 10px; border-radius: 10px; font-size: 18px; font-weight: bold; min-width: 130px; text-align: center; }
+
+  #main-quiz { display: none; width: 100%; max-width: 700px; }
+  .question-box { background: white; padding: 20px; border-radius: 12px; margin-bottom: 15px; border-left: 6px solid #1a3a5a; }
+  button.opt { padding: 10px 15px; margin: 5px; border-radius: 8px; border: 1px solid #ddd; cursor: pointer; font-weight: bold; background: #f8f9fa; }
+
+  #medal-overlay { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2000; text-align: center; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 0 50px rgba(0,0,0,0.5); width: 85%; max-width: 400px; border: 5px solid #ffd700; }
+  
+  /* WhatsApp Button Style */
+  .whatsapp-btn { background: #25D366; color: white; padding: 12px 20px; border: none; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 16px; margin-top: 15px; display: inline-flex; align-items: center; text-decoration: none; }
+  .whatsapp-btn:hover { background: #128C7E; }
+</style>
+</head>
+<body onload="loadGallery()">
+
+  <div class="header-section">
+    <div class="center-name">SUPER SUCCESS COMPUTER EDUCATION CENTER</div>
+    <div style="color:#d32f2f; font-weight:bold; margin-top:5px;">🎯 "ing" Mastery Test (WhatsApp)</div>
+  </div>
+
+  <div id="name-box">
+    <p>পরীক্ষা শুরু করার আগে তোমার নাম লেখো:</p>
+    <input type="text" id="student-name" placeholder="Enter Full Name..."> <br>
+    <button onclick="startQuiz()" style="background:#1a3a5a; color:white; padding:10px 25px; border-radius:8px; cursor:pointer;">START TEST 🚀</button>
+  </div>
+
+  <div id="dashboard-area" class="dashboard">
+    <div id="timer-display" class="stat-box">⏳ 60s</div>
+    <div class="stat-box">⭐ Score: <span id="score">0</span></div>
+  </div>
+
+  <div id="main-quiz">
+    <div id="quiz-area">
+      <div class="question-box"><p>1. Eat + ing = ?</p><button class="opt" onclick="check(this,true)">eating</button><button class="opt" onclick="check(this,false)">eateing</button></div>
+      <div class="question-box"><p>2. Make + ing = ?</p><button class="opt" onclick="check(this,false)">makeing</button><button class="opt" onclick="check(this,true)">making</button></div>
+      <div class="question-box"><p>3. Run + ing = ?</p><button class="opt" onclick="check(this,true)">running</button><button class="opt" onclick="check(this,false)">runing</button></div>
+      <div class="question-box"><p>4. Write + ing = ?</p><button class="opt" onclick="check(this,true)">writing</button><button class="opt" onclick="check(this,false)">writeing</button></div>
+      <div class="question-box"><p>5. Sit + ing = ?</p><button class="opt" onclick="check(this,false)">siting</button><button class="opt" onclick="check(this,true)">sitting</button></div>
+      <div class="question-box"><p>6. Lie + ing = ?</p><button class="opt" onclick="check(this,true)">lying</button><button class="opt" onclick="check(this,false)">lieing</button></div>
+      <div class="question-box"><p>7. Cry + ing = ?</p><button class="opt" onclick="check(this,false)">criing</button><button class="opt" onclick="check(this,true)">crying</button></div>
+      <div class="question-box"><p>8. Dance + ing = ?</p><button class="opt" onclick="check(this,true)">dancing</button><button class="opt" onclick="check(this,false)">danceing</button></div>
+      <div class="question-box"><p>9. Hop + ing = ?</p><button class="opt" onclick="check(this,false)">hoping</button><button class="opt" onclick="check(this,true)">hopping</button></div>
+      <div class="question-box"><p>10. Die + ing = ?</p><button class="opt" onclick="check(this,true)">dying</button><button class="opt" onclick="check(this,false)">dieing</button></div>
+    </div>
+  </div>
+
+  <div id="medal-overlay">
+    <div style="font-size: 50px;">🏆</div>
+    <h2 id="congrats-name"></h2>
+    <p id="final-msg" style="font-size: 18px; font-weight: bold;"></p>
+    
+    <a id="wa-link" href="#" class="whatsapp-btn" target="_blank">
+       📲 রেজাল্ট স্যারকে পাঠাও
+    </a>
+    
+    <br><br>
+    <button onclick="location.reload()" style="background:#1a3a5a; color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer;">Close</button>
+  </div>
+
+<script>
+  let score=0, solved=0, totalQs=10, timeLeft=60, timerId, studentName="";
+  const myWhatsApp = "918017247298"; // আপনার নম্বর এখানে ৯১ সহ দেওয়া হয়েছে
+
+  function startQuiz() {
+    studentName = document.getElementById('student-name').value.trim();
+    if(!studentName) { alert("নাম লেখো!"); return; }
+    document.getElementById('name-box').style.display = "none";
+    document.getElementById('dashboard-area').style.display = "flex";
+    document.getElementById('main-quiz').style.display = "block";
+    
+    timerId = setInterval(() => {
+      timeLeft--;
+      document.getElementById('timer-display').innerText = "⏳ " + timeLeft + "s";
+      if(timeLeft <= 0) finish();
+    }, 1000);
+  }
+
+  function check(btn, isCorrect) {
+    let parent = btn.parentElement;
+    if(parent.classList.contains('done')) return;
+    parent.classList.add('done');
+    if(isCorrect) { score++; btn.style.background="#4CAF50"; btn.style.color="white"; }
+    else { btn.style.background="#f44336"; btn.style.color="white"; }
+    document.getElementById('score').innerText = score;
+    solved++;
+    if(solved === totalQs) finish();
+  }
+
+  function finish() {
+    clearInterval(timerId);
+    document.getElementById('main-quiz').style.opacity = "0.1";
+    document.getElementById('medal-overlay').style.display = "block";
+    document.getElementById('congrats-name').innerText = "অভিনন্দন, " + studentName + "!";
+    document.getElementById('final-msg').innerText = "তোমার স্কোর: " + score + "/" + totalQs;
+    
+    // WhatsApp মেসেজ তৈরি করা
+    let message = `স্যার, আমার মক টেস্টের রেজাল্ট:%0Aনাম: ${studentName}%0Aস্কোর: ${score}/${totalQs}%0Aসেন্টার: SSCEC`;
+    document.getElementById('wa-link').href = `https://wa.me/${myWhatsApp}?text=${message}`;
+  }
+
+  function loadGallery() {
+    // আগের মতোই লোকাল সেভ থাকবে
+  }
+</script>
+</body>
+</html>
