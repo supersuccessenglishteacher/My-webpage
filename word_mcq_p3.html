@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS Word Part 3 - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f9; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #1a3a5a; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #1a3a5a; transition: 0.3s; }
+  .quiz-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #fdfdfd; padding: 10px; border-radius: 8px; border: 1px dashed #ccc; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #e3f2fd; border-radius: 8px; border-left: 4px solid #1565c0; color: #0d47a1; font-weight: bold; animation: fadeIn 0.4s ease-in; }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .show-btn { background: #1a3a5a; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #2e5a88; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+  .badge { background: #e91e63; color: white; padding: 2px 12px; border-radius: 10px; font-size: 11px; margin-bottom: 10px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">📝 MS Word Challenge (Part 3)</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">প্রফেশনাল লেভেল</div>
+      <div class="question">২১. ডকুমেন্টের ব্যাকগ্রাউন্ডে ঝাপসা লেখা বা ছবি দেওয়াকে কী বলা হয়?</div>
+      <div class="options">
+        (A) Page Color &nbsp; (B) Watermark &nbsp; (C) Page Border &nbsp; (D) Ghost Text
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans21')">👁️ উত্তর দেখো</button>
+      <div id="ans21" class="answer-box">সঠিক উত্তর: (B) Watermark</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২২. পেজটি লম্বালম্বি (Portrait) নাকি আড়াআড়ি (Landscape) হবে—তা কোন অপশন থেকে ঠিক করা হয়?</div>
+      <div class="options">
+        (A) Size &nbsp; (B) Margin &nbsp; (C) Orientation &nbsp; (D) Columns
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans22')">👁️ উত্তর দেখো</button>
+      <div id="ans22" class="answer-box">সঠিক উত্তর: (C) Orientation</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৩. কিবোর্ডের মাধ্যমে ফন্ট সাইজ (Font Size) বড় করার শর্টকাট কী কোনটি?</div>
+      <div class="options">
+        (A) Ctrl + [ &nbsp; (B) Ctrl + ] &nbsp; (C) Ctrl + F &nbsp; (D) Ctrl + P
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans23')">👁️ উত্তর দেখো</button>
+      <div id="ans23" class="answer-box">সঠিক উত্তর: (B) Ctrl + ]</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৪. MS Word-এ 'Subscript' (যেমন: H₂O) করার শর্টকাট কী কোনটি?</div>
+      <div class="options">
+        (A) Ctrl + Equals(=) &nbsp; (B) Ctrl + Shift + Plus(+) &nbsp; (C) Alt + B &nbsp; (D) Ctrl + D
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans24')">👁️ উত্তর দেখো</button>
+      <div id="ans24" class="answer-box">সঠিক উত্তর: (A) Ctrl + Equals(=)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৫. একটি বড় লেখাকে দুই বা ততোধিক কলামে (যেমন সংবাদপত্রে থাকে) ভাগ করার অপশন কোনটি?</div>
+      <div class="options">
+        (A) Split &nbsp; (B) Columns &nbsp; (C) Table &nbsp; (D) Break
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans25')">👁️ উত্তর দেখো</button>
+      <div id="ans25" class="answer-box">সঠিক উত্তর: (B) Columns</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৬. পেজের চারদিকে সুন্দর বর্ডার দেওয়ার জন্য কোন ট্যাব ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Home &nbsp; (B) Design / Layout &nbsp; (C) Review &nbsp; (D) References
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans26')">👁️ উত্তর দেখো</button>
+      <div id="ans26" class="answer-box">সঠিক উত্তর: (B) Design / Layout (উইন্ডোজ ভার্সন ভেদে আলাদা হতে পারে)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৭. সিলেক্ট করা লেখাকে ছোট হাতের থেকে বড় হাতের (Case Change) করার শর্টকাট কী?</div>
+      <div class="options">
+        (A) Shift + F3 &nbsp; (B) Alt + F3 &nbsp; (C) Ctrl + F3 &nbsp; (D) F3
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans27')">👁️ উত্তর দেখো</button>
+      <div id="ans27" class="answer-box">সঠিক উত্তর: (A) Shift + F3</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৮. ডকুমেন্টে কোনো শেপ (Shape) বা ছবি ইনসার্ট করার পর কোন নতুন ট্যাবটি দেখা যায়?</div>
+      <div class="options">
+        (A) Format / Picture Format &nbsp; (B) Design &nbsp; (C) Layout &nbsp; (D) Edit
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans28')">👁️ উত্তর দেখো</button>
+      <div id="ans28" class="answer-box">সঠিক উত্তর: (A) Format / Picture Format</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৯. প্যারাগ্রাফের শুরুতে একটি বড় অক্ষর (যেমন ম্যাগাজিনে থাকে) তৈরি করাকে কী বলে?</div>
+      <div class="options">
+        (A) WordArt &nbsp; (B) Drop Cap &nbsp; (C) Big Font &nbsp; (D) Text Wrap
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans29')">👁️ উত্তর দেখো</button>
+      <div id="ans29" class="answer-box">সঠিক উত্তর: (B) Drop Cap</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩০. ডকুমেন্ট সরাসরি সেভ না করে অন্য কোনো নামে সেভ করার জন্য কোনটি ব্যবহৃত হয়?</div>
+      <div class="options">
+        (A) Save &nbsp; (B) Open &nbsp; (C) Save As &nbsp; (D) Export
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans30')">👁️ উত্তর দেখো</button>
+      <div id="ans30" class="answer-box">সঠিক উত্তর: (C) Save As</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | জ্ঞানই শক্তি</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #1a3a5a; color: white; cursor: pointer; font-weight: bold;">🔄 নতুন করে শুরু করো</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
