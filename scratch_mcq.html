@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scratch Coding MCQ - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #fef9f2; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #4d97ff; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffab19; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #4d97ff; transition: 0.3s; }
+  .quiz-card:hover { transform: translateY(-3px); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #f0f7ff; padding: 10px; border-radius: 8px; border: 1px solid #d0e4ff; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #e3f2fd; border-radius: 8px; border-left: 4px solid #4d97ff; color: #0056b3; font-weight: bold; animation: fadeIn 0.4s; }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .show-btn { background: #4d97ff; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #ffab19; color: #333; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+  .badge { background: #ffab19; color: #333; padding: 2px 10px; border-radius: 10px; font-size: 11px; margin-bottom: 10px; display: inline-block; font-weight: bold; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">🐱 Scratch Programming Quiz</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">কিডস কোডিং</div>
+      <div class="question">১. স্ক্র্যাচে (Scratch) যে ক্যারেক্টার বা অবজেক্টটি নিয়ে কাজ করা হয় তাকে কী বলে?</div>
+      <div class="options">
+        (A) Actor &nbsp; (B) Pointer &nbsp; (C) Sprite &nbsp; (D) Costume
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans1')">👁️ উত্তর দেখো</button>
+      <div id="ans1" class="answer-box">সঠিক উত্তর: (C) Sprite</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২. স্ক্র্যাচ প্রোগ্রাম শুরু করার জন্য সাধারণত কোন ফ্ল্যাগ (Flag) ক্লিক করতে হয়?</div>
+      <div class="options">
+        (A) Red Flag &nbsp; (B) Green Flag &nbsp; (C) Blue Flag &nbsp; (D) Yellow Flag
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans2')">👁️ উত্তর দেখো</button>
+      <div id="ans2" class="answer-box">সঠিক উত্তর: (B) Green Flag</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩. স্প্রাইটকে নড়াচড়া করানোর জন্য (Motion) কোন রঙের ব্লক ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Blue &nbsp; (B) Purple &nbsp; (C) Yellow &nbsp; (D) Orange
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans3')">👁️ উত্তর দেখো</button>
+      <div id="ans3" class="answer-box">সঠিক উত্তর: (A) Blue (নীল)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৪. স্ক্র্যাচ স্টেজের পটভূমি বা ব্যাকগ্রাউন্ডকে কী বলা হয়?</div>
+      <div class="options">
+        (A) Backdrop &nbsp; (B) Wallpaper &nbsp; (C) Scene &nbsp; (D) Layout
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans4')">👁️ উত্তর দেখো</button>
+      <div id="ans4" class="answer-box">সঠিক উত্তর: (A) Backdrop</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৫. একটি কাজ বারবার করার জন্য কোন ব্লকটি ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Move &nbsp; (B) Repeat &nbsp; (C) Say &nbsp; (D) Wait
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans5')">👁️ উত্তর দেখো</button>
+      <div id="ans5" class="answer-box">সঠিক উত্তর: (B) Repeat</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৬. স্প্রাইটের কথা বলার টেক্সট বা 'Bubble' দেখানোর জন্য কোন ক্যাটাগরির ব্লক প্রয়োজন?</div>
+      <div class="options">
+        (A) Sound &nbsp; (B) Motion &nbsp; (C) Looks &nbsp; (D) Sensing
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans6')">👁️ উত্তর দেখো</button>
+      <div id="ans6" class="answer-box">সঠিক উত্তর: (C) Looks (বেগুনি ব্লক)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৭. স্ক্র্যাচ ইন্টারফেসে যেখানে ফলাফল বা অ্যানিমেশন দেখা যায় তাকে কী বলে?</div>
+      <div class="options">
+        (A) Code Area &nbsp; (B) Block Palette &nbsp; (C) Stage &nbsp; (D) Sprite List
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans7')">👁️ উত্তর দেখো</button>
+      <div id="ans7" class="answer-box">সঠিক উত্তর: (C) Stage</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৮. স্প্রাইটের হাঁটার অ্যানিমেশন তৈরি করতে এর কী পরিবর্তন করতে হয়?</div>
+      <div class="options">
+        (A) Costume &nbsp; (B) Direction &nbsp; (C) Size &nbsp; (D) Name
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans8')">👁️ উত্তর দেখো</button>
+      <div id="ans8" class="answer-box">সঠিক উত্তর: (A) Costume</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৯. মাউস ক্লিকের মতো 'ঘটনা' নিয়ন্ত্রণ করার ব্লকগুলো কোন রঙের হয়?</div>
+      <div class="options">
+        (A) Blue &nbsp; (B) Yellow &nbsp; (C) Green &nbsp; (D) Red
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans9')">👁️ উত্তর দেখো</button>
+      <div id="ans9" class="answer-box">সঠিক উত্তর: (B) Yellow (Events)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১০. স্ক্র্যাচ প্রজেক্টে স্কোর বা পয়েন্ট জমা রাখার জন্য কোনটি তৈরি করতে হয়?</div>
+      <div class="options">
+        (A) Sprite &nbsp; (B) Variable &nbsp; (C) Backdrop &nbsp; (D) Sound
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans10')">👁️ উত্তর দেখো</button>
+      <div id="ans10" class="answer-box">সঠিক উত্তর: (B) Variable (চলক)</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | কোডিং হোক আনন্দের</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #4d97ff; color: white; cursor: pointer; font-weight: bold;">🔄 আবার শুরু করো</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      x.style.display = (x.style.display === "none" || x.style.display === "") ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
