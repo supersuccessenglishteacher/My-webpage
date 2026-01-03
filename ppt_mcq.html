@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS PowerPoint MCQ - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #fdf4f2; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #b7472a; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #b7472a; transition: 0.3s; }
+  .quiz-card:hover { transform: translateY(-3px); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #fffaf9; padding: 10px; border-radius: 8px; border: 1px solid #f2e0dc; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #fff3f0; border-radius: 8px; border-left: 4px solid #b7472a; color: #b7472a; font-weight: bold; animation: fadeIn 0.4s; }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .show-btn { background: #b7472a; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #8e351f; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+  .badge { background: #ff5722; color: white; padding: 2px 10px; border-radius: 10px; font-size: 12px; margin-bottom: 10px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">📽️ MS PowerPoint Q&A (Part 1)</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">বেসিক</div>
+      <div class="question">১. MS PowerPoint-এর একটি পেজকে কী বলা হয়?</div>
+      <div class="options">
+        (A) Sheet &nbsp; (B) Document &nbsp; (C) Slide &nbsp; (D) Frame
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans1')">👁️ উত্তর দেখো</button>
+      <div id="ans1" class="answer-box">সঠিক উত্তর: (C) Slide</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২. স্লাইড শো শুরু করার জন্য কিবোর্ডের কোন ফাংশন কী চাপতে হয়?</div>
+      <div class="options">
+        (A) F1 &nbsp; (B) F2 &nbsp; (C) F5 &nbsp; (D) F7
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans2')">👁️ উত্তর দেখো</button>
+      <div id="ans2" class="answer-box">সঠিক উত্তর: (C) F5</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩. একটি নতুন স্লাইড ইনসার্ট (Insert) করার শর্টকাট কী কোনটি?</div>
+      <div class="options">
+        (A) Ctrl + N &nbsp; (B) Ctrl + M &nbsp; (C) Ctrl + S &nbsp; (D) Ctrl + D
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans3')">👁️ উত্তর দেখো</button>
+      <div id="ans3" class="answer-box">সঠিক উত্তর: (B) Ctrl + M</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৪. স্লাইড শো চলাকালীন আগের স্লাইডে ফিরে যাওয়ার জন্য কিবোর্ডের কোনটি ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Enter &nbsp; (B) Space &nbsp; (C) Backspace &nbsp; (D) Tab
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans4')">👁️ উত্তর দেখো</button>
+      <div id="ans4" class="answer-box">সঠিক উত্তর: (C) Backspace</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৫. স্লাইডের ভেতরে কোনো লেখার ওপর নড়াচড়া বা ইফেক্ট দেওয়াকে কী বলে?</div>
+      <div class="options">
+        (A) Transition &nbsp; (B) Animation &nbsp; (C) Design &nbsp; (D) Slide Show
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans5')">👁️ উত্তর দেখো</button>
+      <div id="ans5" class="answer-box">সঠিক উত্তর: (B) Animation</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৬. এক স্লাইড থেকে অন্য স্লাইডে যাওয়ার সময় যে স্পেশাল ইফেক্ট দেখা যায় তাকে কী বলে?</div>
+      <div class="options">
+        (A) Transition &nbsp; (B) Animation &nbsp; (C) Motion Path &nbsp; (D) Effect Option
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans6')">👁️ উত্তর দেখো</button>
+      <div id="ans6" class="answer-box">সঠিক উত্তর: (A) Transition</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৭. স্লাইডের ব্যাকগ্রাউন্ড ডিজাইন এবং লেআউট একসাথে পরিবর্তন করার অপশন কোনটি?</div>
+      <div class="options">
+        (A) Animations &nbsp; (B) Transitions &nbsp; (C) Themes &nbsp; (D) Review
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans7')">👁️ উত্তর দেখো</button>
+      <div id="ans7" class="answer-box">সঠিক উত্তর: (C) Themes (Design Tab)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৮. বর্তমান স্লাইড (Current Slide) থেকে স্লাইড শো শুরু করার শর্টকাট কোনটি?</div>
+      <div class="options">
+        (A) Shift + F5 &nbsp; (B) Ctrl + F5 &nbsp; (C) Alt + F5 &nbsp; (D) F5
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans8')">👁️ উত্তর দেখো</button>
+      <div id="ans8" class="answer-box">সঠিক উত্তর: (A) Shift + F5</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৯. স্লাইড শো চলাকালীন মাঝপথে স্লাইড বন্ধ করার জন্য কোন বাটন ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Ctrl &nbsp; (B) Esc &nbsp; (C) Alt &nbsp; (D) Delete
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans9')">👁️ উত্তর দেখো</button>
+      <div id="ans9" class="answer-box">সঠিক উত্তর: (B) Esc (Escape)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১০. একই স্লাইডের হুবহু নকল (Duplicate) তৈরি করার শর্টকাট কী কোনটি?</div>
+      <div class="options">
+        (A) Ctrl + C &nbsp; (B) Ctrl + V &nbsp; (C) Ctrl + D &nbsp; (D) Ctrl + N
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans10')">👁️ উত্তর দেখো</button>
+      <div id="ans10" class="answer-box">সঠিক উত্তর: (C) Ctrl + D</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | স্লাইড প্রেজেন্টেশন মাস্টার</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #b7472a; color: white; cursor: pointer; font-weight: bold;">🔄 আবার শুরু করো</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
