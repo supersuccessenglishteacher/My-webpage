@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS Paint Mock Test - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #eef2f3; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  
+  .header-box { background: linear-gradient(135deg, #0078d4, #00bcf2); color: white; width: 100%; max-width: 800px; text-align: center; padding: 25px; border-radius: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  
+  .container { width: 100%; max-width: 800px; }
+  
+  .quiz-card { background: white; padding: 25px; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-right: 8px solid #0078d4; position: relative; transition: 0.3s; }
+  .quiz-card:hover { transform: translateX(5px); }
+  
+  .q-text { font-size: 19px; font-weight: bold; color: #1a3a5a; margin-bottom: 12px; }
+  .options-text { font-size: 16px; color: #444; background: #f9f9f9; padding: 10px; border-radius: 8px; line-height: 1.8; margin-bottom: 15px; border: 1px solid #eee; }
+  
+  .answer-btn { background: #0078d4; color: white; border: none; padding: 10px 20px; border-radius: 25px; cursor: pointer; font-weight: bold; font-size: 14px; transition: 0.3s; display: flex; align-items: center; gap: 8px; }
+  .answer-btn:hover { background: #ff9800; }
+
+  .hidden-answer { display: none; margin-top: 15px; padding: 15px; background: #dff0d8; color: #3c763d; border-radius: 10px; font-weight: bold; font-size: 17px; border-left: 5px solid #d6e9c6; animation: fadeIn 0.5s; }
+
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .footer-info { margin-top: 40px; text-align: center; color: #666; font-weight: bold; }
+  .refresh-box { margin-top: 20px; }
+</style>
+</head>
+<body>
+
+  <div class="header-box">
+    <h1 style="margin:0;">🎨 MS Paint Mock Test</h1>
+    <p style="margin:8px 0 0; font-size: 18px;">Super Success Computer Education Center</p>
+    <p style="font-size: 14px; background: rgba(255,255,255,0.2); display: inline-block; padding: 4px 15px; border-radius: 10px; margin-top: 10px;">গার্ডিয়ানদের জন্য: প্রশ্ন ধরুন এবং উত্তর মিলিয়ে নিন</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="q-text">১. পেইন্ট প্রোগ্রামে 'Eraser' টুল দিয়ে মোছার সময় কোন কালারটি ব্যাকগ্রাউন্ডে দেখা যায়?</div>
+      <div class="options-text">(A) Color 1 &nbsp; (B) Color 2 &nbsp; (C) Color 3 &nbsp; (D) No Color</div>
+      <button class="answer-btn" onclick="showAns('q1')">👁️ উত্তর দেখো</button>
+      <div id="q1" class="hidden-answer">সঠিক উত্তর: (B) Color 2</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="q-text">২. কিবোর্ডের সাহায্যে কোনো ড্রয়িং ছোট বা বড় (Zoom In/Out) করার শর্টকাট কী?</div>
+      <div class="options-text">(A) Ctrl + S &nbsp; (B) Ctrl + P &nbsp; (C) Ctrl + Page Up/Down &nbsp; (D) Ctrl + Z</div>
+      <button class="answer-btn" onclick="showAns('q2')">👁️ উত্তর দেখো</button>
+      <div id="q2" class="hidden-answer">সঠিক উত্তর: (C) Ctrl + Page Up/Down</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="q-text">৩. আঁকা শেষ হওয়ার পর ড্রয়িং পেজটি পরিষ্কার (Delete All) করার জন্য কোনটি শর্টকাট?</div>
+      <div class="options-text">(A) Ctrl+A তারপর Delete &nbsp; (B) Ctrl+X &nbsp; (C) Ctrl+Z &nbsp; (D) Alt+F4</div>
+      <button class="answer-btn" onclick="showAns('q3')">👁️ উত্তর দেখো</button>
+      <div id="q3" class="hidden-answer">সঠিক উত্তর: (A) Ctrl+A তারপর Delete</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="q-text">৪. MS Paint-এ কত ধরনের ব্রাশ (Brushes) পাওয়া যায়?</div>
+      <div class="options-text">(A) ৫টি &nbsp; (B) ৭টি &nbsp; (C) ৯টি &nbsp; (D) ১২টি</div>
+      <button class="answer-btn" onclick="showAns('q4')">👁️ উত্তর দেখো</button>
+      <div id="q4" class="hidden-answer">সঠিক উত্তর: (C) ৯টি</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="q-text">৫. কিবোর্ডের কোন বোতাম টিপলে ইরেজার বা পেন্সিলের সাইজ ছোট হয়?</div>
+      <div class="options-text">(A) Ctrl + (+) &nbsp; (B) Ctrl + (-) &nbsp; (C) Shift + (+) &nbsp; (D) Alt + (-)</div>
+      <button class="answer-btn" onclick="showAns('q5')">👁️ উত্তর দেখো</button>
+      <div id="q5" class="hidden-answer">সঠিক উত্তর: (B) Ctrl + Minus (-)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="q-text">৬. একটি চতুর্ভুজ বা আয়তক্ষেত্র (Rectangle) আঁকার টুল কোনটি?</div>
+      <div class="options-text">(A) Oval &nbsp; (B) Triangle &nbsp; (C) Rectangle &nbsp; (D) Diamond</div>
+      <button class="answer-btn" onclick="showAns('q6')">👁️ উত্তর দেখো</button>
+      <div id="q6" class="hidden-answer">সঠিক উত্তর: (C) Rectangle</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="q-text">৭. ড্রয়িং-এ করা শেষ কাজটি বাতিল করার শর্টকাট হলো Ctrl+Z, কিন্তু বাতিল করা কাজ ফিরে পাওয়ার (Redo) শর্টকাট কী?</div>
+      <div class="options-text">(A) Ctrl + R &nbsp; (B) Ctrl + Y &nbsp; (C) Ctrl + X &nbsp; (D) Ctrl + N</div>
+      <button class="answer-btn" onclick="showAns('q7')">👁️ উত্তর দেখো</button>
+      <div id="q7" class="hidden-answer">সঠিক উত্তর: (B) Ctrl + Y</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="q-text">৮. ছবির কোনো অংশকে উল্টে দেওয়ার জন্য (যেমন বাম দিক ডান দিকে করা) কোন অপশনটি ব্যবহৃত হয়?</div>
+      <div class="options-text">(A) Rotate &nbsp; (B) Flip &nbsp; (C) Resize &nbsp; (D) Skew</div>
+      <button class="answer-btn" onclick="showAns('q8')">👁️ উত্তর দেখো</button>
+      <div id="q8" class="hidden-answer">সঠিক উত্তর: (B) Flip (Horizontal/Vertical)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="q-text">৯. MS Paint উইন্ডোর নিচের অংশে যেখানে পেজের মাপ বা রেজোলিউশন দেখায় তাকে কী বলে?</div>
+      <div class="options-text">(A) Title Bar &nbsp; (B) Ribbon &nbsp; (C) Menu Bar &nbsp; (D) Status Bar</div>
+      <button class="answer-btn" onclick="showAns('q9')">👁️ উত্তর দেখো</button>
+      <div id="q9" class="hidden-answer">সঠিক উত্তর: (D) Status Bar</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="q-text">১০. ড্রয়িং করা ছবিটিকে কম্পিউটারের ডেস্কটপ ব্যাকগ্রাউন্ড বা ওয়ালপেপার হিসেবে সেট করা যায় কি?</div>
+      <div class="options-text">(A) হ্যাঁ &nbsp; (B) না &nbsp; (C) শুধু রঙিন ছবি হলে &nbsp; (D) জানি না</div>
+      <button class="answer-btn" onclick="showAns('q10')">👁️ উত্তর দেখো</button>
+      <div id="q10" class="hidden-answer">সঠিক উত্তর: (A) হ্যাঁ (Set as desktop background)</div>
+    </div>
+
+  </div>
+
+  <div class="footer-info">
+    <p>© 2026 SSCEC | প্রযুক্তির আলোয় গড়ব ভবিষ্যৎ</p>
+    <div class="refresh-box">
+      <button onclick="location.reload()" style="background:#333; color:white; border:none; padding:12px 30px; border-radius:30px; cursor:pointer; font-weight:bold;">🔄 সব উত্তর লুকিয়ে নতুন করে শুরু করো</button>
+    </div>
+  </div>
+
+  <script>
+    function showAns(id) {
+      var element = document.getElementById(id);
+      if (element.style.display === "block") {
+        element.style.display = "none";
+      } else {
+        element.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>
