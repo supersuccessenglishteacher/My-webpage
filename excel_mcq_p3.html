@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS Excel Part 3 - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f4; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #0e5c2f; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #0e5c2f; transition: 0.3s; }
+  .quiz-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #fafafa; padding: 10px; border-radius: 8px; border: 1px solid #eee; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #e8f5e9; border-radius: 8px; border-left: 4px solid #2e7d32; color: #1b5e20; font-weight: bold; animation: zoomIn 0.3s ease-out; }
+  
+  @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+  .show-btn { background: #0e5c2f; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #ff9800; color: white; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+  .badge { background: #1b5e20; color: white; padding: 2px 12px; border-radius: 10px; font-size: 11px; margin-bottom: 10px; display: inline-block; font-weight: bold; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">📊 MS Excel Challenge (Part 3)</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">প্রফেশনাল লেভেল</div>
+      <div class="question">২১. শর্ত অনুযায়ী সেলের রং পরিবর্তন করার পদ্ধতিকে কী বলে?</div>
+      <div class="options">
+        (A) Auto Formatting &nbsp; (B) Conditional Formatting &nbsp; (C) Style Cell &nbsp; (D) Data Validation
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans21')">👁️ উত্তর দেখো</button>
+      <div id="ans21" class="answer-box">সঠিক উত্তর: (B) Conditional Formatting</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২২. এক্সেল শিটে অনেক বড় ডাটাকে সংক্ষেপে রিপোর্ট আকারে দেখার জন্য কোনটি সেরা?</div>
+      <div class="options">
+        (A) Pivot Table &nbsp; (B) Micro Table &nbsp; (C) Filter Table &nbsp; (D) Summary Sheet
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans22')">👁️ উত্তর দেখো</button>
+      <div id="ans22" class="answer-box">সঠিক উত্তর: (A) Pivot Table</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৩. কোনো সেলের ভেতর ড্রপ-ডাউন লিস্ট (Drop-down List) তৈরি করার অপশন কোথায় থাকে?</div>
+      <div class="options">
+        (A) Home Tab &nbsp; (B) Insert Tab &nbsp; (C) Data Validation &nbsp; (D) View Tab
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans23')">👁️ উত্তর দেখো</button>
+      <div id="ans23" class="answer-box">সঠিক উত্তর: (C) Data Validation</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৪. একটি টেবিল থেকে নির্দিষ্ট ডাটা খুঁজে বের করার জন্য কোন বিখ্যাত ফর্মুলা ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) =LOOKUP() &nbsp; (B) =VLOOKUP() &nbsp; (C) =SEARCH() &nbsp; (D) =FIND()
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans24')">👁️ উত্তর দেখো</button>
+      <div id="ans24" class="answer-box">সঠিক উত্তর: (B) =VLOOKUP()</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৫. এক্সেলে কোনো শিটের নাম পরিবর্তন (Rename) করার জন্য মাউসের কোন ক্লিক করতে হয়?</div>
+      <div class="options">
+        (A) Left Click &nbsp; (B) Right Click &nbsp; (C) Double Click &nbsp; (D) Both B & C
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans25')">👁️ উত্তর দেখো</button>
+      <div id="ans25" class="answer-box">সঠিক উত্তর: (D) Both B & C (রাইট ক্লিক করে রিনেম বা সরাসরি ডাবল ক্লিক)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৬. এক্সেলে সেলের ভেতর 'Comment' বা নোট যুক্ত করার শর্টকাট কী কোনটি?</div>
+      <div class="options">
+        (A) Shift + F2 &nbsp; (B) Ctrl + F2 &nbsp; (C) Alt + F2 &nbsp; (D) Shift + F5
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans26')">👁️ উত্তর দেখো</button>
+      <div id="ans26" class="answer-box">সঠিক উত্তর: (A) Shift + F2</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৭. এক্সেলে শিট ইনসার্ট করার শর্টকাট কী কোনটি?</div>
+      <div class="options">
+        (A) Shift + F11 &nbsp; (B) Ctrl + N &nbsp; (C) Alt + I &nbsp; (D) Shift + F1
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans27')">👁️ উত্তর দেখো</button>
+      <div id="ans27" class="answer-box">সঠিক উত্তর: (A) Shift + F11</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৮. এক্সেলে কোনো কলামের সব ডাটাকে বড় থেকে ছোট (Z-A) সাজানোকে কী বলে?</div>
+      <div class="options">
+        (A) Ascending Sort &nbsp; (B) Descending Sort &nbsp; (C) Filter &nbsp; (D) Grouping
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans28')">👁️ উত্তর দেখো</button>
+      <div id="ans28" class="answer-box">সঠিক উত্তর: (B) Descending Sort</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৯. সেলের ফরম্যাট (যেমন কালার বা বর্ডার) কপি করে অন্য সেলে দেওয়ার জন্য কোনটি ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Copy Paste &nbsp; (B) Format Painter &nbsp; (C) Magic Brush &nbsp; (D) Auto Fill
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans29')">👁️ উত্তর দেখো</button>
+      <div id="ans29" class="answer-box">সঠিক উত্তর: (B) Format Painter</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩০. এক্সেলে কোনো একটি চার্টের নাম বা শিরোনামকে কী বলা হয়?</div>
+      <div class="options">
+        (A) Header &nbsp; (B) Chart Title &nbsp; (C) Legend &nbsp; (D) Data Label
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans30')">👁️ উত্তর দেখো</button>
+      <div id="ans30" class="answer-box">সঠিক উত্তর: (B) Chart Title</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | এক্সেল মাস্টার্স গাইড</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #0e5c2f; color: white; cursor: pointer; font-weight: bold;">🔄 নতুন করে শুরু করো</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
