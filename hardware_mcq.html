@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer Hardware MCQ - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f1f5f9; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #37474f; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #00e676; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #37474f; transition: 0.3s; }
+  .quiz-card:hover { transform: translateY(-3px); }
+  .question { font-size: 18px; font-weight: bold; color: #1a202c; margin-bottom: 10px; }
+  .options { color: #4a5568; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #f8fafc; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #f0fff4; border-radius: 8px; border-left: 4px solid #38a169; color: #22543d; font-weight: bold; animation: slideIn 0.4s; }
+  
+  @keyframes slideIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+  .show-btn { background: #37474f; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #00e676; color: #1a202c; }
+  
+  .footer { margin-top: 30px; color: #64748b; font-size: 14px; text-align: center; }
+  .badge { background: #00e676; color: #1a202c; padding: 2px 10px; border-radius: 10px; font-size: 11px; margin-bottom: 10px; display: inline-block; font-weight: bold; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">🖥️ Computer Hardware Quiz</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">বেসিক</div>
+      <div class="question">১. কম্পিউটারের কোন অংশটিকে এর 'মস্তিষ্ক' (Brain) বলা হয়?</div>
+      <div class="options">
+        (A) Monitor &nbsp; (B) CPU &nbsp; (C) Keyboard &nbsp; (D) Mouse
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans1')">👁️ উত্তর দেখো</button>
+      <div id="ans1" class="answer-box">সঠিক উত্তর: (B) CPU (Central Processing Unit)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২. নিচের কোনটি কম্পিউটারের একটি 'ইনপুট' (Input) ডিভাইস?</div>
+      <div class="options">
+        (A) Printer &nbsp; (B) Speaker &nbsp; (C) Scanner &nbsp; (D) Monitor
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans2')">👁️ উত্তর দেখো</button>
+      <div id="ans2" class="answer-box">সঠিক উত্তর: (C) Scanner</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩. কম্পিউটারের অস্থায়ী স্মৃতি বা 'ভolatেইল মেমোরি' (Volatile Memory) কোনটি?</div>
+      <div class="options">
+        (A) Hard Disk &nbsp; (B) RAM &nbsp; (C) ROM &nbsp; (D) Pendrive
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans3')">👁️ উত্তর দেখো</button>
+      <div id="ans3" class="answer-box">সঠিক উত্তর: (B) RAM (Random Access Memory)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৪. কম্পিউটারের প্রধান সার্কিট বোর্ড, যেখানে সব পার্টস যুক্ত থাকে, তাকে কী বলে?</div>
+      <div class="options">
+        (A) Power Supply &nbsp; (B) Graphics Card &nbsp; (C) Motherboard &nbsp; (D) Sound Card
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans4')">👁️ উত্তর দেখো</button>
+      <div id="ans4" class="answer-box">সঠিক উত্তর: (C) Motherboard</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৫. কম্পিউটারে স্থায়ীভাবে ডেটা জমা রাখার জন্য কোনটি ব্যবহৃত হয়?</div>
+      <div class="options">
+        (A) RAM &nbsp; (B) Hard Disk / SSD &nbsp; (C) Cache Memory &nbsp; (D) Register
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans5')">👁️ উত্তর দেখো</button>
+      <div id="ans5" class="answer-box">সঠিক উত্তর: (B) Hard Disk / SSD</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৬. CPU-এর ভেতর গাণিতিক ও যুক্তিমূলক কাজগুলো কে সম্পন্ন করে?</div>
+      <div class="options">
+        (A) Control Unit &nbsp; (B) ALU &nbsp; (C) Memory Unit &nbsp; (D) Register
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans6')">👁️ উত্তর দেখো</button>
+      <div id="ans6" class="answer-box">সঠিক উত্তর: (B) ALU (Arithmetic Logic Unit)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৭. পেন ড্রাইভ বা মাউস কম্পিউটারে লাগানোর জায়গাকে কী বলা হয়?</div>
+      <div class="options">
+        (A) Port &nbsp; (B) Slot &nbsp; (C) Socket &nbsp; (D) Bus
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans7')">👁️ উত্তর দেখো</button>
+      <div id="ans7" class="answer-box">সঠিক উত্তর: (A) Port (যেমন USB Port)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৮. বিদ্যুৎ চলে যাওয়ার পরও কম্পিউটারকে কিছু সময় চালু রাখে কোনটি?</div>
+      <div class="options">
+        (A) CPU &nbsp; (B) UPS &nbsp; (C) SMPS &nbsp; (D) RAM
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans8')">👁️ উত্তর দেখো</button>
+      <div id="ans8" class="answer-box">সঠিক উত্তর: (B) UPS (Uninterruptible Power Supply)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৯. নিচের কোনটি একটি 'আউটপুট' (Output) ডিভাইস?</div>
+      <div class="options">
+        (A) Microphone &nbsp; (B) Light Pen &nbsp; (C) Speaker &nbsp; (D) Keyboard
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans9')">👁️ উত্তর দেখো</button>
+      <div id="ans9" class="answer-box">সঠিক উত্তর: (C) Speaker</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১০. হার্ডওয়্যার এবং ইউজারের মধ্যে সরাসরি যোগাযোগ রক্ষা করে কোনটি?</div>
+      <div class="options">
+        (A) MS Word &nbsp; (B) Operating System &nbsp; (C) Photoshop &nbsp; (D) Google Chrome
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans10')">👁️ উত্তর দেখো</button>
+      <div id="ans10" class="answer-box">সঠিক উত্তর: (B) Operating System (যেমন Windows)</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | হার্ডওয়্যার ইঞ্জিনিয়ারিং বেসিকস</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #37474f; color: white; cursor: pointer; font-weight: bold;">🔄 রিলোড কুইজ</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      x.style.display = (x.style.display === "none" || x.style.display === "") ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
