@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS PowerPoint Part 3 - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #fff9f8; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #d24726; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #d24726; transition: 0.3s; }
+  .quiz-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #fdfdfd; padding: 10px; border-radius: 8px; border: 1px solid #eee; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #fff4f2; border-radius: 8px; border-left: 4px solid #d24726; color: #b03a1e; font-weight: bold; animation: fadeIn 0.4s; }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .show-btn { background: #d24726; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #333; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+  .badge { background: #333; color: white; padding: 2px 12px; border-radius: 10px; font-size: 11px; margin-bottom: 10px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">📽️ MS PowerPoint Expert (Part 3)</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">প্রো লেভেল</div>
+      <div class="question">২১. স্লাইড শো চলাকালীন একটি কালো স্ক্রিন (Black Screen) দেখানোর জন্য কিবোর্ডের কোন বাটন চাপতে হয়?</div>
+      <div class="options">
+        (A) B &nbsp; (B) W &nbsp; (C) S &nbsp; (D) Esc
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans21')">👁️ উত্তর দেখো</button>
+      <div id="ans21" class="answer-box">সঠিক উত্তর: (A) B (সাদা স্ক্রিনের জন্য W)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২২. পাওয়ারপয়েন্টে 'Rehearse Timings' অপশনটি কেন ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) স্লাইড ডিলিট করতে &nbsp; (B) স্লাইডের সময় নির্ধারণ করতে &nbsp; (C) গান যোগ করতে &nbsp; (D) প্রিন্ট করতে
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans22')">👁️ উত্তর দেখো</button>
+      <div id="ans22" class="answer-box">সঠিক উত্তর: (B) স্লাইডের সময় নির্ধারণ করতে</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৩. পাওয়ারপয়েন্ট ফাইলে অডিও বা ভিডিও ইনসার্ট করার অপশন কোন ট্যাবে থাকে?</div>
+      <div class="options">
+        (A) Design &nbsp; (B) Transitions &nbsp; (C) Insert &nbsp; (D) Animations
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans23')">👁️ উত্তর দেখো</button>
+      <div id="ans23" class="answer-box">সঠিক উত্তর: (C) Insert Tab (Media Group)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৪. একটি অবজেক্টকে স্লাইডের নির্দিষ্ট পথে (যেমন গোল করে) ঘোরানোর জন্য কোন অ্যানিমেশন ব্যবহৃত হয়?</div>
+      <div class="options">
+        (A) Entrance &nbsp; (B) Emphasis &nbsp; (C) Exit &nbsp; (D) Motion Paths
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans24')">👁️ উত্তর দেখো</button>
+      <div id="ans24" class="answer-box">সঠিক উত্তর: (D) Motion Paths</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৫. স্লাইড শো চলাকালীন মাউস পয়েন্টারকে 'লেজার পয়েন্টার' (Laser Pointer) করার শর্টকাট কী?</div>
+      <div class="options">
+        (A) Ctrl + L &nbsp; (B) Ctrl + Left Mouse Button &nbsp; (C) Alt + L &nbsp; (D) Shift + L
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans25')">👁️ উত্তর দেখো</button>
+      <div id="ans25" class="answer-box">সঠিক উত্তর: (B) Ctrl + Left Mouse Button</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৬. অনেকগুলো স্লাইড থেকে বেছে নিয়ে একটি আলাদা ছোট প্রেজেন্টেশন তৈরির পদ্ধতিকে কী বলে?</div>
+      <div class="options">
+        (A) Setup Slide Show &nbsp; (B) Custom Slide Show &nbsp; (C) Rehearse Show &nbsp; (D) Broadcast Show
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans26')">👁️ উত্তর দেখো</button>
+      <div id="ans26" class="answer-box">সঠিক উত্তর: (B) Custom Slide Show</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৭. পাওয়ারপয়েন্টে স্ক্রিন রেকর্ড (Screen Recording) করার সুবিধা কোন ট্যাব থেকে পাওয়া যায়?</div>
+      <div class="options">
+        (A) View &nbsp; (B) Insert &nbsp; (C) Review &nbsp; (D) Transitions
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans27')">👁️ উত্তর দেখো</button>
+      <div id="ans27" class="answer-box">সঠিক উত্তর: (B) Insert Tab</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৮. স্লাইড শো চলাকালীন কিবোর্ডের ১ চেপে এন্টার (1 + Enter) দিলে কী হয়?</div>
+      <div class="options">
+        (A) শেষ স্লাইডে যায় &nbsp; (B) প্রথম স্লাইডে যায় &nbsp; (C) স্লাইড বন্ধ হয় &nbsp; (D) ভিডিও প্লে হয়
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans28')">👁️ উত্তর দেখো</button>
+      <div id="ans28" class="answer-box">সঠিক উত্তর: (B) প্রথম স্লাইডে যায়</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২৯. স্লাইডের হ্যান্ডআউট (Handout) প্রিন্ট করার সময় এক পেজে সর্বোচ্চ কয়টি স্লাইড প্রিন্ট করা যায়?</div>
+      <div class="options">
+        (A) ৩টি &nbsp; (B) ৬টি &nbsp; (C) ৯টি &nbsp; (D) ১২টি
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans29')">👁️ উত্তর দেখো</button>
+      <div id="ans29" class="answer-box">সঠিক উত্তর: (C) ৯টি</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩০. পাওয়ারপয়েন্ট প্রেজেন্টেশনের এক্সটেনশন (Extension) ফাইল কোনটি?</div>
+      <div class="options">
+        (A) .docx &nbsp; (B) .xlsx &nbsp; (C) .pptx &nbsp; (D) .pdf
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans30')">👁️ উত্তর দেখো</button>
+      <div id="ans30" class="answer-box">সঠিক উত্তর: (C) .pptx</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | প্রযুক্তির শিখরে সুপার সাকসেস</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #d24726; color: white; cursor: pointer; font-weight: bold;">🔄 রিলোড কুইজ</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
