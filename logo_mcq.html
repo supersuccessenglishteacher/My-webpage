@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSW LOGO MCQ - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #fdfdfd; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #3f51b5; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #3f51b5; transition: 0.3s; }
+  .quiz-card:hover { transform: scale(1.01); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #f9f9ff; padding: 10px; border-radius: 8px; border: 1px solid #e1e1fb; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #e8eaf6; border-radius: 8px; border-left: 4px solid #3f51b5; color: #1a237e; font-weight: bold; animation: slideIn 0.3s; }
+  
+  @keyframes slideIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+  .show-btn { background: #3f51b5; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #283593; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+  .badge { background: #ff4081; color: white; padding: 2px 10px; border-radius: 10px; font-size: 11px; margin-bottom: 10px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">🐢 MSW LOGO Programming</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">কিডস কোডিং</div>
+      <div class="question">১. MSW LOGO-তে যে ত্রিভুজাকৃতি পয়েন্টারটি দিয়ে ছবি আঁকা হয়, তাকে কী বলে?</div>
+      <div class="options">
+        (A) Mouse &nbsp; (B) Pointer &nbsp; (C) Turtle &nbsp; (D) Pen
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans1')">👁️ উত্তর দেখো</button>
+      <div id="ans1" class="answer-box">সঠিক উত্তর: (C) Turtle</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২. টারটলকে (Turtle) সামনের দিকে এগিয়ে নেওয়ার কমান্ড কোনটি?</div>
+      <div class="options">
+        (A) FD &nbsp; (B) BK &nbsp; (C) RT &nbsp; (D) LT
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans2')">👁️ উত্তর দেখো</button>
+      <div id="ans2" class="answer-box">সঠিক উত্তর: (A) FD (Forward)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩. টারটলকে ডান দিকে ৯০ ডিগ্রি ঘোরানোর সঠিক কমান্ড কোনটি?</div>
+      <div class="options">
+        (A) RT 90 &nbsp; (B) FD 90 &nbsp; (C) LT 90 &nbsp; (D) BK 90
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans3')">👁️ উত্তর দেখো</button>
+      <div id="ans3" class="answer-box">সঠিক উত্তর: (A) RT 90 (Right Turn)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৪. LOGO স্ক্রিন পরিষ্কার করার (Clear Screen) কমান্ড কোনটি?</div>
+      <div class="options">
+        (A) CLEAN &nbsp; (B) CS &nbsp; (C) ERASE &nbsp; (D) CLEAR
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans4')">👁️ উত্তর দেখো</button>
+      <div id="ans4" class="answer-box">সঠিক উত্তর: (B) CS (Clear Screen)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৫. টারটলকে স্ক্রিনের মাঝখানে (Home Position) ফিরিয়ে আনার কমান্ড কোনটি?</div>
+      <div class="options">
+        (A) BACK &nbsp; (B) START &nbsp; (C) HOME &nbsp; (D) CENTER
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans5')">👁️ উত্তর দেখো</button>
+      <div id="ans5" class="answer-box">সঠিক উত্তর: (C) HOME</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৬. লোগোতে একটি বর্গক্ষেত্র (Square) আঁকতে কোন জ্যামিতিক কমান্ড ব্যবহার করা সহজ?</div>
+      <div class="options">
+        (A) REPEAT 4 &nbsp; (B) REPEAT 3 &nbsp; (C) REPEAT 360 &nbsp; (D) CIRCLE
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans6')">👁️ উত্তর দেখো</button>
+      <div id="ans6" class="answer-box">সঠিক উত্তর: (A) REPEAT 4 [FD 100 RT 90]</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৭. টারটলকে অদৃশ্য বা লুকিয়ে ফেলার কমান্ড কোনটি?</div>
+      <div class="options">
+        (A) ST &nbsp; (B) HT &nbsp; (C) HIDDEN &nbsp; (D) BYE
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans7')">👁️ উত্তর দেখো</button>
+      <div id="ans7" class="answer-box">সঠিক উত্তর: (B) HT (Hide Turtle)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৮. টারটল যখন নড়াচড়া করবে কিন্তু কোনো দাগ কাটবে না, তখন কোন কমান্ড দিতে হয়?</div>
+      <div class="options">
+        (A) PENUP (PU) &nbsp; (B) PENDOWN (PD) &nbsp; (C) PENERASE &nbsp; (D) STOP
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans8')">👁️ উত্তর দেখো</button>
+      <div id="ans8" class="answer-box">সঠিক উত্তর: (A) PENUP (PU)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৯. LOGO প্রোগ্রাম বন্ধ করার কমান্ড কোনটি?</div>
+      <div class="options">
+        (A) EXIT &nbsp; (B) END &nbsp; (C) BYE &nbsp; (D) CLOSE
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans9')">👁️ উত্তর দেখো</button>
+      <div id="ans9" class="answer-box">সঠিক উত্তর: (C) BYE</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১০. 'LOGO' এর পূর্ণরূপ কী?</div>
+      <div class="options">
+        (A) Logic Oriented Graphic Oriented &nbsp; (B) Low Oriented Graphic Object &nbsp; (C) Logical Organic Graphic Office &nbsp; (D) None
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans10')">👁️ উত্তর দেখো</button>
+      <div id="ans10" class="answer-box">সঠিক উত্তর: (A) Logic Oriented Graphic Oriented</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | কোডিং ফর ফিউচার</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #3f51b5; color: white; cursor: pointer; font-weight: bold;">🔄 রিলোড কুইজ</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      x.style.display = (x.style.display === "none" || x.style.display === "") ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
