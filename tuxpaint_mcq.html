@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tux Paint MCQ - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #fffaf0; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #ff5722; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #ff5722; transition: 0.3s; }
+  .quiz-card:hover { transform: scale(1.01); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #fff5f2; padding: 10px; border-radius: 8px; border: 1px solid #ffd8cc; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #ffebe6; border-radius: 8px; border-left: 4px solid #ff5722; color: #bf360c; font-weight: bold; animation: slideIn 0.3s; }
+  
+  @keyframes slideIn { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+  .show-btn { background: #ff5722; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #e64a19; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+  .badge { background: #4caf50; color: white; padding: 2px 10px; border-radius: 10px; font-size: 11px; margin-bottom: 10px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">🐧 Tux Paint Creativity Quiz</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">ড্রয়িং স্কিল</div>
+      <div class="question">১. Tux Paint সফটওয়্যারের ম্যাসকট (Mascot) বা লোগোতে কোন প্রাণীর ছবি থাকে?</div>
+      <div class="options">
+        (A) বিড়াল &nbsp; (B) পেঙ্গুইন &nbsp; (C) সিংহ &nbsp; (D) হাতি
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans1')">👁️ উত্তর দেখো</button>
+      <div id="ans1" class="answer-box">সঠিক উত্তর: (B) পেঙ্গুইন (এর নাম 'Tux')</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২. ছবিতে বিভিন্ন তৈরি করা ডিজাইন (যেমন- ফুল বা গাছ) যোগ করার জন্য কোন টুল ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Paint &nbsp; (B) Shapes &nbsp; (C) Stamp &nbsp; (D) Lines
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans2')">👁️ উত্তর দেখো</button>
+      <div id="ans2" class="answer-box">সঠিক উত্তর: (C) Stamp</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩. Tux Paint-এ বিশেষ এফেক্ট (যেমন- ঘাস, রংধনু, বা ইট) দেওয়ার জন্য কোন টুল ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Magic Tool &nbsp; (B) Eraser &nbsp; (C) Fill &nbsp; (D) Text
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans3')">👁️ উত্তর দেখো</button>
+      <div id="ans3" class="answer-box">সঠিক উত্তর: (A) Magic Tool</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৪. কোনো নতুন ড্রয়িং শুরু করার জন্য কোন বাটনে ক্লিক করতে হয়?</div>
+      <div class="options">
+        (A) Open &nbsp; (B) New &nbsp; (C) Start &nbsp; (D) Save
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans4')">👁️ উত্তর দেখো</button>
+      <div id="ans4" class="answer-box">সঠিক উত্তর: (B) New</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৫. ছবি আঁকার সময় ভুল হলে তা মুছে ফেলার জন্য কোন টুলটি কাজ করে?</div>
+      <div class="options">
+        (A) Magic &nbsp; (B) Paint &nbsp; (C) Eraser &nbsp; (D) Undo
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans5')">👁️ উত্তর দেখো</button>
+      <div id="ans5" class="answer-box">সঠিক উত্তর: (C) Eraser</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৬. Tux Paint-এ ড্রয়িং সেভ (Save) করলে সেটি ফাইল হিসেবে না হয়ে কী হিসেবে জমা হয়?</div>
+      <div class="options">
+        (A) Thumbnail &nbsp; (B) Document &nbsp; (C) Slide &nbsp; (D) Folder
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans6')">👁️ উত্তর দেখো</button>
+      <div id="ans6" class="answer-box">সঠিক উত্তর: (A) Thumbnail (যা পরে 'Open' বাটনে পাওয়া যায়)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৭. স্ট্যাম্প (Stamp) টুলে কোনো ছবির আকার ছোট বা বড় করার অপশনটি কোথায় থাকে?</div>
+      <div class="options">
+        (A) উপরের দিকে &nbsp; (B) নিচের ডান দিকে (Sliding Scale) &nbsp; (C) বাম দিকে &nbsp; (D) থাকে না
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans7')">👁️ উত্তর দেখো</button>
+      <div id="ans7" class="answer-box">সঠিক উত্তর: (B) নিচের ডান দিকে (এক সারি ছোট বার হিসেবে)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৮. সরাসরি কোনো টেক্সট বা লেখা ড্রয়িংয়ে যুক্ত করার টুল কোনটি?</div>
+      <div class="options">
+        (A) Label &nbsp; (B) Text &nbsp; (C) Magic &nbsp; (D) Both A and B
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans8')">👁️ উত্তর দেখো</button>
+      <div id="ans8" class="answer-box">সঠিক উত্তর: (D) Both A and B (Text এবং Label টুল)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৯. আগের করা কোনো কাজ ফিরিয়ে আনার জন্য (Undo) কোন শর্টকাট কিবোর্ড কমান্ড ব্যবহার করা যায়?</div>
+      <div class="options">
+        (A) Ctrl + S &nbsp; (B) Ctrl + Z &nbsp; (C) Ctrl + O &nbsp; (D) Ctrl + N
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans9')">👁️ উত্তর দেখো</button>
+      <div id="ans9" class="answer-box">সঠিক উত্তর: (B) Ctrl + Z</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১০. Tux Paint প্রোগ্রাম থেকে বের হওয়ার জন্য কোন বাটনে ক্লিক করতে হয়?</div>
+      <div class="options">
+        (A) Close &nbsp; (B) Exit &nbsp; (C) Quit &nbsp; (D) Stop
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans10')">👁️ উত্তর দেখো</button>
+      <div id="ans10" class="answer-box">সঠিক উত্তর: (C) Quit</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | ছোটদের রঙিন পৃথিবী</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #ff5722; color: white; cursor: pointer; font-weight: bold;">🔄 রিলোড প্রশ্ন</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      x.style.display = (x.style.display === "none" || x.style.display === "") ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
