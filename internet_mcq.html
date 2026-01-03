@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internet Basic MCQ - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f4f8; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #e91e63; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #e91e63; transition: 0.3s; }
+  .quiz-card:hover { transform: scale(1.01); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #fff9fb; padding: 10px; border-radius: 8px; border: 1px solid #fce4ec; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #fce4ec; border-radius: 8px; border-left: 4px solid #e91e63; color: #880e4f; font-weight: bold; animation: zoomIn 0.3s ease-out; }
+  
+  @keyframes zoomIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+  .show-btn { background: #e91e63; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #c2185b; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">🌐 Internet & Web Challenge</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="question">১. ইন্টারনেট ব্যবহার করে তথ্য খোঁজার জন্য কোন সফটওয়্যার প্রয়োজন?</div>
+      <div class="options">
+        (A) MS Office &nbsp; (B) Web Browser &nbsp; (C) Media Player &nbsp; (D) Antivirus
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans1')">👁️ উত্তর দেখো</button>
+      <div id="ans1" class="answer-box">সঠিক উত্তর: (B) Web Browser (যেমন: Chrome, Edge)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২. ইন্টারনেটে কোনো ওয়েবসাইটের ঠিকানাকে (যেমন: www.google.com) কী বলা হয়?</div>
+      <div class="options">
+        (A) URL &nbsp; (B) HTTP &nbsp; (C) ISP &nbsp; (D) HTML
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans2')">👁️ উত্তর দেখো</button>
+      <div id="ans2" class="answer-box">সঠিক উত্তর: (A) URL (Uniform Resource Locator)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩. নিচের কোনটি একটি বিখ্যাত 'সার্চ ইঞ্জিন' (Search Engine)?</div>
+      <div class="options">
+        (A) Facebook &nbsp; (B) WhatsApp &nbsp; (C) Google &nbsp; (D) Windows
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans3')">👁️ উত্তর দেখো</button>
+      <div id="ans3" class="answer-box">সঠিক উত্তর: (C) Google</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৪. 'WWW' এর পূর্ণরূপ কী?</div>
+      <div class="options">
+        (A) World Wide Web &nbsp; (B) Whole Wide Web &nbsp; (C) World Web Wide &nbsp; (D) World Wide Work
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans4')">👁️ উত্তর দেখো</button>
+      <div id="ans4" class="answer-box">সঠিক উত্তর: (A) World Wide Web</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৫. ইমেইল পাঠানোর সময় ফাইলের সাথে কোনো ছবি বা ডকুমেন্ট পাঠানোকে কী বলে?</div>
+      <div class="options">
+        (A) Link &nbsp; (B) Attachment &nbsp; (C) Forward &nbsp; (D) Spam
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans5')">👁️ উত্তর দেখো</button>
+      <div id="ans5" class="answer-box">সঠিক উত্তর: (B) Attachment</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৬. অপ্রয়োজনীয় বা ক্ষতিকর বিজ্ঞাপনমূলক ইমেইলকে কী বলা হয়?</div>
+      <div class="options">
+        (A) Inbox &nbsp; (B) Draft &nbsp; (C) Spam &nbsp; (D) Sent
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans6')">👁️ উত্তর দেখো</button>
+      <div id="ans6" class="answer-box">সঠিক উত্তর: (C) Spam</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৭. ইন্টারনেটে কেনাকাটা বা লেনদেন করাকে এক কথায় কী বলে?</div>
+      <div class="options">
+        (A) E-mail &nbsp; (B) E-commerce &nbsp; (C) E-learning &nbsp; (D) E-chat
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans7')">👁️ উত্তর দেখো</button>
+      <div id="ans7" class="answer-box">সঠিক উত্তর: (B) E-commerce</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৮. ব্রাউজারে কোনো ওয়েবসাইট ভবিষ্যতে দ্রুত পাওয়ার জন্য সেভ করে রাখাকে কী বলে?</div>
+      <div class="options">
+        (A) History &nbsp; (B) Bookmark &nbsp; (C) Download &nbsp; (D) Cookies
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans8')">👁️ উত্তর দেখো</button>
+      <div id="ans8" class="answer-box">সঠিক উত্তর: (B) Bookmark</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৯. নিরাপদ ওয়েবসাইটের শুরুতে কোনটি থাকে (যা তথ্য এনক্রিপ্ট করে)?</div>
+      <div class="options">
+        (A) http:// &nbsp; (B) https:// &nbsp; (C) ftp:// &nbsp; (D) www://
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans9')">👁️ উত্তর দেখো</button>
+      <div id="ans9" class="answer-box">সঠিক উত্তর: (B) https:// (এখানে 's' মানে Secure)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১০. ইন্টারনেটে অপরিচিত কাউকে নিজের পাসওয়ার্ড বা ব্যক্তিগত তথ্য শেয়ার করা কি উচিত?</div>
+      <div class="options">
+        (A) হ্যাঁ &nbsp; (B) না &nbsp; (C) শুধু বন্ধুদের সাথে &nbsp; (D) প্রয়োজনে করা যায়
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans10')">👁️ উত্তর দেখো</button>
+      <div id="ans10" class="answer-box">সঠিক উত্তর: (B) না (এটি সাইবার নিরাপত্তার জন্য ঝুঁকিপূর্ণ)</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | গ্লোবাল কানেক্টিভিটি লার্নিং</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #e91e63; color: white; cursor: pointer; font-weight: bold;">🔄 রিলোড কুইজ</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
