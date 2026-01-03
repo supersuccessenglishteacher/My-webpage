@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS Paint MCQ - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #0078d4; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #0078d4; transition: 0.3s; }
+  .quiz-card:hover { transform: scale(1.01); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #e7f3ff; border-radius: 8px; border-left: 4px solid #2ecc71; color: #1a3a5a; font-weight: bold; }
+  
+  .show-btn { background: #0078d4; color: white; border: none; padding: 8px 18px; border-radius: 5px; cursor: pointer; font-size: 14px; transition: 0.2s; }
+  .show-btn:hover { background: #005a9e; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">🎨 MS Paint MCQ Challenge</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="question">১. MS Paint-এ তৈরি করা ফাইল সাধারণত কোন ফরম্যাটে সেভ হয়?</div>
+      <div class="options">
+        (A) .txt &nbsp; (B) .mp3 &nbsp; (C) .png / .jpg &nbsp; (D) .exe
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans1')">উত্তর দেখো</button>
+      <div id="ans1" class="answer-box">সঠিক উত্তর: (C) .png / .jpg</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২. কোনো বন্ধ আকৃতির ভেতরে একবারে রঙ ভরার জন্য কোন টুল ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Pencil &nbsp; (B) Fill with color &nbsp; (C) Eraser &nbsp; (D) Text
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans2')">উত্তর দেখো</button>
+      <div id="ans2" class="answer-box">সঠিক উত্তর: (B) Fill with color (বালতি আইকন)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩. পেইন্টে নিখুঁত গোল বৃত্ত আঁকার জন্য কোন কী (Key) চেপে ধরতে হয়?</div>
+      <div class="options">
+        (A) Ctrl &nbsp; (B) Alt &nbsp; (C) Shift &nbsp; (D) Space
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans3')">উত্তর দেখো</button>
+      <div id="ans3" class="answer-box">সঠিক উত্তর: (C) Shift</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৪. ভুল করে মুছে ফেলা কিছু ফিরিয়ে আনতে (Undo) কোন শর্টকাট ব্যবহৃত হয়?</div>
+      <div class="options">
+        (A) Ctrl + S &nbsp; (B) Ctrl + Z &nbsp; (C) Ctrl + V &nbsp; (D) Ctrl + X
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans4')">উত্তর দেখো</button>
+      <div id="ans4" class="answer-box">সঠিক উত্তর: (B) Ctrl + Z</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৫. ইরেজার (Eraser) এর সাইজ বড় করার শর্টকাট কী কোনটি?</div>
+      <div class="options">
+        (A) Ctrl + Plus (+) &nbsp; (B) Ctrl + Minus (-) &nbsp; (C) Ctrl + E &nbsp; (D) Shift + E
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans5')">উত্তর দেখো</button>
+      <div id="ans5" class="answer-box">সঠিক উত্তর: (A) Ctrl + Plus (+)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৬. ড্রয়িং-এ কিছু লেখার জন্য কোন টুলটি ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Brushes &nbsp; (B) Shapes &nbsp; (C) Text Tool (A) &nbsp; (D) Magnifier
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans6')">উত্তর দেখো</button>
+      <div id="ans6" class="answer-box">সঠিক উত্তর: (C) Text Tool (A আইকন)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৭. বাঁকানো রেখা (Curve Line) আঁকার জন্য কোন টুল ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Line &nbsp; (B) Curve &nbsp; (C) Polygon &nbsp; (D) Pencil
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans7')">উত্তর দেখো</button>
+      <div id="ans7" class="answer-box">সঠিক উত্তর: (B) Curve</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৮. ছবির কোনো নির্দিষ্ট অংশের রঙ কপি করে অন্য জায়গায় দেওয়ার টুল কোনটি?</div>
+      <div class="options">
+        (A) Color Picker &nbsp; (B) Airbrush &nbsp; (C) Eraser &nbsp; (D) Selection
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans8')">উত্তর দেখো</button>
+      <div id="ans8" class="answer-box">সঠিক উত্তর: (A) Color Picker</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৯. পেইন্ট উইন্ডোর একদম উপরে যেখানে ফাইলের নাম থাকে তাকে কী বলে?</div>
+      <div class="options">
+        (A) Ribbon &nbsp; (B) Title Bar &nbsp; (C) Status Bar &nbsp; (D) Tool Box
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans9')">উত্তর দেখো</button>
+      <div id="ans9" class="answer-box">সঠিক উত্তর: (B) Title Bar</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১০. সম্পূর্ণ ড্রয়িং একবারে সিলেক্ট করার শর্টকাট কোনটি?</div>
+      <div class="options">
+        (A) Ctrl + S &nbsp; (B) Ctrl + C &nbsp; (C) Ctrl + A &nbsp; (D) Ctrl + P
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans10')">উত্তর দেখো</button>
+      <div id="ans10" class="answer-box">সঠিক উত্তর: (C) Ctrl + A</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | Developed for Students</p>
+    <button onclick="location.reload()" style="padding: 10px 20px; border-radius: 20px; border: none; background: #ddd; cursor: pointer;">সব বন্ধ করো (Refresh)</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
