@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSW LOGO Part 2 - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0fdf4; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #2e7d32; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #2e7d32; transition: 0.3s; }
+  .quiz-card:hover { transform: translateY(-3px); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #f9fff9; padding: 10px; border-radius: 8px; border: 1px solid #dcfce7; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #dcfce7; border-radius: 8px; border-left: 4px solid #2e7d32; color: #14532d; font-weight: bold; animation: fadeIn 0.4s; }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .show-btn { background: #2e7d32; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #1b4332; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+  .badge { background: #4caf50; color: white; padding: 2px 10px; border-radius: 10px; font-size: 11px; margin-bottom: 10px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">🐢 MSW LOGO Mastery (Part 2)</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">ইন্টারমিডিয়েট</div>
+      <div class="question">১১. লোগোতে পেন-এর রং পরিবর্তন করার কমান্ড কোনটি?</div>
+      <div class="options">
+        (A) SETPC &nbsp; (B) SETCOLOR &nbsp; (C) PENCOLOR &nbsp; (D) COLOR
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans11')">👁️ উত্তর দেখো</button>
+      <div id="ans11" class="answer-box">সঠিক উত্তর: (A) SETPC (Set Pen Color)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১২. লোগোতে একটি বৃত্ত (Circle) আঁকার সহজ পদ্ধতি কোনটি?</div>
+      <div class="options">
+        (A) CIRCLE 100 &nbsp; (B) REPEAT 360 [FD 1 RT 1] &nbsp; (C) ROUND 50 &nbsp; (D) Both A and B
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans12')">👁️ উত্তর দেখো</button>
+      <div id="ans12" class="answer-box">সঠিক উত্তর: (D) Both A and B</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৩. পেন-এর চওড়া বা মোটা কমানো-বাড়ানোর জন্য কোন কমান্ড ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) SETPENSIZE &nbsp; (B) SETWIDTH &nbsp; (C) PENSIZE &nbsp; (D) BOLD
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans13')">👁️ উত্তর দেখো</button>
+      <div id="ans13" class="answer-box">সঠিক উত্তর: (A) SETPENSIZE [width height]</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৪. কোনো বন্ধ আকৃতির ভেতরে রং করার জন্য (Fill) কোন কমান্ডটি ব্যবহৃত হয়?</div>
+      <div class="options">
+        (A) FILL &nbsp; (B) PAINT &nbsp; (C) SETFLOODCOLOR &nbsp; (D) Both A and C
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans14')">👁️ উত্তর দেখো</button>
+      <div id="ans14" class="answer-box">সঠিক উত্তর: (D) Both A and C (প্রথমে SETFC দিয়ে রং ঠিক করে FILL দিতে হয়)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৫. স্ক্রিনে কোনো টেক্সট বা লেখা দেখানোর জন্য কোন কমান্ড ব্যবহৃত হয়?</div>
+      <div class="options">
+        (A) PRINT &nbsp; (B) LABEL &nbsp; (C) TEXT &nbsp; (D) WRITE
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans15')">👁️ উত্তর দেখো</button>
+      <div id="ans15" class="answer-box">সঠিক উত্তর: (B) LABEL "Text_Name</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৬. লোগোতে 'SETPC 4' কমান্ড দিলে পেনের রং কী হবে?</div>
+      <div class="options">
+        (A) Black &nbsp; (B) Blue &nbsp; (C) Green &nbsp; (D) Red
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans16')">👁️ উত্তর দেখো</button>
+      <div id="ans16" class="answer-box">সঠিক উত্তর: (D) Red (Color code 4 = Red)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৭. টারটলকে স্ক্রিন থেকে চিরতরে মুছে ফেলার কমান্ড কোনটি?</div>
+      <div class="options">
+        (A) HT &nbsp; (B) BYE &nbsp; (C) CT &nbsp; (D) DELETE
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans17')">👁️ উত্তর দেখো</button>
+      <div id="ans17" class="answer-box">সঠিক উত্তর: (C) CT (Clear Text - যা কমান্ডার উইন্ডো পরিষ্কার করে)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৮. লোগোতে গাণিতিক হিসাব করার কমান্ড কোনটি? (যেমন: ৫+৫)</div>
+      <div class="options">
+        (A) CALCULATE &nbsp; (B) MATH &nbsp; (C) PRINT 5+5 &nbsp; (D) SUM 5 5
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans18')">👁️ উত্তর দেখো</button>
+      <div id="ans18" class="answer-box">সঠিক উত্তর: (C) PRINT 5+5</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৯. লোগো স্ক্রিনকে 'ঘড়ির কাটার উল্টো দিকে' ঘোরানোর কমান্ড কোনটি?</div>
+      <div class="options">
+        (A) RT &nbsp; (B) LT &nbsp; (C) BK &nbsp; (D) FD
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans19')">👁️ উত্তর দেখো</button>
+      <div id="ans19" class="answer-box">সঠিক উত্তর: (B) LT (Left Turn)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২০. লোগোতে রিপিট কমান্ডের ভেতর আরেকটি রিপিট কমান্ড থাকাকে কী বলে?</div>
+      <div class="options">
+        (A) Double Repeat &nbsp; (B) Nesting &nbsp; (C) Loop &nbsp; (D) Hard Coding
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans20')">👁️ উত্তর দেখো</button>
+      <div id="ans20" class="answer-box">সঠিক উত্তর: (B) Nesting (Nested REPEAT)</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | লজিক অ্যান্ড গ্রাফিক্স ল্যাব</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #2e7d32; color: white; cursor: pointer; font-weight: bold;">🔄 রিলোড কুইজ</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      x.style.display = (x.style.display === "none" || x.style.display === "") ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
