@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tux Paint Part 2 - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f4ff; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #00bcd4; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #00bcd4; transition: 0.3s; }
+  .quiz-card:hover { transform: translateY(-3px); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #f5fdff; padding: 10px; border-radius: 8px; border: 1px solid #cdecff; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #e0f7fa; border-radius: 8px; border-left: 4px solid #00bcd4; color: #006064; font-weight: bold; animation: fadeIn 0.4s; }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .show-btn { background: #00bcd4; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #0097a7; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+  .badge { background: #ff9800; color: white; padding: 2px 10px; border-radius: 10px; font-size: 11px; margin-bottom: 10px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">🐧 Tux Paint Advanced Mastery</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">অ্যাডভান্সড</div>
+      <div class="question">১১. কোনো আঁকা ছবিকে ঝাপসা বা অস্পষ্ট করার জন্য ম্যাজিক টুলের কোন অপশনটি ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Blur &nbsp; (B) Smudge &nbsp; (C) Fill &nbsp; (D) Darken
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans11')">👁️ উত্তর দেখো</button>
+      <div id="ans11" class="answer-box">সঠিক উত্তর: (A) Blur</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১২. ভেজা রঙের ওপর হাত বুলিয়ে দিলে যেমন রং ছড়িয়ে যায়, তেমন এফেক্ট দিতে কোনটি ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Chalk &nbsp; (B) Smudge &nbsp; (C) Mosaic &nbsp; (D) Glass Tile
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans12')">👁️ উত্তর দেখো</button>
+      <div id="ans12" class="answer-box">সঠিক উত্তর: (B) Smudge</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৩. Tux Paint-এ অনেকগুলো ছবিকে পর পর সাজিয়ে একটি ভিডিওর মতো দেখার পদ্ধতিকে কী বলে?</div>
+      <div class="options">
+        (A) Movie &nbsp; (B) Animation &nbsp; (C) Slideshow &nbsp; (D) Album
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans13')">👁️ উত্তর দেখো</button>
+      <div id="ans13" class="answer-box">সঠিক উত্তর: (C) Slideshow</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৪. স্লাইডশো দেখার সময় ছবির পরিবর্তনের গতি কমানো বা বাড়ানোর জন্য কোন বাটন ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Speed Bar &nbsp; (B) Next &nbsp; (C) Play &nbsp; (D) Back
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans14')">👁️ উত্তর দেখো</button>
+      <div id="ans14" class="answer-box">সঠিক উত্তর: (A) Speed Bar (স্লাইডিং স্কেল)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৫. ড্রয়িংয়ে ইটের দেয়াল তৈরির জন্য ম্যাজিক টুলের কোন অপশনটি ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Wall &nbsp; (B) Bricks &nbsp; (C) Stones &nbsp; (D) Blocks
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans15')">👁️ উত্তর দেখো</button>
+      <div id="ans15" class="answer-box">সঠিক উত্তর: (B) Bricks</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৬. ম্যাজিক টুলের 'Real Rainbow' এবং 'Rainbow' অপশনের মধ্যে পার্থক্য কী?</div>
+      <div class="options">
+        (A) কোনো পার্থক্য নেই &nbsp; (B) একটি রঙ ছড়ায়, অন্যটি আসল ধনুকের মতো &nbsp; (C) রঙের সংখ্যা কম-বেশি &nbsp; (D) কোনটিই নয়
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans16')">👁️ উত্তর দেখো</button>
+      <div id="ans16" class="answer-box">সঠিক উত্তর: (B) Real Rainbow আকাশের আসল রংধনুর মতো এফেক্ট দেয়।</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৭. Tux Paint-এ কি ছবি প্রিন্ট করার অপশন আছে?</div>
+      <div class="options">
+        (A) না &nbsp; (B) হ্যাঁ &nbsp; (C) শুধু রঙিন ছবি &nbsp; (D) শুধু সাদা-কালো
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans17')">👁️ উত্তর দেখো</button>
+      <div id="ans17" class="answer-box">সঠিক উত্তর: (B) হ্যাঁ (Print বাটন ব্যবহার করে)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৮. কোনো ড্রয়িং ওপেন করার সময় সেটিকে স্লাইডশোতে যুক্ত করতে চাইলে কোন চিহ্ন ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Tick mark &nbsp; (B) Star &nbsp; (C) Numbers (1, 2, 3...) &nbsp; (D) Cross
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans18')">👁️ উত্তর দেখো</button>
+      <div id="ans18" class="answer-box">সঠিক উত্তর: (C) Numbers (স্লাইড অর্ডার ঠিক করার জন্য)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৯. 'Flower' ম্যাজিক টুল ব্যবহার করলে স্ক্রিনে কী তৈরি হয়?</div>
+      <div class="options">
+        (A) শুধু লাল ফুল &nbsp; (B) মাউস ড্র্যাগ করলে ফুল ও ডালপালা তৈরি হয় &nbsp; (C) ফুলের স্টিকার &nbsp; (D) কোনোটিই নয়
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans19')">👁️ উত্তর দেখো</button>
+      <div id="ans19" class="answer-box">সঠিক উত্তর: (B) মাউস ড্র্যাগ করলে ফুল ও ডালপালা তৈরি হয়</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২০. Tux Paint-এর 'Open' স্ক্রিনে গিয়ে কোনো ছবি ডিলিট করার জন্য কোন আইকন ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Cross &nbsp; (B) Eraser &nbsp; (C) Trash Can (ঝুড়ি) &nbsp; (D) Delete key
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans20')">👁️ উত্তর দেখো</button>
+      <div id="ans20" class="answer-box">সঠিক উত্তর: (C) Trash Can (ঝুড়ি)</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | ক্রিয়েটিভ জিনিয়াস ট্রেনিং</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #00bcd4; color: white; cursor: pointer; font-weight: bold;">🔄 আবার খেলো</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      x.style.display = (x.style.display === "none" || x.style.display === "") ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
