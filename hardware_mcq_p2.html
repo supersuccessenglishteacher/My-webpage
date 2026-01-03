@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hardware Part 2 - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0fdf4; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #00796b; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffc107; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #00796b; transition: 0.3s; }
+  .quiz-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #f9f9f9; padding: 10px; border-radius: 8px; border: 1px solid #e0e0e0; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #e0f2f1; border-radius: 8px; border-left: 4px solid #00796b; color: #004d40; font-weight: bold; animation: fadeIn 0.4s; }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .show-btn { background: #00796b; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #004d40; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+  .badge { background: #ffc107; color: #333; padding: 2px 10px; border-radius: 10px; font-size: 11px; margin-bottom: 10px; display: inline-block; font-weight: bold; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">⚙️ Hardware Advanced (Part 2)</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">মেমোরি ইউনিট</div>
+      <div class="question">১১. কম্পিউটারের তথ্য মাপার সবচেয়ে ছোট একক কোনটি?</div>
+      <div class="options">
+        (A) Byte &nbsp; (B) Bit &nbsp; (C) KB &nbsp; (D) MB
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans11')">👁️ উত্তর দেখো</button>
+      <div id="ans11" class="answer-box">সঠিক উত্তর: (B) Bit (Binary Digit - 0 অথবা 1)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১২. কত বিট (Bit) মিলে ১ বাইট (Byte) তৈরি হয়?</div>
+      <div class="options">
+        (A) 4 bits &nbsp; (B) 8 bits &nbsp; (C) 16 bits &nbsp; (D) 1024 bits
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans12')">👁️ উত্তর দেখো</button>
+      <div id="ans12" class="answer-box">সঠিক উত্তর: (B) 8 bits</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৩. ১ গিগাবাইট (1 GB) সমান কত মেগাবাইট (MB)?</div>
+      <div class="options">
+        (A) 100 MB &nbsp; (B) 1000 MB &nbsp; (C) 1024 MB &nbsp; (D) 512 MB
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans13')">👁️ উত্তর দেখো</button>
+      <div id="ans13" class="answer-box">সঠিক উত্তর: (C) 1024 MB</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৪. নিচের কোনটি একটি প্রসেসিং ডিভাইস (Processing Device)?</div>
+      <div class="options">
+        (A) Monitor &nbsp; (B) CPU &nbsp; (C) Mouse &nbsp; (D) Hard Disk
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans14')">👁️ উত্তর দেখো</button>
+      <div id="ans14" class="answer-box">সঠিক উত্তর: (B) CPU</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৫. পেন ড্রাইভকে আর কোন নামে ডাকা হয়?</div>
+      <div class="options">
+        (A) Flash Drive &nbsp; (B) Blue-ray &nbsp; (C) Floppy Disk &nbsp; (D) RAM
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans15')">👁️ উত্তর দেখো</button>
+      <div id="ans15" class="answer-box">সঠিক উত্তর: (A) Flash Drive</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৬. নিচের কোনটি একই সাথে ইনপুট ও আউটপুট ডিভাইস হিসেবে কাজ করতে পারে?</div>
+      <div class="options">
+        (A) Keyboard &nbsp; (B) Touch Screen Monitor &nbsp; (C) Printer &nbsp; (D) Speaker
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans16')">👁️ উত্তর দেখো</button>
+      <div id="ans16" class="answer-box">সঠিক উত্তর: (B) Touch Screen Monitor</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৭. হার্ড ডিস্কের চেয়ে অনেক বেশি দ্রুত গতির স্টোরেজ ডিভাইসের নাম কী?</div>
+      <div class="options">
+        (A) CD-ROM &nbsp; (B) SSD &nbsp; (C) DVD &nbsp; (D) Floppy
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans17')">👁️ উত্তর দেখো</button>
+      <div id="ans17" class="answer-box">সঠিক উত্তর: (B) SSD (Solid State Drive)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৮. 'VGA' পোর্ট কম্পিউটারের কোন হার্ডওয়্যারের সাথে যুক্ত থাকে?</div>
+      <div class="options">
+        (A) Keyboard &nbsp; (B) Mouse &nbsp; (C) Monitor &nbsp; (D) Speaker
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans18')">👁️ উত্তর দেখো</button>
+      <div id="ans18" class="answer-box">সঠিক উত্তর: (C) Monitor</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৯. প্রিন্টারের ছাপার মান বা রেজোলিউশন মাপার একক কোনটি?</div>
+      <div class="options">
+        (A) PPM &nbsp; (B) DPI &nbsp; (C) LPT &nbsp; (D) USB
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans19')">👁️ উত্তর দেখো</button>
+      <div id="ans19" class="answer-box">সঠিক উত্তর: (B) DPI (Dots Per Inch)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২০. কম্পিউটারের ডেটা প্রসেসিং করার সময় বর্তমান কাজগুলো সাময়িকভাবে কোথায় জমা থাকে?</div>
+      <div class="options">
+        (A) Hard Disk &nbsp; (B) RAM &nbsp; (C) ROM &nbsp; (D) Pen Drive
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans20')">👁️ উত্তর দেখো</button>
+      <div id="ans20" class="answer-box">সঠিক উত্তর: (B) RAM</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | হার্ডওয়্যার এক্সপার্ট ট্রেনিং</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #00796b; color: white; cursor: pointer; font-weight: bold;">🔄 আবার শুরু করো</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      x.style.display = (x.style.display === "none" || x.style.display === "") ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
