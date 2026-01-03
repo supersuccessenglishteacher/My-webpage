@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scratch Part 2 - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #fdf2f9; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #8a2be2; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #8a2be2; transition: 0.3s; }
+  .quiz-card:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #faf5ff; padding: 10px; border-radius: 8px; border: 1px solid #f3e8ff; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #f3e8ff; border-radius: 8px; border-left: 4px solid #8a2be2; color: #4b0082; font-weight: bold; animation: slideDown 0.4s; }
+  
+  @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+  .show-btn { background: #8a2be2; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #4b0082; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+  .badge { background: #ff4500; color: white; padding: 2px 12px; border-radius: 10px; font-size: 11px; margin-bottom: 10px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">🚀 Scratch Advanced (Part 2)</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">অ্যাডভান্সড</div>
+      <div class="question">১১. একটি স্প্রাইট থেকে অন্য স্প্রাইটে সংকেত বা সিগন্যাল পাঠানোর জন্য কোন ব্লক ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Message Box &nbsp; (B) Broadcast &nbsp; (C) Shout &nbsp; (D) Signal
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans11')">👁️ উত্তর দেখো</button>
+      <div id="ans11" class="answer-box">সঠিক উত্তর: (B) Broadcast (ইভেন্ট ক্যাটাগরিতে থাকে)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১২. কোনো শর্ত (Condition) সত্য হলে কাজ করবে—এর জন্য কোন কন্ট্রোল ব্লক ব্যবহৃত হয়?</div>
+      <div class="options">
+        (A) If-Then &nbsp; (B) Repeat &nbsp; (C) Wait &nbsp; (D) Stop
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans12')">👁️ উত্তর দেখো</button>
+      <div id="ans12" class="answer-box">সঠিক উত্তর: (A) If-Then</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৩. স্ক্র্যাচে দুটি সংখ্যার তুলনা বা যোগ-বিয়োগ করার জন্য কোন রঙের ব্লক ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Blue &nbsp; (B) Green &nbsp; (C) Orange &nbsp; (D) Purple
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans13')">👁️ উত্তর দেখো</button>
+      <div id="ans13" class="answer-box">সঠিক উত্তর: (B) Green (Operators)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৪. স্প্রাইট যখন নড়াচড়া করবে তখন স্ক্রিনে দাগ কাটার জন্য কোন এক্সটেনশন প্রয়োজন?</div>
+      <div class="options">
+        (A) Draw &nbsp; (B) Pencil &nbsp; (C) Pen &nbsp; (D) Line
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans14')">👁️ উত্তর দেখো</button>
+      <div id="ans14" class="answer-box">সঠিক উত্তর: (C) Pen Extension</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৫. কোনো স্প্রাইট কিবোর্ডের কোনো নির্দিষ্ট বাটন (যেমন: Space) চাপলে কাজ শুরু করবে—এটি কোন ব্লকের কাজ?</div>
+      <div class="options">
+        (A) Motion &nbsp; (B) Looks &nbsp; (C) Events &nbsp; (D) Control
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans15')">👁️ উত্তর দেখো</button>
+      <div id="ans15" class="answer-box">সঠিক উত্তর: (C) Events ("When key pressed")</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৬. স্প্রাইটকে একদম উল্টো দিকে ঘোরানোর জন্য 'Point in direction' কত সেট করতে হয়?</div>
+      <div class="options">
+        (A) 90 &nbsp; (B) -90 &nbsp; (C) 0 &nbsp; (D) 180
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans16')">👁️ উত্তর দেখো</button>
+      <div id="ans16" class="answer-box">সঠিক উত্তর: (B) -90 (বাম দিকে) বা (D) 180 (নিচের দিকে) - প্রসঙ্গের ওপর নির্ভর করে। তবে উল্টো দিক বলতে সাধারণত -90 বা 180 বুঝায়।</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৭. স্ক্র্যাচে একটি স্প্রাইটকে মাউসের সাথে সাথে ঘোরানোর জন্য কোন কমান্ড ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Move 10 steps &nbsp; (B) Point towards mouse-pointer &nbsp; (C) Go to random position &nbsp; (D) Glide to mouse
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans17')">👁️ উত্তর দেখো</button>
+      <div id="ans17" class="answer-box">সঠিক উত্তর: (B) Point towards mouse-pointer</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৮. কোনো কাজ সারাজীবন বা অনির্দিষ্টকাল চালানোর জন্য কোন লুপটি ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Repeat 10 &nbsp; (B) Repeat Until &nbsp; (C) Forever &nbsp; (D) Wait Until
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans18')">👁️ উত্তর দেখো</button>
+      <div id="ans18" class="answer-box">সঠিক উত্তর: (C) Forever</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৯. ভ্যারিয়েবল (Variable) ব্লকের মান ৫ বাড়াতে হলে কোন কমান্ড দিতে হবে?</div>
+      <div class="options">
+        (A) Set score to 5 &nbsp; (B) Change score by 5 &nbsp; (C) Add 5 &nbsp; (D) Plus 5
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans19')">👁️ উত্তর দেখো</button>
+      <div id="ans19" class="answer-box">সঠিক উত্তর: (B) Change score by 5</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২০. নিজের তৈরি কোনো বিশেষ কমান্ড বা ফাংশন বানানোর জন্য কোন ট্যাব ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Variables &nbsp; (B) Operators &nbsp; (C) My Blocks &nbsp; (D) Sensing
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans20')">👁️ উত্তর দেখো</button>
+      <div id="ans20" class="answer-box">সঠিক উত্তর: (C) My Blocks</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | গেম ডেভেলপারস ইন মেকিং</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #8a2be2; color: white; cursor: pointer; font-weight: bold;">🔄 রিলোড প্রশ্ন</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      x.style.display = (x.style.display === "none" || x.style.display === "") ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
