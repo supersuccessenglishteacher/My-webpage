@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS Excel Part 4 - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f7f2; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #185c37; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #185c37; transition: 0.3s; }
+  .quiz-card:hover { transform: scale(1.01); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #f9f9f9; padding: 10px; border-radius: 8px; border: 1px solid #eee; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #e8f5e9; border-radius: 8px; border-left: 4px solid #2e7d32; color: #1b5e20; font-weight: bold; animation: slideIn 0.3s ease-out; }
+  
+  @keyframes slideIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; transform: translateX(0); } }
+
+  .show-btn { background: #185c37; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #ff9800; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+  .badge { background: #000; color: #fff; padding: 2px 12px; border-radius: 10px; font-size: 11px; margin-bottom: 10px; display: inline-block; font-weight: bold; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">📊 MS Excel Expert (Part 4)</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">এক্সপার্ট লেভেল</div>
+      <div class="question">৩১. এক্সেলে কোনো ফর্মুলা কপি করার সময় সেল অ্যাড্রেস যাতে পরিবর্তন না হয় (Absolute Reference), তার জন্য কোন চিহ্নটি ব্যবহৃত হয়?</div>
+      <div class="options">
+        (A) # &nbsp; (B) @ &nbsp; (C) $ (Dollar) &nbsp; (D) &
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans31')">👁️ উত্তর দেখো</button>
+      <div id="ans31" class="answer-box">সঠিক উত্তর: (C) $ (Dollar) যেমন: $A$1</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩২. এক্সেলে যদি কোনো সংখ্যাকে ০ (Zero) দিয়ে ভাগ করা হয়, তবে কোন এরর (Error) মেসেজটি দেখাবে?</div>
+      <div class="options">
+        (A) #VALUE! &nbsp; (B) #DIV/0! &nbsp; (C) #NAME? &nbsp; (D) #REF!
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans32')">👁️ উত্তর দেখো</button>
+      <div id="ans32" class="answer-box">সঠিক উত্তর: (B) #DIV/0!</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩৩. কোনো সেলে ড্রপডাউন মেনু তৈরি করার সময় 'List' অপশনটি কোন ফিচারের অধীনে থাকে?</div>
+      <div class="options">
+        (A) Data Sorting &nbsp; (B) Data Validation &nbsp; (C) Conditional Formatting &nbsp; (D) Consolidation
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans33')">👁️ উত্তর দেখো</button>
+      <div id="ans33" class="answer-box">সঠিক উত্তর: (B) Data Validation</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩৪. এক্সেলে কোনো রো (Row) হাইড (Hide) করার শর্টকাট কী কোনটি?</div>
+      <div class="options">
+        (A) Ctrl + 9 &nbsp; (B) Ctrl + 0 &nbsp; (C) Ctrl + H &nbsp; (D) Alt + H
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans34')">👁️ উত্তর দেখো</button>
+      <div id="ans34" class="answer-box">সঠিক উত্তর: (A) Ctrl + 9</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩৫. এক্সেলে কলামের চওড়া যদি খুব ছোট হয় এবং সংখ্যাগুলো না ধরে, তবে কোন চিহ্নটি দেখায়?</div>
+      <div class="options">
+        (A) #NAME? &nbsp; (B) ##### &nbsp; (C) #REF! &nbsp; (D) @@@@@
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans35')">👁️ উত্তর দেখো</button>
+      <div id="ans35" class="answer-box">সঠিক উত্তর: (B) #####</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩৬. এক্সেলে কোনো সেল এডিট (Edit) করার জন্য ফাংশন কী কোনটি?</div>
+      <div class="options">
+        (A) F1 &nbsp; (B) F2 &nbsp; (C) F4 &nbsp; (D) F7
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans36')">👁️ উত্তর দেখো</button>
+      <div id="ans36" class="answer-box">সঠিক উত্তর: (B) F2</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩৭. এক্সেলে একাধিক সেলের গড় করার সময় যদি কোনো সেলে লেখা (Text) থাকে, তবে কোন ফর্মুলাটি সেটি উপেক্ষা করে?</div>
+      <div class="options">
+        (A) =AVERAGE() &nbsp; (B) =AVERAGEA() &nbsp; (C) =MEAN() &nbsp; (D) =SUM()
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans37')">👁️ উত্তর দেখো</button>
+      <div id="ans37" class="answer-box">সঠিক উত্তর: (A) =AVERAGE()</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩৮. এক্সেলে ফিল্টার (Filter) অন বা অফ করার শর্টকাট কী কোনটি?</div>
+      <div class="options">
+        (A) Ctrl + Shift + L &nbsp; (B) Ctrl + F &nbsp; (C) Alt + F &nbsp; (D) Ctrl + Alt + L
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans38')">👁️ উত্তর দেখো</button>
+      <div id="ans38" class="answer-box">সঠিক উত্তর: (A) Ctrl + Shift + L</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩৯. এক্সেলে 'Goal Seek' অপশনটি কোন মেনুর অধীনে থাকে?</div>
+      <div class="options">
+        (A) What-If Analysis &nbsp; (B) Formulas &nbsp; (C) Insert &nbsp; (D) View
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans39')">👁️ উত্তর দেখো</button>
+      <div id="ans39" class="answer-box">সঠিক উত্তর: (A) What-If Analysis (Data Tab)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৪০. এক্সেলে একটি সম্পূর্ণ কলাম সিলেক্ট করার শর্টকাট কোনটি?</div>
+      <div class="options">
+        (A) Ctrl + Space &nbsp; (B) Shift + Space &nbsp; (C) Ctrl + A &nbsp; (D) Alt + Space
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans40')">👁️ উত্তর দেখো</button>
+      <div id="ans40" class="answer-box">সঠিক উত্তর: (A) Ctrl + Space</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | এক্সেল মাস্টার্স ল্যাব</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #185c37; color: white; cursor: pointer; font-weight: bold;">🔄 নতুন করে শুরু করো</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
