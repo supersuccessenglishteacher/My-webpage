@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Windows Part 2 - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f1f4f9; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #2b579a; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #2b579a; transition: 0.3s; }
+  .quiz-card:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #f9fbff; padding: 10px; border-radius: 8px; border: 1px solid #d9e2ec; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #e1eaf7; border-radius: 8px; border-left: 4px solid #2b579a; color: #1e3a63; font-weight: bold; animation: fadeIn 0.4s; }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .show-btn { background: #2b579a; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #1e3a63; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+  .badge { background: #ff9800; color: white; padding: 2px 12px; border-radius: 10px; font-size: 11px; margin-bottom: 10px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">🖥️ Windows Advanced Challenge (Part 2)</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">অ্যাডভান্সড</div>
+      <div class="question">১১. কম্পিউটারের প্রসেসর এবং র‍্যাম (RAM) কত—তা দেখার জন্য কোন শর্টকাট ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Win + Pause/Break &nbsp; (B) Win + R &nbsp; (C) Ctrl + Alt + Del &nbsp; (D) Alt + F4
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans11')">👁️ উত্তর দেখো</button>
+      <div id="ans11" class="answer-box">সঠিক উত্তর: (A) Win + Pause/Break</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১২. সরাসরি 'File Explorer' খোলার জন্য কিবোর্ড শর্টকাট কোনটি?</div>
+      <div class="options">
+        (A) Win + F &nbsp; (B) Win + E &nbsp; (C) Win + X &nbsp; (D) Win + L
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans12')">👁️ উত্তর দেখো</button>
+      <div id="ans12" class="answer-box">সঠিক উত্তর: (B) Win + E</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৩. কম্পিউটারের স্ক্রিন লক (Lock Screen) করার দ্রুততম শর্টকাট কী কোনটি?</div>
+      <div class="options">
+        (A) Win + L &nbsp; (B) Win + S &nbsp; (C) Alt + L &nbsp; (D) Ctrl + L
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans13')">👁️ উত্তর দেখো</button>
+      <div id="ans13" class="answer-box">সঠিক উত্তর: (A) Win + L</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৪. কমান্ড প্রম্পট (Command Prompt) খোলার জন্য রান বক্সে (Run Box) কী লিখতে হয়?</div>
+      <div class="options">
+        (A) Command &nbsp; (B) CMD &nbsp; (C) WinCmd &nbsp; (D) Terminal
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans14')">👁️ উত্তর দেখো</button>
+      <div id="ans14" class="answer-box">সঠিক উত্তর: (B) CMD</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৫. উইন্ডোজের স্ক্রিনশট নেওয়ার আধুনিক শর্টকাট (Snip & Sketch) কোনটি?</div>
+      <div class="options">
+        (A) Win + Shift + S &nbsp; (B) Win + P &nbsp; (C) Alt + PrintScreen &nbsp; (D) Ctrl + Shift + S
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans15')">👁️ উত্তর দেখো</button>
+      <div id="ans15" class="answer-box">সঠিক উত্তর: (A) Win + Shift + S</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৬. কম্পিউটারে কোনো ভাইরাস চেক করার জন্য উইন্ডোজের নিজস্ব টুলের নাম কী?</div>
+      <div class="options">
+        (A) Windows Guard &nbsp; (B) Windows Defender / Security &nbsp; (C) Safe Mode &nbsp; (D) System Restore
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans16')">👁️ উত্তর দেখো</button>
+      <div id="ans16" class="answer-box">সঠিক উত্তর: (B) Windows Defender / Security</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৭. হার্ডড্রাইভের অপ্রয়োজনীয় ফাইল মুছে ফেলার জন্য কোন টুলটি ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Disk Cleanup &nbsp; (B) Disk Format &nbsp; (C) Defragment &nbsp; (D) ScanDisk
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans17')">👁️ উত্তর দেখো</button>
+      <div id="ans17" class="answer-box">সঠিক উত্তর: (A) Disk Cleanup</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৮. বর্তমানে কম্পিউটারে কতগুলো র‍্যাম (RAM) স্লট খালি আছে তা কোথা থেকে দেখা যায়?</div>
+      <div class="options">
+        (A) Control Panel &nbsp; (B) Task Manager &nbsp; (C) My Computer &nbsp; (D) Device Manager
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans18')">👁️ উত্তর দেখো</button>
+      <div id="ans18" class="answer-box">সঠিক উত্তর: (B) Task Manager (Performance Tab)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১৯. কম্পিউটারের হার্ডওয়্যার সংক্রান্ত সমস্যার সমাধান বা ড্রাইভ আপডেট করার জায়গা কোনটি?</div>
+      <div class="options">
+        (A) Device Manager &nbsp; (B) File Manager &nbsp; (C) Task Manager &nbsp; (D) Program Manager
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans19')">👁️ উত্তর দেখো</button>
+      <div id="ans19" class="answer-box">সঠিক উত্তর: (A) Device Manager</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২০. উইন্ডোজের 'Quick Access Menu' (যা স্টার্ট বাটনে রাইট ক্লিক করলে আসে) দেখার শর্টকাট কোনটি?</div>
+      <div class="options">
+        (A) Win + X &nbsp; (B) Win + Q &nbsp; (C) Win + Z &nbsp; (D) Win + I
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans20')">👁️ উত্তর দেখো</button>
+      <div id="ans20" class="answer-box">সঠিক উত্তর: (A) Win + X</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | টেকনিক্যাল নলেজ হুব</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #2b579a; color: white; cursor: pointer; font-weight: bold;">🔄 রিলোড কুইজ</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
