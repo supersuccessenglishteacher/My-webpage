@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer Software MCQ - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f5f3ff; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #6d28d9; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #a78bfa; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #6d28d9; transition: 0.3s; }
+  .quiz-card:hover { transform: translateY(-3px); }
+  .question { font-size: 18px; font-weight: bold; color: #1e1b4b; margin-bottom: 10px; }
+  .options { color: #4b5563; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #fdfcff; padding: 10px; border-radius: 8px; border: 1px solid #e5e7eb; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #ede9fe; border-radius: 8px; border-left: 4px solid #7c3aed; color: #4338ca; font-weight: bold; animation: fadeIn 0.4s; }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .show-btn { background: #7c3aed; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #5b21b6; }
+  
+  .footer { margin-top: 30px; color: #6b7280; font-size: 14px; text-align: center; }
+  .badge { background: #ddd6fe; color: #5b21b6; padding: 2px 10px; border-radius: 10px; font-size: 11px; margin-bottom: 10px; display: inline-block; font-weight: bold; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">💾 Computer Software Quiz</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="badge">বেসিক</div>
+      <div class="question">১. কম্পিউটারের যে অংশগুলো ছোঁয়া যায় না কিন্তু কাজের নির্দেশ দেয়, তাদের কী বলে?</div>
+      <div class="options">
+        (A) Hardware &nbsp; (B) Software &nbsp; (C) CPU &nbsp; (D) RAM
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans1')">👁️ উত্তর দেখো</button>
+      <div id="ans1" class="answer-box">সঠিক উত্তর: (B) Software</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২. নিচের কোনটি একটি 'অপারেটিং সিস্টেম' (System Software)?</div>
+      <div class="options">
+        (A) MS Paint &nbsp; (B) Windows 10 &nbsp; (C) Google Chrome &nbsp; (D) MS Word
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans2')">👁️ উত্তর দেখো</button>
+      <div id="ans2" class="answer-box">সঠিক উত্তর: (B) Windows 10</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩. কোনো নির্দিষ্ট কাজের জন্য (যেমন- ছবি আঁকা বা গান শোনা) যে সফটওয়্যার ব্যবহৃত হয় তাকে কী বলে?</div>
+      <div class="options">
+        (A) System Software &nbsp; (B) Application Software &nbsp; (C) Hardware &nbsp; (D) Utility
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans3')">👁️ উত্তর দেখো</button>
+      <div id="ans3" class="answer-box">সঠিক উত্তর: (B) Application Software</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৪. কম্পিউটারের ক্ষতিকারক ভাইরাস দূর করার জন্য কোন সফটওয়্যার প্রয়োজন?</div>
+      <div class="options">
+        (A) Web Browser &nbsp; (B) Antivirus &nbsp; (C) Media Player &nbsp; (D) Photoshop
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans4')">👁️ উত্তর দেখো</button>
+      <div id="ans4" class="answer-box">সঠিক উত্তর: (B) Antivirus</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৫. ইন্টারনেটে ওয়েবসাইট দেখার জন্য কোন সফটওয়্যারটি ব্যবহৃত হয়?</div>
+      <div class="options">
+        (A) MS PowerPoint &nbsp; (B) Web Browser &nbsp; (C) Excel &nbsp; (D) Calculator
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans5')">👁️ উত্তর দেখো</button>
+      <div id="ans5" class="answer-box">সঠিক উত্তর: (B) Web Browser (যেমন: Chrome, Firefox)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৬. নিচের কোনটি একটি 'এপ্লিকেশন সফটওয়্যার' নয়?</div>
+      <div class="options">
+        (A) MS Word &nbsp; (B) Linux &nbsp; (C) Photoshop &nbsp; (D) VLC Player
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans6')">👁️ উত্তর দেখো</button>
+      <div id="ans6" class="answer-box">সঠিক উত্তর: (B) Linux (এটি একটি অপারেটিং সিস্টেম)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৭. ফোনের জন্য সবচেয়ে জনপ্রিয় অপারেটিং সিস্টেম কোনটি?</div>
+      <div class="options">
+        (A) Windows &nbsp; (B) Android &nbsp; (C) MS Office &nbsp; (D) MacOS
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans7')">👁️ উত্তর দেখো</button>
+      <div id="ans7" class="answer-box">সঠিক উত্তর: (B) Android</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৮. গান শোনার বা ভিডিও দেখার জন্য নিচের কোনটি ব্যবহৃত হয়?</div>
+      <div class="options">
+        (A) Database &nbsp; (B) Media Player &nbsp; (C) Browser &nbsp; (D) Spreadsheet
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans8')">👁️ উত্তর দেখো</button>
+      <div id="ans8" class="answer-box">সঠিক উত্তর: (B) Media Player</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৯. কম্পিউটারের সব হার্ডওয়্যারকে কাজ করার জন্য নিয়ন্ত্রণ করে কে?</div>
+      <div class="options">
+        (A) Game &nbsp; (B) Operating System &nbsp; (C) Paint &nbsp; (D) Mouse
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans9')">👁️ উত্তর দেখো</button>
+      <div id="ans9" class="answer-box">সঠিক উত্তর: (B) Operating System</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১০. গুগল ক্রোম (Google Chrome) কী ধরনের সফটওয়্যার?</div>
+      <div class="options">
+        (A) System Software &nbsp; (B) Browser &nbsp; (C) Operating System &nbsp; (D) Drawing Software
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans10')">👁️ উত্তর দেখো</button>
+      <div id="ans10" class="answer-box">সঠিক উত্তর: (B) Browser</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | সফটওয়্যার ও লজিক ল্যাব</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #6d28d9; color: white; cursor: pointer; font-weight: bold;">🔄 আবার শুরু করো</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      x.style.display = (x.style.display === "none" || x.style.display === "") ? "block" : "none";
+    }
+  </script>
+
+</body>
+</html>
