@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS Word MCQ - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f7f9; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #2b579a; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #2b579a; transition: 0.3s; }
+  .quiz-card:hover { transform: scale(1.01); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #f9f9f9; padding: 10px; border-radius: 8px; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #dff0d8; border-radius: 8px; border-left: 4px solid #3c763d; color: #3c763d; font-weight: bold; animation: fadeIn 0.5s; }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .show-btn { background: #2b579a; color: white; border: none; padding: 8px 18px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #1e3e6d; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">📝 MS Word MCQ Challenge</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="question">১. MS Word-এ নতুন একটি ডকুমেন্ট খোলার শর্টকাট কী কোনটি?</div>
+      <div class="options">
+        (A) Ctrl + O &nbsp; (B) Ctrl + N &nbsp; (C) Ctrl + S &nbsp; (D) Ctrl + M
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans1')">👁️ উত্তর দেখো</button>
+      <div id="ans1" class="answer-box">সঠিক উত্তর: (B) Ctrl + N</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২. কোনো লেখাকে পেজের একদম মাঝখানে (Center) আনার শর্টকাট কী?</div>
+      <div class="options">
+        (A) Ctrl + C &nbsp; (B) Ctrl + L &nbsp; (C) Ctrl + E &nbsp; (D) Ctrl + R
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans2')">👁️ উত্তর দেখো</button>
+      <div id="ans2" class="answer-box">সঠিক উত্তর: (C) Ctrl + E</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩. MS Word-এ বানান ভুল হলে শব্দের নিচে কোন রঙের আঁকাবাঁকা দাগ দেখা যায়?</div>
+      <div class="options">
+        (A) নীল &nbsp; (B) সবুজ &nbsp; (C) লাল &nbsp; (D) কালো
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans3')">👁️ উত্তর দেখো</button>
+      <div id="ans3" class="answer-box">সঠিক উত্তর: (C) লাল (Red)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৪. সিলেক্ট করা লেখাকে মোটা (Bold) করার জন্য কোনটি ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) Ctrl + B &nbsp; (B) Ctrl + I &nbsp; (C) Ctrl + U &nbsp; (D) Ctrl + P
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans4')">👁️ উত্তর দেখো</button>
+      <div id="ans4" class="answer-box">সঠিক উত্তর: (A) Ctrl + B</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৫. ডকুমেন্টের কোনো শব্দ খোঁজার (Find) জন্য কোন শর্টকাট ব্যবহৃত হয়?</div>
+      <div class="options">
+        (A) Ctrl + H &nbsp; (B) Ctrl + F &nbsp; (C) Ctrl + G &nbsp; (D) Ctrl + K
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans5')">👁️ উত্তর দেখো</button>
+      <div id="ans5" class="answer-box">সঠিক উত্তর: (B) Ctrl + F</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৬. MS Word-এ পেজের মাপ, ওরিয়েন্টেশন এবং মার্জিন কোন ট্যাবে থাকে?</div>
+      <div class="options">
+        (A) Home &nbsp; (B) Insert &nbsp; (C) Layout / Page Layout &nbsp; (D) View
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans6')">👁️ উত্তর দেখো</button>
+      <div id="ans6" class="answer-box">সঠিক উত্তর: (C) Layout / Page Layout</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৭. লেখাকে আন্ডারলাইন (Underline) করার শর্টকাট কমান্ড কোনটি?</div>
+      <div class="options">
+        (A) Ctrl + U &nbsp; (B) Ctrl + I &nbsp; (C) Ctrl + B &nbsp; (D) Ctrl + Shift + U
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans7')">👁️ উত্তর দেখো</button>
+      <div id="ans7" class="answer-box">সঠিক উত্তর: (A) Ctrl + U</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৮. MS Word ফাইলে 'Save As' করার জন্য কিবোর্ডের কোন ফাংশন কী (Key) চাপতে হয়?</div>
+      <div class="options">
+        (A) F1 &nbsp; (B) F5 &nbsp; (C) F7 &nbsp; (D) F12
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans8')">👁️ উত্তর দেখো</button>
+      <div id="ans8" class="answer-box">সঠিক উত্তর: (D) F12</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৯. ডকুমেন্টের একদম উপরে ও নিচে যে লেখা সব পেজে থাকে তাকে কী বলে?</div>
+      <div class="options">
+        (A) Top & Bottom &nbsp; (B) Header & Footer &nbsp; (C) Margin &nbsp; (D) Border
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans9')">👁️ উত্তর দেখো</button>
+      <div id="ans9" class="answer-box">সঠিক উত্তর: (B) Header & Footer</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১০. ডকুমেন্টটি প্রিন্ট করার আগে কেমন দেখাবে তা দেখার জন্য (Print Preview) কোনটি ব্যবহৃত হয়?</div>
+      <div class="options">
+        (A) Ctrl + F1 &nbsp; (B) Ctrl + F2 &nbsp; (C) Alt + F2 &nbsp; (D) Shift + F2
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans10')">👁️ উত্তর দেখো</button>
+      <div id="ans10" class="answer-box">সঠিক উত্তর: (B) Ctrl + F2</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | Developed for Digital Learning</p>
+    <button onclick="location.reload()" style="padding: 10px 20px; border-radius: 20px; border: none; background: #ddd; cursor: pointer; font-weight: bold;">🔄 সব উত্তর রিফ্রেশ করো</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
