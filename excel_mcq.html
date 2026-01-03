@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MS Excel MCQ - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4fdf4; margin: 0; padding: 20px; display: flex; flex-direction: column; align-items: center; }
+  .header { background: #217346; color: white; width: 100%; max-width: 800px; text-align: center; padding: 20px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 30px; border-bottom: 5px solid #ffeb3b; }
+  .container { width: 100%; max-width: 800px; }
+  .quiz-card { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); border-left: 6px solid #217346; transition: 0.3s; }
+  .quiz-card:hover { transform: scale(1.01); }
+  .question { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+  .options { color: #555; margin-bottom: 15px; font-size: 16px; line-height: 1.6; background: #f9fdfa; padding: 10px; border-radius: 8px; border: 1px solid #e0eee0; }
+  
+  .answer-box { display: none; margin-top: 15px; padding: 15px; background-color: #e8f5e9; border-radius: 8px; border-left: 4px solid #2e7d32; color: #1b5e20; font-weight: bold; animation: fadeIn 0.4s ease-in; }
+  
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  .show-btn { background: #217346; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; font-size: 14px; transition: 0.2s; font-weight: bold; }
+  .show-btn:hover { background: #1a5c38; }
+  
+  .footer { margin-top: 30px; color: #777; font-size: 14px; text-align: center; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1 style="margin:0;">📊 MS Excel MCQ (Part 1)</h1>
+    <p style="margin:5px 0 0;">Super Success Computer Education Center</p>
+  </div>
+
+  <div class="container">
+    
+    <div class="quiz-card">
+      <div class="question">১. MS Excel-এ একটি ফাইলকে কী বলা হয়?</div>
+      <div class="options">
+        (A) Document &nbsp; (B) Workbook &nbsp; (C) Presentation &nbsp; (D) Database
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans1')">👁️ উত্তর দেখো</button>
+      <div id="ans1" class="answer-box">সঠিক উত্তর: (B) Workbook</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">২. এক্সেল শিটে লম্বালম্বি ঘরগুলোকে (A, B, C...) কী বলা হয়?</div>
+      <div class="options">
+        (A) Rows &nbsp; (B) Cells &nbsp; (C) Columns &nbsp; (D) Lines
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans2')">👁️ উত্তর দেখো</button>
+      <div id="ans2" class="answer-box">সঠিক উত্তর: (C) Columns</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৩. একটি কলাম এবং একটি রো (Row) যেখানে মিলিত হয় তাকে কী বলে?</div>
+      <div class="options">
+        (A) Box &nbsp; (B) Cell &nbsp; (C) Area &nbsp; (D) Block
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans3')">👁️ উত্তর দেখো</button>
+      <div id="ans3" class="answer-box">সঠিক উত্তর: (B) Cell</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৪. MS Excel-এ যেকোনো ফর্মুলা বা হিসাব শুরু করার আগে কোন চিহ্নটি দিতে হয়?</div>
+      <div class="options">
+        (A) + &nbsp; (B) # &nbsp; (C) = &nbsp; (D) @
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans4')">👁️ উত্তর দেখো</button>
+      <div id="ans4" class="answer-box">সঠিক উত্তর: (C) = (Equal Sign)</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৫. সংখ্যাগুলো যোগ করার জন্য কোন ফাংশনটি (Function) ব্যবহার করা হয়?</div>
+      <div class="options">
+        (A) TOTAL &nbsp; (B) SUM &nbsp; (C) ADD &nbsp; (D) PLUS
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans5')">👁️ উত্তর দেখো</button>
+      <div id="ans5" class="answer-box">সঠিক উত্তর: (B) SUM</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৬. এক্সেল শিটের একদম নিচের দিকে যে আলাদা আলাদা পেজ থাকে সেগুলোকে কী বলে?</div>
+      <div class="options">
+        (A) Web Sheets &nbsp; (B) Worksheets &nbsp; (C) Data Sheets &nbsp; (D) View Sheets
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans6')">👁️ উত্তর দেখো</button>
+      <div id="ans6" class="answer-box">সঠিক উত্তর: (B) Worksheets</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৭. প্রথম রো এবং প্রথম কলামের সেল অ্যাড্রেস (Cell Address) কোনটি?</div>
+      <div class="options">
+        (A) 1A &nbsp; (B) A1 &nbsp; (C) AA &nbsp; (D) 11
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans7')">👁️ উত্তর দেখো</button>
+      <div id="ans7" class="answer-box">সঠিক উত্তর: (B) A1</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৮. এক্সেলে কোনো ছোট বা বড় সংখ্যা খুঁজে বের করার ফর্মুলা কোনটি?</div>
+      <div class="options">
+        (A) MAX & MIN &nbsp; (B) BIG & SMALL &nbsp; (C) LARGE & TINY &nbsp; (D) HIGH & LOW
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans8')">👁️ উত্তর দেখো</button>
+      <div id="ans8" class="answer-box">সঠিক উত্তর: (A) MAX & MIN</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">৯. এক্সেল শিটে অনেকগুলো ঘরকে এক করার পদ্ধতিকে কী বলা হয়?</div>
+      <div class="options">
+        (A) Join Cells &nbsp; (B) Merge & Center &nbsp; (C) Mix Cells &nbsp; (D) Combine
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans9')">👁️ উত্তর দেখো</button>
+      <div id="ans9" class="answer-box">সঠিক উত্তর: (B) Merge & Center</div>
+    </div>
+
+    <div class="quiz-card">
+      <div class="question">১০. এক্সেলে কোনো সংখ্যাকে গুনের জন্য কিবোর্ডের কোন চিহ্নটি ব্যবহৃত হয়?</div>
+      <div class="options">
+        (A) X &nbsp; (B) + &nbsp; (C) * (Asterisk) &nbsp; (D) /
+      </div>
+      <button class="show-btn" onclick="toggleAns('ans10')">👁️ উত্তর দেখো</button>
+      <div id="ans10" class="answer-box">সঠিক উত্তর: (C) * (Asterisk)</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p>© 2026 SSCEC | হিসাবের সঠিক সমাধান</p>
+    <button onclick="location.reload()" style="padding: 10px 25px; border-radius: 20px; border: none; background: #217346; color: white; cursor: pointer;">🔄 রিফ্রেশ করো</button>
+  </div>
+
+  <script>
+    function toggleAns(id) {
+      var x = document.getElementById(id);
+      if (x.style.display === "none" || x.style.display === "") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
