@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advance MS Office Mock Test - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #eceff1; display: flex; flex-direction: column; align-items: center; padding: 10px; margin: 0; }
+  .header { text-align: center; background: #263238; color: white; padding: 20px; border-radius: 15px; width: 100%; max-width: 800px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 20px; border-bottom: 5px solid #00e676; }
+  .center-name { font-size: 22px; font-weight: bold; margin: 0; }
+  .address { font-size: 13px; margin: 5px 0; color: #cfd8dc; }
+  .contact-info { font-size: 14px; margin-top: 5px; color: #00e676; font-weight: bold; }
+
+  #setup-box { background: white; padding: 30px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+  input[type="text"] { width: 85%; padding: 12px; margin: 15px 0; border: 2px solid #263238; border-radius: 8px; font-size: 16px; }
+
+  .dashboard { display: none; justify-content: space-around; width: 100%; max-width: 800px; margin-bottom: 15px; }
+  .stat-box { background: #263238; color: white; padding: 10px 20px; border-radius: 10px; font-weight: bold; font-size: 18px; }
+
+  #quiz-container { display: none; width: 100%; max-width: 800px; }
+  .question-card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px; border-left: 8px solid #00e676; }
+  .question-text { font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #333; line-height: 1.5; }
+  .lang-en { display: block; font-size: 15px; color: #546e7a; margin-bottom: 5px; font-style: italic; }
+  .option-btn { display: block; width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; cursor: pointer; text-align: left; font-size: 16px; transition: 0.3s; }
+  .option-btn:hover { background: #e8f5e9; border-color: #00e676; }
+
+  #result-overlay { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 20px; box-shadow: 0 0 50px rgba(0,0,0,0.3); text-align: center; width: 85%; max-width: 450px; z-index: 1000; border: 4px solid #263238; }
+  .wa-btn { background: #25D366; color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; display: inline-block; font-weight: bold; margin-top: 20px; font-size: 18px; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="center-name">SUPER SUCCESS COMPUTER EDUCATION CENTER</div>
+    <div class="address">22/1 Bipin Paul Road, Nimta, Kolkata-49</div>
+    <div class="contact-info">📞 8017247298 | 9874152080</div>
+    <h3 style="margin: 10px 0 0; color: #00e676;">📊 Advance MS Office Mock Test (50 Marks)</h3>
+  </div>
+
+  <div id="setup-box">
+    <h3>পরীক্ষার্থীর নাম লেখো (Enter Name):</h3>
+    <input type="text" id="student-name" placeholder="তোমার পুরো নাম...">
+    <button onclick="startQuiz()" style="background:#263238; color:white; border:none; padding:12px 30px; border-radius:8px; cursor:pointer; font-weight:bold;">শুরু করো (Start) 🚀</button>
+  </div>
+
+  <div id="dashboard" class="dashboard">
+    <div class="stat-box" id="timer">⏳ সময়: 900s</div>
+    <div class="stat-box">⭐ স্কোর: <span id="current-score">0</span> / 50</div>
+  </div>
+
+  <div id="quiz-container">
+    <div id="quiz-box"></div>
+  </div>
+
+  <div id="result-overlay">
+    <div style="font-size: 50px;">🎖️</div>
+    <h2 id="final-name"></h2>
+    <p style="font-size: 20px;">তোমার মোট স্কোর: <span id="final-score"></span>/৫০</p>
+    <a id="wa-link" href="#" class="wa-btn" target="_blank">📲 ফলাফল স্যারকে পাঠাও</a>
+    <br><br>
+    <button onclick="location.reload()" style="background:#666; color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer;">বন্ধ করো</button>
+  </div>
+
+<script>
+  const questions = [
+    { qe: "What is VLOOKUP used for?", qb: "VLOOKUP কীসের জন্য ব্যবহৃত হয়?", a: ["Vertical Search", "Sum of Data", "Sorting"], c: 0 },
+    { qe: "Which tool summarizes large data quickly?", qb: "কোন টুলটি বড় ডেটাকে দ্রুত সারসংক্ষেপ করে?", a: ["Chart", "Pivot Table", "Mail Merge"], c: 1 },
+    { qe: "Shortcut to lock a cell in Excel?", qb: "এক্সেল-এ সেল লক করার শর্টকাট কী?", a: ["F2", "F4", "F10"], c: 1 },
+    { qe: "What highlights cells based on conditions?", qb: "শর্তের ভিত্তিতে সেল হাইলাইট করে কোনটি?", a: ["Format Painter", "Conditional Formatting", "Data Validation"], c: 1 },
+    { qe: "Function to join two text strings?", qb: "দুটি লেখাকে জোড়া দেওয়ার ফাংশন কোনটি?", a: ["SUM", "CONCATENATE", "IF"], c: 1 },
+    { qe: "Shortcut for Find and Replace?", qb: "Find and Replace-এর শর্টকাট কী?", a: ["Ctrl+F", "Ctrl+H", "Ctrl+R"], c: 1 },
+    { qe: "Which tool helps achieve a target result?", qb: "টার্গেট রেজাল্ট পাওয়ার জন্য কোন টুলটি লাগে?", a: ["Goal Seek", "Macro", "Sort"], c: 0 },
+    { qe: "To record repetitive tasks, we use?", qb: "একই কাজ বারবার করার জন্য আমরা কী ব্যবহার করি?", a: ["Mail Merge", "Macro", "Bookmark"], c: 1 },
+    { qe: "Absolute cell reference uses which sign?", qb: "অ্যাবসোলিউট সেল রেফারেন্সে কোন চিহ্ন থাকে?", a: ["%", "&", "$"], c: 2 },
+    { qe: "Same letter to many people is called?", qb: "একই চিঠি অনেকের কাছে পাঠানোকে কী বলে?", a: ["Mail Merge", "Hyperlink", "Page Break"], c: 0 },
+    { qe: "To track edits by different users, use?", qb: "অন্যের করা এডিট রেকর্ড করতে কোনটি লাগে?", a: ["Thesaurus", "Track Changes", "Watermark"], c: 1 },
+    { qe: "Shortcut to start Slideshow from start?", qb: "প্রথম থেকে স্লাইডশো দেখার শর্টকাট কী?", a: ["F5", "Shift+F5", "Ctrl+S"], c: 0 },
+    { qe: "Controls layout for all slides?", qb: "সব স্লাইডের ডিজাইন নিয়ন্ত্রণ করে কোনটি?", a: ["Slide Master", "Animation", "Transition"], c: 0 },
+    { qe: "Movement between slides is called?", qb: "এক স্লাইড থেকে অন্য স্লাইডের মুভমেন্ট কী?", a: ["Animation", "Transition", "Hyperlink"], c: 1 },
+    { qe: "Shortcut to duplicate a slide?", qb: "স্লাইড ডুপ্লিকেট করার শর্টকাট কী?", a: ["Ctrl+N", "Ctrl+D", "Ctrl+M"], c: 1 },
+    { qe: "Faint background image on a page?", qb: "পেজের ঝাপসা ব্যাকগ্রাউন্ড ইমেজকে কী বলে?", a: ["Header", "Watermark", "Footer"], c: 1 },
+    { qe: "To find synonyms in MS Word?", qb: "সমার্থক শব্দ খুঁজে বের করার টুল কোনটি?", a: ["Spell Check", "Thesaurus", "Translate"], c: 1 },
+    { qe: "To end a page and move to next?", qb: "পেজ শেষ করে পরের পেজে যেতে কোনটি লাগে?", a: ["Section Break", "Page Break", "Line Break"], c: 1 },
+    { qe: "Shortcut for Bold text?", qb: "লেখাকে বোল্ড করার শর্টকাট কী?", a: ["Ctrl+K", "Ctrl+B", "Ctrl+U"], c: 1 },
+    { qe: "To add a link to a website, use?", qb: "ওয়েবসাইট লিঙ্ক যুক্ত করতে কোনটি লাগে?", a: ["Bookmark", "Hyperlink", "Transition"], c: 1 },
+    { qe: "To summarize data under specific criteria?", qb: "নির্দিষ্ট শর্তে ডেটা সামারি করতে কোনটি লাগে?", a: ["VLOOKUP", "Pivot Table", "Sorting"], c: 1 },
+    { qe: "To prevent others from editing a file?", qb: "ফাইল এডিট করা বন্ধ করতে কোনটি লাগে?", a: ["Protect Document", "Save As", "Track Changes"], c: 0 },
+    { qe: "View that shows slides as thumbnails?", qb: "স্লাইডগুলো ছোট আকারে দেখা যায় কোন ভিউতে?", a: ["Slide Show", "Slide Sorter", "Notes Page"], c: 1 },
+    { qe: "Shortcut to Select All?", qb: "সব লেখা একসাথে সিলেক্ট করার শর্টকাট কী?", a: ["Ctrl+S", "Ctrl+A", "Ctrl+Z"], c: 1 },
+    { qe: "To join text from multiple cells?", qb: "একাধিক সেলের লেখাকে জোড়া দিতে কোনটি লাগে?", a: ["TEXTJOIN", "SUMIF", "AVERAGE"], c: 0 }
+  ];
+
+  let currentQ = 0, score = 0, timer = 900, timerInterval, studentName = "";
+
+  function startQuiz() {
+    studentName = document.getElementById('student-name').value.trim();
+    if(!studentName) { alert("নাম লেখো!"); return; }
+    document.getElementById('setup-box').style.display = "none";
+    document.getElementById('dashboard').style.display = "flex";
+    document.getElementById('quiz-container').style.display = "block";
+    showQuestion();
+    startTimer();
+  }
+
+  function startTimer() {
+    timerInterval = setInterval(() => {
+      timer--;
+      let m = Math.floor(timer/60), s = timer%60;
+      document.getElementById('timer').innerText = `⏳ সময়: ${m}:${s<10?'0':''}${s}`;
+      if(timer <= 0) finishQuiz();
+    }, 1000);
+  }
+
+  function showQuestion() {
+    if(currentQ >= questions.length) { finishQuiz(); return; }
+    let q = questions[currentQ];
+    let html = `
+      <div class="question-card">
+        <span class="lang-en">${q.qe}</span>
+        <div class="question-text">${currentQ + 1}. ${q.qb}</div>
+        ${q.a.map((opt, i) => `<button class="option-btn" onclick="checkAnswer(${i})">${opt}</button>`).join('')}
+      </div>`;
+    document.getElementById('quiz-box').innerHTML = html;
+  }
+
+  function checkAnswer(idx) {
+    if(idx === questions[currentQ].c) {
+      score += 2;
+      document.getElementById('current-score').innerText = score;
+    }
+    currentQ++;
+    showQuestion();
+  }
+
+  function finishQuiz() {
+    clearInterval(timerInterval);
+    document.getElementById('quiz-container').style.opacity = "0.1";
+    document.getElementById('result-overlay').style.display = "block";
+    document.getElementById('final-name').innerText = "অসাধারণ, " + studentName + "!";
+    document.getElementById('final-score').innerText = score;
+    
+    let msg = `স্যার, আমি Advance MS Office Mock Test শেষ করেছি।%0Aনাম: ${studentName}%0Aস্কোর: ${score}/50%0Aসেন্টার: SSCEC, Nimta`;
+    document.getElementById('wa-link').href = `https://wa.me/918017247298?text=${msg}`;
+  }
+</script>
+</body>
+</html>
