@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Troubleshooting - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fdfcf0; margin: 0; padding: 10px; display: flex; flex-direction: column; align-items: center; }
+  .header { text-align: center; background: #455a64; color: white; padding: 25px; border-radius: 15px; width: 100%; max-width: 750px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 20px; border-bottom: 5px solid #00e676; }
+  .center-name { font-size: 20px; font-weight: bold; }
+  
+  .qa-container { width: 100%; max-width: 750px; }
+  .qa-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 6px solid #455a64; }
+  .question { font-size: 17px; font-weight: bold; color: #37474f; margin-bottom: 12px; display: flex; align-items: center; }
+  .question::before { content: "🔧"; margin-right: 10px; }
+  .answer { display: none; background: #f1f8e9; padding: 15px; border-radius: 8px; color: #2e7d32; font-weight: bold; margin-top: 10px; border: 1px solid #c8e6c9; line-height: 1.6; }
+  
+  .show-btn { background: #455a64; color: white; border: none; padding: 10px 18px; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; }
+  .show-btn:hover { background: #00e676; color: #000; }
+  .home-btn { text-decoration: none; background: #455a64; color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold; margin-top: 20px; margin-bottom: 30px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="center-name">SUPER SUCCESS COMPUTER EDUCATION CENTER</div>
+    <h3 style="margin: 10px 0 0; color: #00e676;">🛠️ কম্পিউটার ট্রাবলশুটিং গাইড</h3>
+    <p style="font-size: 14px; margin-top: 5px;">সাধারণ সমস্যা ও তার তাৎক্ষণিক সমাধান</p>
+  </div>
+
+  <div class="qa-container">
+    <div class="qa-card">
+      <div class="question">১. কম্পিউটার পাওয়ার অন হচ্ছে না, প্রথম ধাপ কী হবে?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সমাধান: প্রথমেই পাওয়ার ক্যাবল এবং প্লাগ চেক করুন। যদি ল্যাপটপ হয়, তবে চার্জার লাগিয়ে কিছুক্ষণ অপেক্ষা করুন। পাওয়ার সাপ্লাই (SMPS) ঠিক আছে কি না তা পরীক্ষা করুন।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">২. মনিটরে "No Signal" দেখাচ্ছে কিন্তু CPU ফ্যান ঘুরছে, সমস্যা কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সমাধান: এটি সাধারণত RAM-এর সমস্যার কারণে হয়। RAM খুলে পরিষ্কার করে পুনরায় লাগান। এছাড়া VGA বা HDMI ক্যাবলটি ঠিকমতো লাগানো আছে কি না চেক করুন।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৩. কম্পিউটার হঠাৎ হ্যাং (Hang) করলে কী করা উচিত?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সমাধান: কিবোর্ড থেকে Ctrl + Alt + Delete চেপে Task Manager ওপেন করুন এবং যে প্রোগ্রামটি সমস্যা করছে সেটি 'End Task' করে দিন।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৪. "Blue Screen of Death" (BSOD) কেন দেখা যায়?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সমাধান: এটি সাধারণত হার্ডওয়্যার ফেইলিওর বা ড্রাইভারে ত্রুটি থাকলে হয়। সম্প্রতি কোনো নতুন হার্ডওয়্যার বা ড্রাইভার ইনস্টল করলে সেটি রিমুভ করে দেখুন।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৫. মাউস বা কিবোর্ড কাজ না করলে কী করবেন?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সমাধান: USB পোর্ট পরিবর্তন করে দেখুন। অনেক সময় ধুলোবালির কারণে পোর্ট কানেকশন পায় না। ড্রাইভার আপডেট আছে কি না চেক করুন।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৬. ইন্টারনেট কানেক্ট হচ্ছে না, কীভাবে ঠিক করবেন?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সমাধান: আপনার রাউটারটি একবার বন্ধ করে চালু (Restart) করুন। ওয়াইফাই পাসওয়ার্ড ঠিক আছে কি না দেখুন এবং ট্রাবলশুটার (Troubleshoot Problems) রান করুন।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৭. কম্পিউটার থেকে বিচিত্র শব্দ (Beep Sound) আসছে কেন?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সমাধান: ছোট ছোট বিপিং সাউন্ড সাধারণত হার্ডওয়্যারের (যেমন RAM বা প্রসেসর) ত্রুটি নির্দেশ করে। মাদারবোর্ডের ম্যানুয়াল অনুযায়ী বিপ কোড চেক করুন।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৮. কম্পিউটার খুব গরম হয়ে স্লো হয়ে যাচ্ছে, সমাধান কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সমাধান: CPU ফ্যানটি ঠিকমতো ঘুরছে কি না এবং ভেতরে ধুলো জমেছে কি না দেখুন। প্রসেসরে থার্মাল পেস্ট (Thermal Paste) শুকিয়ে গেলেও এমন হতে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৯. ভুল করে কোনো ফাইল ডিলিট হয়ে গেলে কীভাবে ফেরত পাবেন?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সমাধান: প্রথমে Recycle Bin চেক করুন। যদি সেখান থেকেও ডিলিট হয়ে যায়, তবে ফাইল রিকভারি সফটওয়্যার (যেমন Recuva) ব্যবহার করা যেতে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">১০. উইন্ডোজ স্টার্ট হতে অনেক সময় নিচ্ছে, স্পিড বাড়াবো কীভাবে?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সমাধান: অপ্রয়োজনীয় 'Startup Apps' বন্ধ করুন। ড্রাইভ 'Defragment' করুন এবং নিয়মিত টেম্পোরারি ফাইল (%temp%) ডিলিট করুন।</div>
+    </div>
+  </div>
+
+  <a href="index.html" class="home-btn">🏠 হোম মেনুতে ফিরে যাও</a>
+
+  <script>
+    function toggleAns(btn) {
+      const ans = btn.nextElementSibling;
+      if (ans.style.display === "block") {
+        ans.style.display = "none";
+        btn.innerText = "উত্তর দেখুন";
+      } else {
+        ans.style.display = "block";
+        btn.innerText = "উত্তর লুকান";
+      }
+    }
+  </script>
+</body>
+</html>
