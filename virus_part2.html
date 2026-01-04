@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virus Part 2 - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fce4ec; margin: 0; padding: 10px; display: flex; flex-direction: column; align-items: center; }
+  .header { text-align: center; background: #880e4f; color: white; padding: 25px; border-radius: 15px; width: 100%; max-width: 750px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 20px; border-bottom: 5px solid #ff4081; }
+  .center-name { font-size: 20px; font-weight: bold; }
+  
+  .qa-container { width: 100%; max-width: 750px; }
+  .qa-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 6px solid #ff4081; }
+  .question { font-size: 17px; font-weight: bold; color: #880e4f; margin-bottom: 12px; display: flex; align-items: center; }
+  .question::before { content: "🛑"; margin-right: 10px; }
+  .answer { display: none; background: #fce4ec; padding: 15px; border-radius: 8px; color: #880e4f; font-weight: bold; margin-top: 10px; border: 1px solid #f8bbd0; line-height: 1.5; }
+  
+  .show-btn { background: #880e4f; color: white; border: none; padding: 10px 18px; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; transition: 0.3s; }
+  .show-btn:hover { background: #ff4081; }
+  .home-btn { text-decoration: none; background: #880e4f; color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold; margin-top: 20px; margin-bottom: 30px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="center-name">SUPER SUCCESS COMPUTER EDUCATION CENTER</div>
+    <h3 style="margin: 10px 0 0; color: #ff4081;">🦠 ভাইরাস ও ম্যালওয়্যার (পার্ট ২)</h3>
+    <p style="font-size: 14px; margin-top: 5px;">আধুনিক সাইবার থ্রেট সম্পর্কে জানুন</p>
+  </div>
+
+  <div class="qa-container">
+    <div class="qa-card">
+      <div class="question">১. 'Adware' (অ্যাডওয়্যার) কী এবং এটি কী ক্ষতি করে?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: এটি এক ধরণের ম্যালওয়্যার যা আপনার কম্পিউটারে বারবার বিরক্তিকর বিজ্ঞাপন বা পপ-আপ দেখায়। এটি ব্রাউজারের গতি কমিয়ে দেয় এবং আপনার ব্রাউজিং ডেটা চুরি করতে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">২. 'Worm' (ওয়ার্ম) এবং ভাইরাসের মধ্যে পার্থক্য কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: ভাইরাস ছড়ানোর জন্য মানুষের সাহায্যের প্রয়োজন হয় (যেমন কোনো ফাইল ওপেন করা), কিন্তু 'Worm' নিজে থেকেই নেটওয়ার্কের মাধ্যমে এক কম্পিউটার থেকে অন্য কম্পিউটারে দ্রুত ছড়িয়ে পড়তে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৩. 'Logic Bomb' বলতে কী বোঝায়?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: এটি এমন এক ধরণের ক্ষতিকারক কোড যা নির্দিষ্ট কোনো শর্ত পূরণ হলে (যেমন নির্দিষ্ট তারিখ বা সময়) সক্রিয় হয়ে কম্পিউটারের তথ্য নষ্ট করে দেয়।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৪. 'Rootkit' (রুটকিট) কেন সবচেয়ে বেশি বিপজ্জনক?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: এটি কম্পিউটারের গভীরে লুকিয়ে থাকে এবং অপারেটিং সিস্টেমের নিয়ন্ত্রণ নিয়ে নেয়। সাধারণ অ্যান্টিভাইরাস অনেক সময় একে খুঁজে পায় না।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৫. ফায়ারওয়াল (Firewall) এর কাজ কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: এটি আপনার কম্পিউটার এবং ইন্টারনেটের মাঝে একটি দেয়াল হিসেবে কাজ করে। এটি আপনার অনুমতি ছাড়া কোনো সন্দেহজনক ট্রাফিক বা ভাইরাসকে কম্পিউটারে ঢুকতে বাধা দেয়।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৬. স্প্যাম (Spam) ইমেইলের মাধ্যমে কীভাবে ভাইরাস ছড়ায়?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: হ্যাকাররা ইমেইলের সাথে ক্ষতিকারক লিঙ্ক বা ফাইল পাঠায়। সেই লিঙ্কে ক্লিক করলে বা ফাইল ডাউনলোড করলেই কম্পিউটারে ম্যালওয়্যার ঢুকে পড়ে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৭. ফোনের বা কম্পিউটারের ব্যাটারি হঠাৎ খুব দ্রুত শেষ হওয়া কি ভাইরাসের লক্ষণ?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: হ্যাঁ। ম্যালওয়্যার বা স্পাইওয়্যার ব্যাকগ্রাউন্ডে সবসময় কাজ করে এবং প্রসেসর ব্যবহার করে, যার ফলে ব্যাটারি দ্রুত খরচ হয় এবং ডিভাইস গরম হয়ে যায়।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৮. মোবাইল ফোনে ভাইরাস থেকে বাঁচতে কোন স্টোর ব্যবহার করা নিরাপদ?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: সবসময় অফিসিয়াল স্টোর যেমন Google Play Store বা Apple App Store ব্যবহার করা উচিত। বাইরের কোনো থার্ড-পার্টি সাইট থেকে APK ফাইল ডাউনলোড করা একদম উচিত নয়।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৯. কম্পিউটার ভাইরাস কি হার্ডওয়্যার (যেমন মাউস বা কিবোর্ড) নষ্ট করতে পারে?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: সরাসরি হার্ডওয়্যার নষ্ট করতে পারে না, তবে এটি হার্ডওয়্যার নিয়ন্ত্রণকারী 'Firmware' নষ্ট করে দিতে পারে যার ফলে পার্টসগুলো কাজ করা বন্ধ করে দেয়।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">১০. ফাইল ব্যাকআপ (Backup) রাখা কেন জরুরি?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: যদি কোনো ভাইরাস বা র‍্যানসমওয়্যার আপনার ফাইল নষ্ট করে দেয়, তবে ব্যাকআপ থাকলে আপনি খুব সহজেই আপনার জরুরি তথ্যগুলো ফিরে পাবেন।</div>
+    </div>
+  </div>
+
+  <a href="index.html" class="home-btn">🏠 হোম মেনুতে ফিরে যাও</a>
+
+  <script>
+    function toggleAns(btn) {
+      const ans = btn.nextElementSibling;
+      if (ans.style.display === "block") {
+        ans.style.display = "none";
+        btn.innerText = "উত্তর দেখুন";
+      } else {
+        ans.style.display = "block";
+        btn.innerText = "উত্তর লুকান";
+      }
+    }
+  </script>
+</body>
+</html>
