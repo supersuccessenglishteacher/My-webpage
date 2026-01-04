@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer Virus Awareness - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fafafa; margin: 0; padding: 10px; display: flex; flex-direction: column; align-items: center; }
+  .header { text-align: center; background: #37474f; color: white; padding: 25px; border-radius: 15px; width: 100%; max-width: 750px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 20px; border-bottom: 5px solid #ffa000; }
+  .center-name { font-size: 20px; font-weight: bold; }
+  
+  .virus-alert { background: #fff3e0; border: 2px solid #ffb74d; color: #e65100; padding: 15px; border-radius: 10px; width: 100%; max-width: 720px; margin-bottom: 25px; text-align: center; font-weight: bold; font-size: 15px; }
+
+  .qa-container { width: 100%; max-width: 750px; }
+  .qa-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 6px solid #ffa000; }
+  .question { font-size: 17px; font-weight: bold; color: #37474f; margin-bottom: 12px; display: flex; align-items: center; }
+  .question::before { content: "⚠️"; margin-right: 10px; }
+  .answer { display: none; background: #fff8e1; padding: 15px; border-radius: 8px; color: #5d4037; font-weight: bold; margin-top: 10px; border: 1px solid #ffe082; line-height: 1.5; }
+  
+  .show-btn { background: #37474f; color: white; border: none; padding: 10px 18px; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; transition: 0.3s; }
+  .show-btn:hover { background: #ffa000; color: #37474f; }
+  .home-btn { text-decoration: none; background: #37474f; color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold; margin-top: 20px; margin-bottom: 30px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="center-name">SUPER SUCCESS COMPUTER EDUCATION CENTER</div>
+    <h3 style="margin: 10px 0 0; color: #ffa000;">🦠 কম্পিউটার ভাইরাস ও ম্যালওয়্যার</h3>
+    <p style="font-size: 14px; margin-top: 5px;">ডিভাইসকে সুস্থ ও নিরাপদ রাখার নির্দেশিকা</p>
+  </div>
+
+  <div class="virus-alert">
+    📢 সাবধান: পেনড্রাইভ বা ইন্টারনেট থেকে যে কোনো ফাইল নেওয়ার আগে সচেতন হোন!
+  </div>
+
+  <div class="qa-container">
+    <div class="qa-card">
+      <div class="question">১. কম্পিউটার ভাইরাস (Virus) আসলে কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: কম্পিউটার ভাইরাস হলো এক ধরণের ক্ষতিকারক সফটওয়্যার প্রোগ্রাম যা নিজের কপি তৈরি করতে পারে এবং আপনার অনুমতি ছাড়াই ফাইলের ক্ষতি করতে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">২. VIRUS এর পূর্ণরূপ কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: Vital Information Resources Under Seize।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৩. ম্যালওয়্যার (Malware) বলতে কী বোঝায়?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: Malware শব্দটি 'Malicious Software' থেকে এসেছে। এটি এমন সব সফটওয়্যারকে বোঝায় যা কোনো কম্পিউটার বা নেটওয়ার্কের ক্ষতি করার জন্য তৈরি করা হয়।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৪. কম্পিউটার ভাইরাস আক্রান্ত হওয়ার প্রধান লক্ষণগুলো কী কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: কম্পিউটার খুব স্লো হয়ে যাওয়া, হঠাৎ রিস্টার্ট হওয়া, অপ্রয়োজনীয় ফাইল নিজে থেকে তৈরি হওয়া এবং বারবার এরর মেসেজ আসা।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৫. 'Trojan Horse' কী ধরণের ম্যালওয়্যার?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: এটি ছদ্মবেশী ভাইরাস। এটি দেখতে ভালো বা কাজের সফটওয়্যার মনে হলেও ভেতরে আসলে ধ্বংসাত্মক কোড থাকে যা আপনার তথ্য চুরি করতে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৬. স্পাইওয়্যার (Spyware) কী কাজ করে?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: এটি ব্যবহারকারীর অগোচরে তার কম্পিউটার থেকে গোপন তথ্য (যেমন পাসওয়ার্ড, ক্রেডিট কার্ড নম্বর) নজরদারি করে এবং হ্যাকারের কাছে পাঠিয়ে দেয়।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৭. কম্পিউটারকে ভাইরাসমুক্ত রাখার প্রধান উপায় কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: ভালো মানের একটি 'Anti-Virus' সফটওয়্যার ব্যবহার করা এবং সেটিকে নিয়মিত আপডেট করা।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৮. বিশ্বের প্রথম কম্পিউটার ভাইরাসের নাম কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: পার্সোনাল কম্পিউটারের জন্য প্রথম ভাইরাসের নাম হলো 'Creeper' (ক্রিপার)।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৯. পাইরেটেড বা ক্র্যাক সফটওয়্যার (Cracked Software) ব্যবহার করা কি বিপজ্জনক?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: হ্যাঁ, অত্যন্ত বিপজ্জনক। ক্র্যাক সফটওয়্যারের সাথে প্রায়ই র‍্যানসমওয়্যার বা ম্যালওয়্যার লুকানো থাকে যা আপনার পুরো কম্পিউটার লক করে দিতে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">১০. পেনড্রাইভ থেকে ভাইরাস ছড়ানো কীভাবে আটকানো যায়?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: পেনড্রাইভ কম্পিউটারে ঢুকিয়ে সরাসরি ওপেন না করে প্রথমে অ্যান্টিভাইরাস দিয়ে 'Scan' করে নেওয়া উচিত।</div>
+    </div>
+  </div>
+
+  <a href="index.html" class="home-btn">🏠 হোম মেনুতে ফিরে যাও</a>
+
+  <script>
+    function toggleAns(btn) {
+      const ans = btn.nextElementSibling;
+      if (ans.style.display === "block") {
+        ans.style.display = "none";
+        btn.innerText = "উত্তর দেখুন";
+      } else {
+        ans.style.display = "block";
+        btn.innerText = "উত্তর লুকান";
+      }
+    }
+  </script>
+</body>
+</html>
