@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Part 2 - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #eef2f7; margin: 0; padding: 10px; display: flex; flex-direction: column; align-items: center; }
+  .header { text-align: center; background: #283593; color: white; padding: 25px; border-radius: 15px; width: 100%; max-width: 700px; box-shadow: 0 4px 12px rgba(0,0,0,0.2); margin-bottom: 20px; border-bottom: 5px solid #00e5ff; }
+  .center-name { font-size: 20px; font-weight: bold; }
+  .qa-container { width: 100%; max-width: 700px; }
+  .qa-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 6px solid #00e5ff; }
+  .question { font-size: 17px; font-weight: bold; color: #1a237e; margin-bottom: 12px; }
+  .answer { display: none; background: #e0f7fa; padding: 15px; border-radius: 8px; color: #006064; font-weight: bold; margin-top: 10px; border: 1px solid #b2ebf2; }
+  .show-btn { background: #283593; color: white; border: none; padding: 10px 18px; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; }
+  .home-btn { text-decoration: none; background: #283593; color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold; margin-top: 20px; margin-bottom: 30px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="center-name">SUPER SUCCESS COMPUTER EDUCATION CENTER</div>
+    <h3 style="margin: 10px 0 0; color: #00e5ff;">🤖 AI: Part 2 (Advanced Knowledge)</h3>
+    <p style="font-size: 14px; margin-top: 5px;">মেশিন লার্নিং এবং এআই-এর ভবিষ্যৎ</p>
+  </div>
+
+  <div class="qa-container">
+    <div class="qa-card">
+      <div class="question">১. ML-এর পূর্ণরূপ কী? যা AI-এর একটি গুরুত্বপূর্ণ অংশ।</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: Machine Learning (মেশিন লার্নিং)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">২. AI কি মানুষের আবেগ (Emotions) বুঝতে পারে?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: বর্তমানে "Sentiment Analysis" প্রযুক্তির মাধ্যমে AI মানুষের আবেগ বা মুড কিছুটা বুঝতে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৩. চালকবিহীন গাড়ি (Self-driving Car) কোন কোম্পানি প্রথম জনপ্রিয়তা দেয়?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: Tesla (টেসলা)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৪. "Generative AI" বলতে কী বোঝায়?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: যে AI নিজে থেকে নতুন ছবি, টেক্সট বা মিউজিক তৈরি করতে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৫. এআই (AI) কি কোনো ভুল তথ্য দিতে পারে?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: হ্যাঁ, একে এআই "Hallucination" বলা হয়। তাই সব তথ্য যাচাই করা প্রয়োজন।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৬. ফেসবুকে আপনার পছন্দের ভিডিও সাজেস্ট করে কোন প্রযুক্তি?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: AI Algorithm (এআই অ্যালগরিদম)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৭. "Deep Learning" আসলে কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: এটি মানুষের মস্তিষ্কের নিউরনের মতো কাজ করার একটি এআই পদ্ধতি।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৮. এআই কি মানুষের মতো ছবি আঁকতে পারে?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: হ্যাঁ, যেমন- Midjourney বা DALL-E ৩।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৯. শিক্ষা ক্ষেত্রে এআই-এর একটি ভালো ব্যবহার কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: পার্সোনালাইজড লার্নিং বা কঠিন বিষয়কে সহজে বুঝিয়ে দেওয়া।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">১০. ভবিষ্যতে এআই কি মানুষের সমান বুদ্ধিমান হতে পারবে?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: একে বলা হয় AGI (Artificial General Intelligence), যা নিয়ে বিজ্ঞানীরা এখনও গবেষণা করছেন।</div>
+    </div>
+  </div>
+
+  <a href="index.html" class="home-btn">🏠 হোম মেনুতে ফিরে যাও</a>
+
+  <script>
+    function toggleAns(btn) {
+      const ans = btn.nextElementSibling;
+      if (ans.style.display === "block") {
+        ans.style.display = "none";
+        btn.innerText = "উত্তর দেখুন";
+      } else {
+        ans.style.display = "block";
+        btn.innerText = "উত্তর লুকান";
+      }
+    }
+  </script>
+</body>
+</html>
