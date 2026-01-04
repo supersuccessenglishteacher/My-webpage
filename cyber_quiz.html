@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Security Mock Test - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7f6; display: flex; flex-direction: column; align-items: center; padding: 10px; margin: 0; }
+  .header { text-align: center; background: #1b5e20; color: white; padding: 20px; border-radius: 15px; width: 100%; max-width: 700px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 20px; }
+  .center-name { font-size: 22px; font-weight: bold; margin: 0; }
+  .contact-info { font-size: 14px; margin-top: 5px; color: #ffeb3b; }
+
+  #setup-box { background: white; padding: 30px; border-radius: 15px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+  input[type="text"] { width: 85%; padding: 12px; margin: 15px 0; border: 2px solid #1b5e20; border-radius: 8px; font-size: 16px; }
+
+  .dashboard { display: none; justify-content: space-around; width: 100%; max-width: 700px; margin-bottom: 15px; }
+  .stat-box { background: #1b5e20; color: white; padding: 10px 20px; border-radius: 10px; font-weight: bold; font-size: 18px; }
+
+  #quiz-container { display: none; width: 100%; max-width: 700px; }
+  .question-card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px; border-left: 8px solid #c62828; }
+  .question-text { font-size: 18px; font-weight: bold; margin-bottom: 15px; color: #333; }
+  .option-btn { display: block; width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; cursor: pointer; text-align: left; font-size: 16px; transition: 0.3s; }
+  .option-btn:hover { background: #e8f5e9; border-color: #1b5e20; }
+
+  #result-overlay { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 20px; box-shadow: 0 0 50px rgba(0,0,0,0.3); text-align: center; width: 85%; max-width: 400px; z-index: 1000; border: 4px solid #1b5e20; }
+  .wa-btn { background: #25D366; color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; display: inline-block; font-weight: bold; margin-top: 20px; font-size: 18px; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="center-name">SUPER SUCCESS COMPUTER EDUCATION CENTER</div>
+    <div class="contact-info">📞 8017247298 | 9874152080</div>
+    <h3 style="margin: 10px 0 0; color: #ffeb3b;">🛡️ Cyber Security Mock Test</h3>
+  </div>
+
+  <div id="setup-box">
+    <h3>পরীক্ষার্থীর নাম লেখো:</h3>
+    <input type="text" id="student-name" placeholder="তোমার পুরো নাম...">
+    <button onclick="startQuiz()" style="background:#1b5e20; color:white; border:none; padding:12px 30px; border-radius:8px; cursor:pointer; font-weight:bold;">শুরু করো 🔐</button>
+  </div>
+
+  <div id="dashboard" class="dashboard">
+    <div class="stat-box" id="timer">⏳ 120s</div>
+    <div class="stat-box">⭐ স্কোর: <span id="current-score">0</span></div>
+  </div>
+
+  <div id="quiz-container">
+    <div id="quiz-box"></div>
+  </div>
+
+  <div id="result-overlay">
+    <div style="font-size: 50px;">🎖️</div>
+    <h2 id="final-name"></h2>
+    <p style="font-size: 20px;">তোমার মোট স্কোর: <span id="final-score"></span>/১০</p>
+    <a id="wa-link" href="#" class="wa-btn" target="_blank">📲 ফলাফল স্যারকে পাঠাও</a>
+    <br><br>
+    <button onclick="location.reload()" style="background:#666; color:white; border:none; padding:8px 15px; border-radius:5px; cursor:pointer;">বন্ধ করো</button>
+  </div>
+
+<script>
+  const questions = [
+    { q: "OTP এর পূর্ণরূপ কী?", a: ["One Time Password", "Only Text Pass", "Over Top Pass"], c: 0 },
+    { q: "একটি শক্তিশালী পাসওয়ার্ডে কোনটি থাকা উচিত?", a: ["শুধু নাম", "জন্ম তারিখ", "অক্ষর, সংখ্যা ও চিহ্ন"], c: 2 },
+    { q: "নকল লিঙ্কের মাধ্যমে তথ্য চুরি করাকে কী বলে?", a: ["Fishing", "Phishing", "Hacking"], c: 1 },
+    { q: "নিরাপদ ওয়েবসাইটের শুরুতে কোনটি থাকে?", a: ["http://", "https://", "www."], c: 1 },
+    { q: "কিবোর্ডে টাইপ করা তথ্য চুরি করে কোনটি?", a: ["Keylogger", "Antivirus", "Mouse"], c: 0 },
+    { q: "উঁকি দিয়ে পাসওয়ার্ড দেখে নেওয়াকে কী বলে?", a: ["Back Surfing", "Shoulder Surfing", "Side Viewing"], c: 1 },
+    { q: "পাবলিক ওয়াইফাই ব্যবহারের প্রধান ঝুঁকি কী?", a: ["নেট স্লো হওয়া", "তথ্য চুরি হওয়া", "ব্যাটারি শেষ হওয়া"], c: 1 },
+    { q: "ফাইল লক করে টাকা দাবি করা ভাইরাস কোনটি?", a: ["Ransomware", "Malware", "Trojan"], c: 0 },
+    { q: "সিম কার্ড সুরক্ষিত রাখতে কোনটি ব্যবহার করা উচিত?", a: ["SIM Lock (PIN)", "SIM Cover", "SIM Tracker"], c: 0 },
+    { q: "সাইবার ক্রাইম হলে সরকারি কোন পোর্টালে জানানো যায়?", a: ["cybercrime.gov.in", "google.com", "facebook.com"], c: 0 }
+  ];
+
+  let currentQ = 0, score = 0, timer = 120, timerInterval, studentName = "";
+
+  function startQuiz() {
+    studentName = document.getElementById('student-name').value.trim();
+    if(!studentName) { alert("নাম লেখো!"); return; }
+    document.getElementById('setup-box').style.display = "none";
+    document.getElementById('dashboard').style.display = "flex";
+    document.getElementById('quiz-container').style.display = "block";
+    showQuestion();
+    startTimer();
+  }
+
+  function startTimer() {
+    timerInterval = setInterval(() => {
+      timer--;
+      document.getElementById('timer').innerText = "⏳ " + timer + "s";
+      if(timer <= 0) finishQuiz();
+    }, 1000);
+  }
+
+  function showQuestion() {
+    if(currentQ >= questions.length) { finishQuiz(); return; }
+    let qData = questions[currentQ];
+    let html = `
+      <div class="question-card">
+        <div class="question-text">${currentQ + 1}. ${qData.q}</div>
+        ${qData.a.map((opt, i) => `<button class="option-btn" onclick="checkAnswer(${i})">${opt}</button>`).join('')}
+      </div>`;
+    document.getElementById('quiz-box').innerHTML = html;
+  }
+
+  function checkAnswer(idx) {
+    if(idx === questions[currentQ].c) {
+      score++;
+      document.getElementById('current-score').innerText = score;
+    }
+    currentQ++;
+    showQuestion();
+  }
+
+  function finishQuiz() {
+    clearInterval(timerInterval);
+    document.getElementById('quiz-container').style.opacity = "0.1";
+    document.getElementById('result-overlay').style.display = "block";
+    document.getElementById('final-name').innerText = "অসাধারণ, " + studentName + "!";
+    document.getElementById('final-score').innerText = score;
+    
+    let msg = `স্যার, আমি Cyber Security Mock Test সম্পন্ন করেছি।%0Aনাম: ${studentName}%0Aস্কোর: ${score}/10%0Aসেন্টার: SSCEC`;
+    let waNumber = "918017247298"; 
+    document.getElementById('wa-link').href = `https://wa.me/${waNumber}?text=${msg}`;
+  }
+</script>
+</body>
+</html>
