@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Security - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #eceff1; margin: 0; padding: 10px; display: flex; flex-direction: column; align-items: center; }
+  .header { text-align: center; background: #263238; color: white; padding: 25px; border-radius: 15px; width: 100%; max-width: 750px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); margin-bottom: 20px; border-bottom: 5px solid #ff5252; }
+  .center-name { font-size: 20px; font-weight: bold; }
+  .security-tip { background: #ffebee; border: 2px solid #ffcdd2; color: #b71c1c; padding: 15px; border-radius: 10px; width: 100%; max-width: 720px; margin-bottom: 25px; text-align: center; font-weight: bold; }
+  
+  .qa-container { width: 100%; max-width: 750px; }
+  .qa-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 6px solid #263238; transition: 0.3s; }
+  .qa-card:hover { transform: scale(1.02); }
+  .question { font-size: 17px; font-weight: bold; color: #263238; margin-bottom: 12px; display: flex; align-items: center; }
+  .question::before { content: "🛡️"; margin-right: 10px; }
+  .answer { display: none; background: #f1f8e9; padding: 15px; border-radius: 8px; color: #1b5e20; font-weight: bold; margin-top: 10px; border: 1px solid #c5e1a5; line-height: 1.5; }
+  
+  .show-btn { background: #263238; color: white; border: none; padding: 10px 18px; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; }
+  .home-btn { text-decoration: none; background: #263238; color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold; margin-top: 20px; margin-bottom: 30px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="center-name">SUPER SUCCESS COMPUTER EDUCATION CENTER</div>
+    <h3 style="margin: 10px 0 0; color: #ff5252;">🔐 সাইবার সিকিউরিটি ও ইন্টারনেট সুরক্ষা</h3>
+    <p style="font-size: 14px; margin-top: 5px;">অনলাইনে নিজেকে নিরাপদ রাখার ১০টি গোপন সূত্র</p>
+  </div>
+
+  <div class="security-tip">
+    🚨 মনে রাখবে: তোমার একটি ছোট ভুল হ্যাকারদের জন্য বড় সুযোগ হতে পারে!
+  </div>
+
+  <div class="qa-container">
+    <div class="qa-card">
+      <div class="question">১. ওটিপি (OTP) কী? এটি কেন কাউকে বলা উচিত নয়?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: OTP মানে One Time Password। এটি আপনার ব্যাংক বা পার্সোনাল অ্যাকাউন্টের চাবিকাঠি। এটি কাউকে বললে আপনার টাকা বা অ্যাকাউন্ট চুরি হতে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">২. একটি শক্তিশালী পাসওয়ার্ড (Strong Password) কেমন হওয়া উচিত?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: পাসওয়ার্ডে বড় হাতের অক্ষর, ছোট হাতের অক্ষর, সংখ্যা এবং চিহ্ন (যেমন: @, #, $) থাকা উচিত। নিজের নাম বা মোবাইল নম্বর পাসওয়ার্ড হিসেবে ব্যবহার করা বিপজ্জনক।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৩. টু-ফ্যাক্টর অথেনটিকেশন (2FA) কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: এটি নিরাপত্তার একটি অতিরিক্ত স্তর। পাসওয়ার্ড দেওয়ার পর মোবাইলে একটি কোড আসে, যা ছাড়া কেউ আপনার অ্যাকাউন্টে ঢুকতে পারবে না।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৪. ফিশিং (Phishing) অ্যাটাক বলতে কী বোঝায়?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: হ্যাকাররা অনেক সময় পুরস্কার বা লটারির টোপ দিয়ে নকল লিঙ্ক পাঠায়। সেই লিঙ্কে ক্লিক করলে আপনার ব্যক্তিগত তথ্য চুরি হয়ে যেতে পারে। একেই ফিশিং বলে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৫. পাবলিক ওয়াইফাই (Public Wi-Fi) ব্যবহারের ঝুঁকি কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: স্টেশন বা শপিং মলের ফ্রি ওয়াইফাই ব্যবহার করে ব্যাংক ট্রানজ্যাকশন বা লগইন করা উচিত নয়, কারণ হ্যাকাররা সহজেই এই নেটওয়ার্ক থেকে তথ্য চুরি করতে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৬. কোনো ওয়েবসাইটের লিঙ্ক 'https' দিয়ে শুরু হওয়ার গুরুত্ব কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: 'https' (s = secure) মানে ওয়েবসাইটটি নিরাপদ। শুধু 'http' থাকলে সেই সাইটে আপনার দেওয়া তথ্য হ্যাক হওয়ার সম্ভাবনা থাকে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৭. কম্পিউটার বা মোবাইলে অ্যান্টিভাইরাস (Antivirus) কেন জরুরি?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: এটি আপনার ডিভাইসকে ক্ষতিকারক ভাইরাস এবং ম্যালওয়্যার থেকে রক্ষা করে যা আপনার ফাইল ডিলিট বা চুরি করতে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৮. সোশ্যাল মিডিয়ায় অচেনা কারো ফ্রেন্ড রিকোয়েস্ট গ্রহণ করলে কী হতে পারে?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: অচেনা ব্যক্তি আপনার প্রোফাইলের ছবি এবং তথ্য অপব্যবহার করতে পারে বা আপনাকে মানসিকভাবে হেনস্তা (Cyber Bullying) করতে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৯. সফটওয়্যার আপডেট (Update) কেন করা উচিত?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: নতুন আপডেটে আগের নিরাপত্তার দুর্বলতাগুলো ঠিক করা হয়। আপডেট না করলে আপনার ডিভাইস সহজেই হ্যাক হতে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">১০. সাইবার ক্রাইম হলে কোথায় যোগাযোগ করতে হয়?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: ভারত সরকারের সাইবার ক্রাইম পোর্টাল (www.cybercrime.gov.in) অথবা নিকটস্থ থানায় সাইবার সেলে যোগাযোগ করতে হয়।</div>
+    </div>
+  </div>
+
+  <a href="index.html" class="home-btn">🏠 হোম মেনুতে ফিরে যাও</a>
+
+  <script>
+    function toggleAns(btn) {
+      const ans = btn.nextElementSibling;
+      if (ans.style.display === "block") {
+        ans.style.display = "none";
+        btn.innerText = "উত্তর দেখুন";
+      } else {
+        ans.style.display = "block";
+        btn.innerText = "উত্তর লুকান";
+      }
+    }
+  </script>
+</body>
+</html>
