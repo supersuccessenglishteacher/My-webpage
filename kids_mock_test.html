@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kids Mock Test - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #e0f7fa; margin: 0; padding: 10px; display: flex; flex-direction: column; align-items: center; }
+  .header { text-align: center; background: #00796b; color: white; padding: 15px; border-radius: 15px; width: 100%; max-width: 800px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); margin-bottom: 20px; border: 3px solid #ffeb3b; }
+  .center-name { font-size: 24px; font-weight: bold; margin: 0; }
+  .address { font-size: 13px; margin: 5px 0; color: #e0f2f1; }
+  .contact { font-size: 15px; font-weight: bold; color: #ffeb3b; }
+
+  #setup-box { background: white; padding: 30px; border-radius: 20px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+  input[type="text"] { width: 85%; padding: 12px; margin: 15px 0; border: 2px solid #00796b; border-radius: 10px; font-size: 16px; outline: none; }
+  .start-btn { background: #ff5722; color: white; border: none; padding: 12px 35px; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 18px; transition: 0.3s; }
+  .start-btn:hover { background: #e64a19; transform: scale(1.05); }
+
+  .dashboard { display: none; justify-content: space-around; width: 100%; max-width: 800px; margin-bottom: 15px; }
+  .stat-box { background: #ffffff; color: #00796b; padding: 10px 20px; border-radius: 15px; font-weight: bold; font-size: 20px; border: 2px solid #00796b; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+
+  #quiz-container { display: none; width: 100%; max-width: 800px; }
+  .question-card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-bottom: 20px; border-left: 10px solid #ffeb3b; }
+  .question-text { font-size: 20px; font-weight: bold; margin-bottom: 20px; color: #333; }
+  .option-btn { display: block; width: 100%; padding: 15px; margin: 10px 0; border: 2px solid #eee; border-radius: 12px; background: #f9f9f9; cursor: pointer; text-align: left; font-size: 17px; transition: 0.3s; }
+  .option-btn:hover { background: #e0f2f1; border-color: #00796b; }
+
+  #result-overlay { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 25px; box-shadow: 0 0 50px rgba(0,0,0,0.5); text-align: center; width: 85%; max-width: 450px; z-index: 1000; border: 5px solid #00796b; }
+  .wa-btn { background: #25D366; color: white; padding: 15px 25px; border-radius: 30px; text-decoration: none; display: inline-block; font-weight: bold; margin-top: 20px; font-size: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="center-name">SUPER SUCCESS COMPUTER EDUCATION CENTER</div>
+    <div class="address">22/1 BIPIN PAUL ROAD, NIMTA SHYAMAPRASAD NAGAR, KOLKATA-49</div>
+    <div class="contact">📞 8017247298 | 9874152080</div>
+    <h2 style="margin: 10px 0 0; color: #ffeb3b;">🎨 Kids Junior Mock Test (Full Marks: 50) 🖥️</h2>
+  </div>
+
+  <div id="setup-box">
+    <h3 style="color: #00796b;">তোমার নাম লেখো ছোট বন্ধু:</h3>
+    <input type="text" id="student-name" placeholder="তোমার নাম এখানে লেখো...">
+    <button class="start-btn" onclick="startQuiz()">শুরু করো 🚀</button>
+  </div>
+
+  <div id="dashboard" class="dashboard">
+    <div class="stat-box" id="timer">⏳ সময়: 600s</div>
+    <div class="stat-box">⭐ স্কোর: <span id="current-score">0</span> / 50</div>
+  </div>
+
+  <div id="quiz-container">
+    <div id="quiz-box"></div>
+  </div>
+
+  <div id="result-overlay">
+    <div style="font-size: 60px;">🥇</div>
+    <h2 id="final-name"></h2>
+    <p style="font-size: 22px; font-weight: bold;">তোমার মোট নম্বর: <span id="final-score" style="color: #ff5722;"></span> / ৫০</p>
+    <a id="wa-link" href="#" class="wa-btn" target="_blank">📲 ফলাফল স্যারকে পাঠাও</a>
+    <br><br>
+    <button onclick="location.reload()" style="background:#666; color:white; border:none; padding:10px 20px; border-radius:10px; cursor:pointer;">বন্ধ করো</button>
+  </div>
+
+<script>
+  const questions = [
+    // Computer Basic
+    { q: "কম্পিউটারের মস্তিষ্ক বা Brain কাকে বলা হয়?", a: ["Monitor", "Mouse", "CPU", "Keyboard"], c: 2 },
+    { q: "নিচের কোনটি একটি Input ডিভাইস?", a: ["Printer", "Mouse", "Speaker", "Monitor"], c: 1 },
+    { q: "কম্পিউটার বন্ধ করার সঠিক নিয়ম কী?", a: ["প্লাগ খুলে দেওয়া", "Shut Down করা", "মনিটর বন্ধ করা"], c: 1 },
+    { q: "কিবোর্ডের সবথেকে বড় বাটন কোনটি?", a: ["Enter", "Shift", "Space bar", "Caps Lock"], c: 2 },
+    { q: "কম্পিউটারের মনিটর দেখতে কিসের মতো?", a: ["বইয়ের মতো", "টিভির মতো", "রেডিওর মতো"], c: 1 },
+    { q: "নিচের কোনটি কম্পিউটারের হাত হিসেবে কাজ করে?", a: ["Monitor", "Mouse", "CPU", "UPS"], c: 1 },
+    { q: "কম্পিউটারে ছবি দেখার জন্য কোনটি ব্যবহার করি?", a: ["Keyboard", "CPU", "Monitor"], c: 2 },
+    { q: "কম্পিউটারে গান শোনার জন্য কী লাগে?", a: ["Speaker", "Mouse", "Printer"], c: 0 },
+    { q: "নিচের কোনটি একটি Output ডিভাইস?", a: ["Keyboard", "Printer", "Scanner"], c: 1 },
+    { q: "কম্পিউটার চালু করার বোতামটি কোথায় থাকে?", a: ["Monitor-এ", "CPU Cabinet-এ", "Mouse-এ"], c: 1 },
+
+    // MS Paint
+    { q: "MS Paint-এ ছবি মোছার জন্য কী ব্যবহার করি?", a: ["Pencil", "Eraser", "Brush"], c: 1 },
+    { q: "ছবিতে রঙ ভরার জন্য কোন টুলটি ব্যবহার করা হয়?", a: ["Fill with color", "Text tool", "Magnifier"], c: 0 },
+    { q: "সোজা লাইন টানার জন্য কিবোর্ডের কোন বাটন চেপে রাখতে হয়?", a: ["Alt", "Shift", "Ctrl"], c: 1 },
+    { q: "পেইন্ট প্রোগ্রামে গোল বৃত্ত আঁকার জন্য কোনটি লাগে?", a: ["Rectangle", "Oval", "Triangle"], c: 1 },
+    { q: "পেইন্ট-এ আঁকা ছবি সেভ করার শর্টকাট কী?", a: ["Ctrl + S", "Ctrl + P", "Ctrl + Z"], c: 0 },
+    { q: "পেন্সিল দিয়ে আঁকা ছবিকে বড় করে দেখতে কী লাগে?", a: ["Brush", "Magnifier", "Airbrush"], c: 1 },
+    { q: "পেইন্ট প্রোগ্রামে মোট কত প্রকার ব্রাশ থাকে?", a: ["৫ প্রকার", "৯ প্রকার", "১২ প্রকার"], c: 1 },
+
+    // MS Word
+    { q: "MS Word-এ লেখা মোছার জন্য কোন বাটন ব্যবহার করা হয়?", a: ["Enter", "Backspace", "Space"], c: 1 },
+    { q: "লেখাকে মোটা (Bold) করার শর্টকাট কী?", a: ["Ctrl + B", "Ctrl + I", "Ctrl + U"], c: 0 },
+    { q: "নতুন লাইন শুরু করার জন্য কোন বাটন চাপতে হয়?", a: ["Shift", "Enter", "Tab"], c: 1 },
+    { q: "লেখার স্টাইল পরিবর্তন করাকে কী বলে?", a: ["Color", "Font", "Size"], c: 1 },
+    { q: "লেখার নিচে দাগ (Underline) দেওয়ার শর্টকাট কী?", a: ["Ctrl + U", "Ctrl + B", "Ctrl + S"], c: 0 },
+    { q: "সব লেখা একসাথে সিলেক্ট করার নিয়ম কী?", a: ["Ctrl + A", "Ctrl + C", "Ctrl + V"], c: 0 },
+    { q: "MS Word-এ বানান ভুল হলে কি রঙের লাইন আসে?", a: ["নীল", "সবুজ", "লাল"], c: 2 },
+    { q: "MS Word মূলত কী ধরণের সফটওয়্যার?", a: ["ছবি আঁকার", "চিঠি বা ডকুমেন্ট লেখার", "গেম খেলার"], c: 1 }
+  ];
+
+  let currentQ = 0, score = 0, timer = 600, timerInterval, studentName = "";
+
+  function startQuiz() {
+    studentName = document.getElementById('student-name').value.trim();
+    if(!studentName) { alert("ছোট বন্ধু, তোমার নাম লেখো!"); return; }
+    
+    document.getElementById('setup-box').style.display = "none";
+    document.getElementById('dashboard').style.display = "flex";
+    document.getElementById('quiz-container').style.display = "block";
+    
+    showQuestion();
+    startTimer();
+  }
+
+  function startTimer() {
+    timerInterval = setInterval(() => {
+      timer--;
+      let mins = Math.floor(timer / 60);
+      let secs = timer % 60;
+      document.getElementById('timer').innerText = `⏳ সময়: ${mins}:${secs < 10 ? '0' : ''}${secs}`;
+      if(timer <= 0) finishQuiz();
+    }, 1000);
+  }
+
+  function showQuestion() {
+    if(currentQ >= questions.length) { finishQuiz(); return; }
+    let qData = questions[currentQ];
+    let html = `
+      <div class="question-card">
+        <div class="question-text">${currentQ + 1}. ${qData.q}</div>
+        ${qData.a.map((opt, i) => `<button class="option-btn" onclick="checkAnswer(${i})">${opt}</button>`).join('')}
+      </div>`;
+    document.getElementById('quiz-box').innerHTML = html;
+  }
+
+  function checkAnswer(idx) {
+    if(idx === questions[currentQ].c) {
+      score += 2; // Each question 2 marks
+      document.getElementById('current-score').innerText = score;
+    }
+    currentQ++;
+    showQuestion();
+  }
+
+  function finishQuiz() {
+    clearInterval(timerInterval);
+    document.getElementById('quiz-container').style.opacity = "0.1";
+    document.getElementById('result-overlay').style.display = "block";
+    document.getElementById('final-name').innerText = "দারুণ করেছ, " + studentName + "!";
+    document.getElementById('final-score').innerText = score;
+    
+    let msg = `স্যার, আমি Kids Mock Test শেষ করেছি।%0Aনাম: ${studentName}%0Aস্কোর: ${score}/50%0Aসেন্টার: SSCEC, Nimta`;
+    let waNumber = "918017247298"; 
+    document.getElementById('wa-link').href = `https://wa.me/${waNumber}?text=${msg}`;
+  }
+</script>
+</body>
+</html>
