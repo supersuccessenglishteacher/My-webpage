@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Knowledge - SSCEC</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; margin: 0; padding: 10px; display: flex; flex-direction: column; align-items: center; }
+  .header { text-align: center; background: #673ab7; color: white; padding: 25px; border-radius: 15px; width: 100%; max-width: 700px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); margin-bottom: 20px; border-bottom: 5px solid #ffeb3b; }
+  .center-name { font-size: 20px; font-weight: bold; }
+  .qa-container { width: 100%; max-width: 700px; }
+  .qa-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); border-left: 6px solid #673ab7; }
+  .question { font-size: 17px; font-weight: bold; color: #311b92; margin-bottom: 12px; }
+  .answer { display: none; background: #ede7f6; padding: 15px; border-radius: 8px; color: #512da8; font-weight: bold; margin-top: 10px; border: 1px solid #d1c4e9; }
+  .show-btn { background: #673ab7; color: white; border: none; padding: 10px 18px; border-radius: 5px; cursor: pointer; font-size: 14px; font-weight: bold; }
+  .home-btn { text-decoration: none; background: #673ab7; color: white; padding: 12px 25px; border-radius: 25px; font-weight: bold; margin-top: 20px; margin-bottom: 30px; display: inline-block; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="center-name">SUPER SUCCESS COMPUTER EDUCATION CENTER</div>
+    <h3 style="margin: 10px 0 0; color: #ffeb3b;">🤖 কৃত্রিম বুদ্ধিমত্তা (AI) জ্ঞান</h3>
+    <p style="font-size: 14px; margin-top: 5px;">ভবিষ্যতের প্রযুক্তি সম্পর্কে ১০টি গুরুত্বপূর্ণ তথ্য</p>
+  </div>
+
+  <div class="qa-container">
+    <div class="qa-card">
+      <div class="question">১. AI এর পূর্ণরূপ (Full Form) কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: Artificial Intelligence (আর্টিফিশিয়াল ইন্টেলিজেন্স)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">২. AI এর জনক (Father of AI) কাকে বলা হয়?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: জন ম্যাকার্থি (John McCarthy)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৩. বর্তমান সময়ের সবচেয়ে জনপ্রিয় AI চ্যাটবট কোনটি?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: ChatGPT (চ্যাট জিপিটি)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৪. চ্যাট জিপিটি (ChatGPT) কোন কোম্পানি তৈরি করেছে?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: OpenAI (ওপেন এআই)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৫. মানুষের মতো কথা বলতে পারে এমন একটি বিখ্যাত AI রোবটের নাম কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: সোফিয়া (Sophia)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৬. গুগল (Google) এর তৈরি AI সিস্টেমটির নাম কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: Gemini (জেমিলাই/জেমিনি)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৭. AI কি নিজে থেকে চিন্তা করতে পারে?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: হ্যাঁ, এটি ডেটা এবং অ্যালগরিদমের সাহায্যে মানুষের মতো সিদ্ধান্ত নিতে পারে।</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৮. আইফোনের (iPhone) ডিফল্ট AI ভয়েস অ্যাসিস্ট্যান্ট কোনটি?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: Siri (সিরি)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">৯. অ্যামাজন (Amazon) কোম্পানির AI সিস্টেমটির নাম কী?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: Alexa (অ্যালেক্সা)</div>
+    </div>
+
+    <div class="qa-card">
+      <div class="question">১০. AI কি মানুষের চাকরি কমিয়ে দেবে নাকি সহজ করবে?</div>
+      <button class="show-btn" onclick="toggleAns(this)">উত্তর দেখুন</button>
+      <div class="answer">সঠিক উত্তর: AI মানুষের কাজকে অনেক দ্রুত ও সহজ করে দেবে।</div>
+    </div>
+  </div>
+
+  <a href="index.html" class="home-btn">🏠 হোম মেনুতে ফিরে যাও</a>
+
+  <script>
+    function toggleAns(btn) {
+      const ans = btn.nextElementSibling;
+      if (ans.style.display === "block") {
+        ans.style.display = "none";
+        btn.innerText = "উত্তর দেখুন";
+      } else {
+        ans.style.display = "block";
+        btn.innerText = "উত্তর লুকান";
+      }
+    }
+  </script>
+</body>
+</html>
